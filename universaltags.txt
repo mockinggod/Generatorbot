@@ -1,0 +1,8 @@
+#colour#; blue; green; red; purple; yellow; pink; teal; silver; gold
+#colour2#; blue; green; red; purple; yellow; pink; teal; silver; gold
+#familymembre#; father; son; mother; daughter; brother; sister; spouse
+#shape#; crown; skull; book; cross; heart; sword; lighting bolt
+#animal#; spider, snake; bird; cat; fish; dog; cat
+#animals#; spiders, snakes; birds; cats; fish; dogs; cats
+#hobby#; knitting; gardening; dance; painting; music; singing; poetry
+#hobbyist#; knitter; gardener; dancer; painter; musician; singer; poet

@@ -1,0 +1,183 @@
+Academic
+Accountant
+Acrobat
+Actor
+Agitator
+Alchemist
+Animal tamer
+Apothecary
+Apprentice
+Arborist
+Archer
+Architect
+Aristocrat
+Armorer
+Artisan
+Assassin
+Astrologer
+Author
+Bailiff
+Baker
+Bandit
+Banker
+Barber
+Barde
+Bartender
+Beekeeper
+Beggar
+Blacksmith
+Bladesmith
+Bodyguard
+Bookbinder
+Bouncer
+Bounty hunter
+Bowyer
+Brewer
+Brickmason
+Butcher
+Camp Follower
+Candlemaker
+Carpenter
+Cartographer
+Cartwright
+Champion
+Charcoal-Burner
+Chimney sweep
+Clerk
+Clocksmith
+Coachman
+Cobbler
+Con artist
+Constable
+Cook
+Coopers
+Courier
+Cow herder
+Cutler
+Cutpurse
+Dairy maid
+Dancer
+Doctor
+Drug Lord
+Embalmer
+Engineer
+Executioner
+Falconer
+Farm hand
+Farmer
+Fence
+Ferryman
+Fireman
+Fisherman
+Fishmonger
+Fletcher
+Forager
+Fortune teller
+Furrier
+Gambler
+Gardener
+Gladiator
+Glass blower
+Glasspainter
+Glovemaker
+Gravedigger
+Grocer
+Groom
+Guard
+Guide
+Guild Master
+Hairdresser
+Herald
+Herbalist
+Historian
+Hunter
+Initiate
+Innkeeper
+Interpreter
+Ironmonger
+Jester
+Jeweler
+Judge
+Kidnapper
+Knight
+Laborer
+Lamplighter
+Landlord
+Lawman
+Lawyer
+Leatherworker
+Librarian
+Linguist
+Loan Shark
+Locksmith
+Lumberjack
+Makeup Artist
+Mathematician
+Mayor
+Mercenary
+Messenger
+Miner
+Minstrel
+Missionary
+Mortician
+Musician
+Poet
+Noble
+Nun
+Nurse
+Peddler
+Philosopher
+Plasterer
+Portrait painter
+Potter
+Priest
+Printer
+Professor
+Ranger
+Rat catcher
+Roofer
+Rope-maker
+Saddler
+Sailor
+Scout
+Scribe
+Sculptor
+Servant
+Shepperd
+Sheriff
+Shopkeeper
+Slave
+Smuggler
+Soap maker
+Soaper
+Soldier
+Squire
+Stable hand
+Stonemason
+Student
+Tailor
+Tanner
+Tattoo artist
+Tax Collector
+Taxidermist
+Thatcher
+Thief
+Thug
+Tinkerer
+Tomb raider
+Town Crier
+Town guard
+Toymaker
+Trader
+Trapper
+Tutor
+Vagabond
+Veterinarian
+Wanderer
+Washerwoman
+Weavers
+Wheelwright
+Whittler
+Woodcarver
+Wrestler
+Writer

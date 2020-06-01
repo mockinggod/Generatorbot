@@ -1,0 +1,16 @@
+Abjurer
+Battlemage
+Druid
+Elementalist
+Exorcist
+Illusionist
+Seer
+Shaman
+Summoner
+Transmuter
+Treasure Hunter
+Warlock/Witch
+Witchdoctor
+Wizard
+Paladin
+Potion brewer

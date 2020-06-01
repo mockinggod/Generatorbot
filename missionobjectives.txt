@@ -1,0 +1,21 @@
+Kill person; 1
+Neutralize person; 1
+Protect person; 1
+Capture person; 1
+Retrieve person; 1
+Interact with person; 1
+Find person; 1
+Destroy object; 0.5
+Disable object; 1
+Protect object; 1
+Steal object; 1
+Find object; 1
+Interact object; 1
+Swap object; 1
+Protect location; 1
+Destroy location; 0.5
+Seize location; 1
+Distraction; 1
+Find location; 1
+Get info; 1.5
+Undisclosed; 2

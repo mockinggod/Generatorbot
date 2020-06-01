@@ -1,0 +1,22 @@
+Additional targets; 1; 0; 1.2
+Numerous targets; 1; 0; 1.4
+Dangerous target; 1; 1; 1.3
+Special target; 1; 1; 1.2
+Must be discrete; 1; 0; 1.2
+Must conceal objective; 1; 0; 1.3
+Must leave no trace; 1; 0; 1.7
+Imposed timetable; 1; 0; 1.2
+Many opponents; 1; 1; 1.2
+High grade technology; 1; 1; 1.2
+Special opponents; 1; 1; 1.2
+It's a trap by the hirer; 0; 0.75; 1.7
+It's a trap by the opposition; 0; 1; 1
+You are expected; 1; 1; 1.3
+Tool limitation (No magic/hacking/...); 1; 1; 1.3
+No killing; 1; 0; 1.5
+Helpful equipment; 1; 0; 0.8
+Helpful personnel; 1; 0; 0.8
+Difficult access; 1; 0; 1.2
+Little information; 1; 0; 1.1
+Wrong information; 0; 1; 1
+Lots of information; 1; 0; 0.8

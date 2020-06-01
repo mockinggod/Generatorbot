@@ -1,0 +1,174 @@
+Acts on impulse.
+Always chewing a [[piece of straw; match; toothpick]].
+Always finds a way to make the current situation about themselves.
+Always has a hat on, never the same one.
+Always has a runny nose.
+Always has food in their hand but never seems to be eating
+Always has one hand on their weapon.
+Always has something [[critical; nice; interesting; crude; idiotic]] to say.
+Always muttering about something.
+Always seems disinterested in their interlocutor.
+Always seems to be [[drunk; tired; lying; angry; excited]].
+Always seems to fade into the shadows.
+Always shivering.
+Always tries to flirt, is [[terrible; quite bad; quite good; excellent]] at it. 
+Always whistling.
+Apologies for the slightest perceived mistake.
+Avoids all social interactions.
+Begins each sentence with “Um”.
+Blinks way too much.
+Buys new accessories whenever possible.
+Calls everyone [[“chum”; “friend”; “pall”; “dude”]].
+Can't stay in one place.
+Can't stay quiet for long.
+Can't talk in the presence of the opposite sex.
+Carries a walking stick.
+Complains about the weather, whatever it may be.
+Copies the accent of whoever they are talking to.
+Dyes their hair bright #colour#.
+Employs very vulgar language, whatever the situation.
+Enjoys belching loudly.
+Enjoys to provoke a response.
+They are completely charmless.
+Frequently cracks their knuckles.
+Frequently rubs hands together.
+Gesticulates wildly when talking.
+Has a bright red parrot on their shoulder called "Rose".
+Has a catlike grace.
+Has a cleft lip.
+Has a comically large mouth.
+Has a comically large nose.
+Has a distinctive cauliflower nose.
+Has a large burn on their face and some of their scalp.
+Has a large facial scar.
+Has a large facial tattoo.
+Has a large facial tattoo of a #shape#.
+Has an odd, but not unpleasant [[odor; ascent; smile]].
+Has a particularly flamboyant style.
+Has a quite, dignified, solemn quality that is hard to describe.
+Has a spastic eye, looks like they are winking.
+Has a theory about the world and wants to tell everyone about it.
+Has a trigger word, but no one dares tell you what it is.
+Has an unexplainable elegance.
+Has a very crude glass eye.
+Has a very distinctive fashion sense, but does *not* pull it off.
+Has a very distinctive fashion sense and pulls it off.
+Has all the signs of being sick.
+Has an annoying laugh, laughs frequently.
+Has an ever changing eccentric hairstyle.
+Has an extra finger.
+Has an irregular gait.
+Has crazy, unsettling eyes.
+Has crossed eyes.
+Has different coloured eyes.
+Has a distinct birthmark on the back of their hand.
+Has a distinct birthmark on their face.
+Has striking #colour# eyes.
+Has glazed over eyes.
+Has no sense of humor.
+Has obviously gained weight recently as all their clothes are too tight.
+Has perfect manners in every situation.
+Has several eclectic piercings.
+Has very tidy dreadlocks.
+Impressive beard or chest hair or hair.
+Incorrectly uses big words.
+Is a massive sycophant.
+Is always flipping a coin, they keep track of their biggest number of heads in a row.
+Is always using a toothpick.
+Is always very well dressed.
+Is constantly covered in sweat.
+Is constantly rude by accident.
+Is constantly rude on purpose.
+Is exceedingly abrupt.
+Is extremely flatulent with a distinctive associated noise.
+Is extremely philanthropic, so much so they can't hold onto money.
+Is extremely muscular making them look [[weird; out of place; imposing; terrifying; unstoppable]]
+Is extremely skinny making them look [[frail; ghostly; weak; sick]]
+Is extremely uncomfortable with having attention on them.
+Is very sensitive to insults.
+Is very timid and will get tongue-tied if pushed to talk.
+Keeps hands in pockets.
+Keeps looking over their shoulder.
+Lacks even basic knowledge.
+Large facial mole, keeps touching it.
+Large white streak in the hair.
+Leers at the opposite sex.
+Likes to tell jokes, they are painfully unfunny.
+Likes to tell jokes, they are quite funny.
+Looks just like a famous celebrity.
+Lost a finger, refuses to talk about it.
+Loves the sound of their own voice.
+Loves to tell tales of their past adventurers, each more unlikely than the last. 
+Loves to have all the attention.
+Loves to tell jokes, but often forgets the punch lines.
+Maintains eye contact throughout conversation.
+Makes those that they look at feel small.
+Missing an ear.
+Missing their two front teeth, this is somehow charming.
+Never agrees with anyone.
+Always wearing shorts.
+Never stops coughing.
+Never stops smiling, it gets unsettling fast.
+Nods rhythmically when not talking.
+Often fondles a [[pendant; earring; necklace]] with a thousand yard stare.
+Overly cautious in their movements.
+Picks their nose in the middle of a conversation.
+Plays with their hair a lot.
+Prays whenever they have a free moment.
+Reads whenever they have a free moment.
+Repeats each action three times.
+Rubs eyes so much that they are visibly irritated.
+Saps the morale of anyone near them.
+Says the first thing on their mind.
+Seams extremely full of themselves.
+Seeks to dominate any conversation they are part of.
+Seems to have little idea what is happening.
+Skin so dark it seems unnatural.
+Skin so pale it seems to have a blueish hue.
+Skin to rough it looks like Leather.
+Smells *very* bad.
+Smokes like a chimney.
+So average that even their family sometimes forget about them.
+So small that you could confuse them for a child.
+So tall that you could doubt their nature.
+So ugly that you could doubt their nature.
+Speaks at very different rates.
+Speaks of self in the third person.
+Speaks of the good ol' days.
+Speaks too loudly.
+Speaks too quietly.
+Speaks very slowly.
+Spits a lot when speaking.
+Takes pleasure in offending others.
+Takes pleasure in telling obvious lies, it's unclear why.
+Talks so fast as to be incomprehensible when nervous.
+Tends to imitate their interlocker.
+The fattest person you have ever seen.
+Their is something about them but you just can't think of the word.
+They are unable to lie or bluff believingly.
+They have a magnetic personality.
+They have hypnotic unkempt eyebrows.
+They juggle whenever they have a free moment
+They try their best to be intimidating and fail.
+They try their best to be intimidating and succeed.
+Very childish when nervous.
+Very childish when relaxed.
+Very clumsy when nervous.
+Very good looking, but very boring.
+Walks backwards through doors.
+Walks with a limp.
+Wears a very fancy eye patch.
+Wears a wooden eye patch.
+Wears large and thick glasses.
+Wears numerous jewels everywhere they go.
+Wears several obvious religious symbols.
+Wears tattered but colourful clothing.
+Wears very revealing clothing.
+Wears #colour# lipstick
+Wears a very distinctive #colour# [[coat; hat; scarf; belt]]
+When distracted they twist a ring on their finger.
+While their clothes are clean their skin is filthy.
+While their skin is clean their cloths are filthy.
+Will often pause mid sentence.
+Yawns often and without covering their mouth.
+Goes around barefoot.

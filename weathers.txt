@@ -1,0 +1,84 @@
+0; @and1@ breezy @and2@
+0; @and1@ dry @and2@
+0; @and1@ very dry @and2@
+0; @its@@and1@ sunny @and2@
+0; @its@@and1@ windy @and2@
+0; @itseater@fierce winds are blowing
+0; @itseater@strong winds are blowing
+0; @itseater@the sky is clear
+0; @itseater@the sunlit clouds are drifting across a clear blue sky
+0; @itseater@the wind oscillates between a faint breeze and a gale
+0; @itseater@there is a single cloud in the sky
+0; @itseater@there is an ongoing thunderstorm
+0; @itseater@winds are blowing
+0; @itseater@there is a brief shower that only last a couple a minutes
+1; @and1@ overcast @and2@
+1; @and1@ snowy @and2@
+1; @its@ snowing
+1; @its@ snowing hard
+1; @its@ snowing intermittently 
+1; @its@@and1@ sunny @and2@
+1; @its@@and1@ very windy @and2@
+1; @itseater@a dull grey sky threatening rain
+1; @itseater@a single ray of light shines through the clouds 
+1; @itseater@there is a hailstorm coming
+1; @itseater@there is a snow storm coming
+1; @itseater@there is an ongoing hailstorm
+1; @itseater@there is an ongoing snow storm
+1; @itseater@winds are blowing
+1; the sky is clear
+2; @and1@ dreary @and2@
+2; @and1@ fogy @and2@
+2; @and1@ gusty @and2@
+2; @and1@ humid @and2@
+2; @and1@ misty @and2@
+2; @and1@ overcast @and2@
+2; @its@@and1@ rainy @and2@
+2; @its@ pouring
+2; @its@ raining
+2; @its@ raining cats and dogs
+2; @its@ raining heavily 
+2; @its@ raining intermittently
+2; @its@ snowing
+2; @its@ snowing intermittently
+2; @its@@and1@ cloudy @and2@
+2; @itseater@a dull grey sky threatening rain
+2; @itseater@everything is blanketed in a thick fog
+2; @itseater@the ground is coated with frost.
+2; @itseater@the sky is full of tumultuous, dark, ragged clouds
+2; a single ray of light shines through the clouds 
+2; low flying clouds crowd the sky
+2; the ground is coated with frost
+2; there is a thick fog 
+3; @and1@ fogy @and2@
+3; @and1@ gusty @and2@
+3; @and1@ humid @and2@
+3; @and1@ misty @and2@
+3; @and1@ overcast @and2@
+3; @and1@dreary @and2@
+3; @its@ raining @and2@
+3; @its@ raining cats and dogs
+3; @its@ raining heavily 
+3; @its@ raining intermittently
+3; @its@@and1@ cloudy @and2@
+3; @its@@and1@ sunny @and2@
+3; @itseater@a dull grey sky threatening rain
+3; @itseater@a single ray of light shines through the clouds 
+3; @itseater@the sky is full of tumultuous, dark, ragged clouds
+3; @itseater@there is an incoming thunderstorm
+4; @and1@ dry @and2@
+4; @and1@ overcast @and2@
+4; @and1@ very dry @and2@
+4; @its@ raining intermittently
+4; @its@@and1@ pretty @and2@
+4; @its@@and1@ sunny @and2@
+4; @itseater@a warm rain pleasantly cools you down
+4; a single ray of light shines through the clouds 
+5; @and1@ arid @and2@
+5; @and1@ bone dry @and2@
+5; @and1@ very dry @and2@
+5; @its@@and1@ sunny @and2@
+5; @itseater@the horizon is distorted from the heat
+5; @itseater@there is a dust storm coming
+5; @itseater@there is a ongoing dust storm
+5; as dry as dust

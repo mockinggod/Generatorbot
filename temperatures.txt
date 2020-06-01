@@ -1,0 +1,45 @@
+1; arctic
+1; bitterly cold
+1; bone-chilling
+1; freezing-cold
+1; frigid
+1; glacial
+1; hellishly cold
+1; ice-cold 
+1; icy
+1; polar 
+2; bracing
+2; chilly
+2; cold
+2; crisp 
+2; fresh
+2; nippy
+2; brisk
+2; wintry
+3; clement
+3; comfortably warm
+3; cool
+3; fair
+3; lukewarm
+3; mild
+3; pleasantly warm
+3; slightly warm
+3; temperate
+3; tepid
+4; balmy
+4; hot
+4; moderately hot
+4; toasty
+4; warm
+4; uncomfortably warm
+4; uncomfortably hot
+4; red-hot
+5; blazing hot
+5; blisteringly hot
+5; boiling hot
+5; hellishly hot
+5; oppressively hot
+5; scorching
+5; searingly hot
+5; sizzlingly hot
+5; flaming hot

@@ -1,0 +1,14 @@
+0; @itseater@even though the sky is perfectly clear a thunderclap reverberates out of nowhere
+0; @itseater@the cloud are a deep #colour#
+0; @itseater@without warning hailstones start falling from the heavens
+0; @itseater@suddenly the sun is obscured by the moon causing a partial eclipse
+0; @itseater@suddenly the sun is obscured by the moon causing a total eclipse
+0; @itseater@a large thunderstorm blows in from the closest desert dragging with it sand that falls with the rain
+0; @itseater@a large thunderstorm blows in from the closest ocean dragging with it fish that fall with the rain
+0; @itseater@a volcano has erupted, filling the air with ash and soot
+0; @itseater@a comet flies through the sky, for a few hours it seams that there two suns in the sky
+0; @itseater@a meteor crashes nearby
+3; @itseater@a tornado forms ahead and starts coming towards you
+4; @itseater@a tornado forms ahead and starts coming towards you
+5; @itseater@several dust devils rise during the day
+5; @itseater@ a strong wind has blown dust into the air, turning the sun red

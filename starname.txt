@@ -1,0 +1,335 @@
+Acamar
+Achernar
+Acrab
+Acrux
+Acubens
+Adhara
+Albireo
+Alcor
+Alcyone
+Aldebaran
+Alderamin
+Alfirk
+Algedi
+Algenib
+Algieba
+Algol
+Algorab
+Alhena
+Alioth
+Alkaid
+Alkalurops
+Almach
+Alnair
+Alnasl
+Alnilam
+Alnitak
+Alpha Andromedae
+Alpha Aquarii
+Alpha Aquilae
+Alpha Arietis
+Alpha Aurigae
+Alpha Boötis
+Alpha Cancri
+Alpha Canis Majoris
+Alpha Canis Minoris
+Alpha Canum Venaticorum
+Alpha Capricorni
+Alpha Carinae
+Alpha Cassiopeiae
+Alpha Centauri
+Alpha Cephei
+Alpha Ceti
+Alpha Columbae
+Alpha Coronae Borealis
+Alpha Crucis
+Alpha Cygni
+Alpha Draconis
+Alpha Equulei
+Alpha Eridani
+Alpha Geminorum
+Alpha Gruis
+Alpha Herculis
+Alpha Hydrae
+Alpha Leonis
+Alpha Leporis
+Alpha Librae
+Alpha Lyrae
+Alpha Ophiuchi
+Alpha Orionis
+Alpha Pavonis
+Alpha Pegasi
+Alpha Persei
+Alpha Phoenicis
+Alpha Piscis Austrini
+Alpha Piscium
+Alpha Sagittarii
+Alpha Scorpii
+Alpha Serpentis
+Alpha Tauri
+Alpha Trianguli
+Alpha Trianguli Australis
+Alpha Ursae Majoris
+Alpha Ursae Minoris
+Alpha Virginis
+Alphard
+Alphecca
+Alpheratz
+Alrescha
+Alshain
+Altair
+Aludra
+Alya
+Ankaa
+Antares
+Arcturus
+Arkab Posterior
+Arkab Prior
+Arneb
+Ascella
+Asellus Australis
+Asellus Borealis
+Aspidiske
+Asterope
+Atlas
+Atria
+Avior
+Baten Kaitos
+Bellatrix
+Beta Andromedae
+Beta Aquarii
+Beta Aquilae
+Beta Arietis
+Beta Aurigae
+Beta Boötis
+Beta Canis Majoris
+Beta Canis Minoris
+Beta Canum Venaticorum
+Beta Capricorni
+Beta Carinae
+Beta Cassiopeiae
+Beta Centauri
+Beta Cephei
+Beta Ceti
+Beta Columbae
+Beta Coronae Borealis
+Beta Crucis
+Beta Cygni
+Beta Draconis
+Beta Eridani
+Beta Geminorum
+Beta Herculis
+Beta Leonis
+Beta Leporis
+Beta Librae
+Beta Lyrae
+Beta Ophiuchi
+Beta Orionis
+Beta Pegasi
+Beta Persei
+Beta Scorpii
+Beta Tauri
+Beta Ursae Majoris
+Beta Ursae Minoris
+Beta Virginis
+Beta-1 Sagittarii
+Beta-2 Sagittarii
+Betelgeuse
+Canopus
+Capella
+Caph
+Castor
+Cebalrai
+Celaeno
+Chara
+Cor Caroli
+Cursa
+Dabih
+Delta Cancri
+Delta Canis Majoris
+Delta Cassiopeiae
+Delta Corvi
+Delta Geminorum
+Delta Leonis
+Delta Ophiuchi
+Delta Orionis
+Delta Sagittarii
+Delta Scorpii
+Delta Ursae Majoris
+Delta Ursae Minoris
+Deneb
+Denebola
+Diphda
+Dschubba
+Dubhe
+Edasich
+Electra
+Elnath
+Eltanin
+Enif
+Epsilon Boötis
+Epsilon Canis Majoris
+Epsilon Carinae
+Epsilon Geminorum
+Epsilon Ophiuchi
+Epsilon Orionis
+Epsilon Pegasi
+Epsilon Sagittarii
+Epsilon Ursae Majoris
+Epsilon Virginis
+Errai
+Eta Bootis
+Eta Canis Majoris
+Eta Geminorum
+Eta Ophiuchi
+Eta Tauri
+Eta Ursae Majoris
+Fomalhaut
+Furud
+Gacrux
+Gamma Andromedae
+Gamma Aquarii
+Gamma Aquilae
+Gamma Arietis
+Gamma Boötis
+Gamma Cancri
+Gamma Canis Majoris
+Gamma Capricorni
+Gamma Cephei
+Gamma Corvi
+Gamma Crucis
+Gamma Cygni
+Gamma Draconis
+Gamma Eridani
+Gamma Geminorum
+Gamma Leonis
+Gamma Lyrae
+Gamma Orionis
+Gamma Pegasi
+Gamma Sagittarii
+Gamma Ursae Majoris
+Gamma Ursae Minoris
+Gamma Virginis
+Gienah
+Gomeisa
+Grumium
+Hadar
+Hamal
+Homam
+Iota Carinae
+Iota Draconis
+Izar
+Kappa Orionis
+Kaus Australis
+Kaus Borealis
+Kaus Media
+Kitalpha
+Kochab
+Kornephoros
+Lambda Ophiuchi
+Lambda Orionis
+Lambda Sagittarii
+Lambda Scorpii
+Lambda Velorum
+Lesath
+Maia
+Marfik
+Markab
+Mebsuta
+Megrez
+Meissa
+Menkalinan
+Menkar
+Menkent
+Merak
+Merope
+Mesarthim
+Miaplacidus
+Mimosa
+Mintaka
+Mira
+Mirach
+Mirfak
+Mirzam
+Mizar
+Mothallah
+Mu Boötis
+Mu Pegasi
+Muliphein
+Muphrid
+Muscida
+Naos
+Nashira
+Nekkar
+Nihal
+Nunki
+Nusakan
+Omicron Ceti
+Omicron Ursae Majoris
+Peacock
+Phact
+Phecda
+Pherkad
+Pleione
+Polaris
+Pollux
+Porrima
+Procyon
+Propus
+Rasalgethi
+Rasalhague
+Rastaban
+Regulus
+Rigel
+Rigil Kentaurus
+Ruchbah
+Rukbat
+Sabik
+Sadachbia
+Sadalbari
+Sadalmelik
+Sadalsuud
+Sadr
+Saiph
+Sargas
+Scheat
+Schedar
+Seginus
+Shaula
+Sheliak
+Sheratan
+Sigma Sagittarii
+Sirius
+Spica
+Suhail
+Sulafat
+Tarazed
+Taygeta
+Theta Centauri
+Theta Eridani
+Theta Scorpii
+Theta Serpentis
+Thuban
+Unukalhai
+Upsilon Scorpii
+Vega
+Vindemiatrix
+Wasat
+Wazn
+Wezen
+Xi Draconis
+Yed Posterior
+Yed Prior
+Yildun
+Zaurak
+Zavijava
+Zeta Canis Majoris
+Zeta Ceti
+Zeta Orionis
+Zeta Pegasi
+Zeta Puppis
+Zeta Sagittarii
+Zeta Ursae Majoris
+Zosma
+Zubenelgenubi
+Zubeneschamali
