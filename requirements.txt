@@ -4,6 +4,5 @@ apscheduler==3.6.1
 async-timeout==3.0.1
 discord
 dnspython==1.16.0
-os
 psycopg2-binary
 titlecase==0.12.0
