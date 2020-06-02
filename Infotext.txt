@@ -3,10 +3,8 @@ If you have any questions or feedback you can use the !feedback command alternat
 
 If you want the bot to delete the commands after it acts on them, you must manually give it the permission to manage messages.
 
-Current version 0.3.2
+Current version 0.3.3
 
 Patch notes: 
- * Added weather generator
- * Added this info section
- * Improved the NPC generator content
+ * Fixed custom prefixes
   

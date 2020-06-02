@@ -1,22 +1,19 @@
 Need more entries
 Settlement problem, names, oddity and asset
-Planet more
 
 
-Stage 1
+In fantasy
 Villain generator
 Mini Dungeon generator
 Castle generator
 Travel encounters
-Monster generator
 Loot generator
 Ship generator
 news generator
-religion generator
 cult generator
 Skin for missions
 
-Stage 2
+Other genres
 SiFi stuff
 Modern stuff
 Near future stuff

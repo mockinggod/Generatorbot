@@ -6,7 +6,7 @@ import homebrew as hb
 import random
 import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-
+import psqlfunctions as psqlf
 
 sched = AsyncIOScheduler()
 sched.start()
@@ -23,14 +23,16 @@ except KeyError:
 	with open("discordid.txt", encoding='UTF-8') as f:
 		idnum = f.read() 
 	
-
+try:  
+	serverinfo = os.environ["DATABASE_URL"]
+except KeyError: 
+	with open("serverinfo.txt", encoding='UTF-8') as f:
+		serverinfo = f.read() 
+	
 	
 feedbackusedtoday = [] 
 	
 
-	
-prefixes = hb.rotate(hb.arrayreader("prefixes.txt"))
-prefixes[0] = [int(i) for i in prefixes[0]]
 
 with open("helptext.txt", encoding='UTF-8') as f:
 		helptext = f.read().splitlines() 
@@ -45,14 +47,15 @@ def prefix(bot, message): # Function finds the prefix used by the guild
 	
 	prefix = "!"
 	if isinstance(message.channel, discord.abc.GuildChannel):
-		for n in range(len(prefixes[0])):
-			if int(prefixes[0][n-1]) == message.guild.id:
-				prefix = int(prefixes[0][n-1])
-				prefix = str(prefixes[1][n-1])
+		for n in range(len(prefixes)):
+			if int(prefixes[n-1][0]) == message.guild.id:
+				prefix = str(prefixes[n-1][1])
+				break
 			
 	return(prefix)	
 
-description = 'placeholder'
+prefixes = psqlf.readprefixes(serverinfo)	
+	
 bot = commands.Bot(command_prefix=prefix)
 bot.remove_command("help")
 
@@ -71,9 +74,10 @@ async def on_ready():
 async def on_guild_remove(guild):
 
 	for n in range(len(prefixes[0])):
-		if int(prefixes[0][n-1]) == guild.id:
-			del prefixes[0][n-1]
-			del prefixes[1][n-1]
+		if int(prefixes[n-1][0]) == guild.id:
+			psqlf.removeprefix(serverinfo, guild.id)
+			del prefixes[n-1]
+			break
 	
 def clearfeedbacklist():	
 
@@ -202,19 +206,23 @@ async def gbchangeprefix(ctx, arg1):
 			
 		else:
 
-			for n in range(len(prefixes[0])):
-				if int(prefixes[0][n-1]) == ctx.message.guild.id:
-					del prefixes[0][n-1]
-					del prefixes[1][n-1]
+			indb = False
+			for n in range(len(prefixes)):
+				if int(prefixes[n-1][0]) == ctx.message.guild.id:
+					indb = True
+					del prefixes[n-1]
+					break
 					
-			prefixes[0].append(ctx.message.guild.id)
-			prefixes[1].append(arg1)
-			
-			with open("prefixes.txt", "w", encoding='UTF-8') as f:
-				for n in range(len(prefixes[0])):
-					f.write(str(prefixes[0][n-1]) + ";" + str(prefixes[1][n-1] + "\n"))
-
-			output = "prefix changed to \"" + arg1 + "\" for this server."
+			if indb:
+				psqlf.updateprefix(serverinfo, ctx.message.guild.id, arg1)
+				
+				
+			else:
+				psqlf.addprefix(serverinfo, ctx.message.guild.id, arg1)
+				
+				
+			prefixes.append((ctx.message.guild.id, arg1))
+			output = "prefix changed to \"" + prefix(bot, ctx.message) + "\" for this server."
 		
 	else:
 	
