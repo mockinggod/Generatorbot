@@ -2,16 +2,15 @@ import numpy as np
 
 # Generates a genuine sounding ship name from two tables
 
-with open("shipnames.txt") as f:
+
+
+with open("shipnames.txt", encoding='latin-1') as f:
     shipnames = f.read().splitlines() 
 
-with open("shipnames.txt") as f:
-    shipnames = f.read().splitlines() 
-
-with open("shipnamespt1.txt") as f:
+with open("shipnamespt1.txt", encoding='latin-1') as f:
     part1 = f.read().splitlines() 	
 	
-with open("shipnamespt2.txt") as f:
+with open("shipnamespt2.txt", encoding='latin-1') as f:
     part2 = f.read().splitlines() 	
 	
 with open("malename.txt", encoding='latin-1') as f:
