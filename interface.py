@@ -9,6 +9,7 @@ import fantasybookgenerator
 import syfanplanetgenerator
 import riddlegenerator
 import weathergenerator
+import medievalshipnamegenerator
 
 import homebrew as hb
 import numpy as np
@@ -106,6 +107,15 @@ def main(ctx, item, *args):
 			loop += 1
 			dum = fantasyinngenerator.main()
 			openoutput += titlecase(dum["name"]) + "\n"
+			
+	elif item == "shipname":
+		openoutput = ""
+		if len(arg) == 0:
+			arg.append(1)
+		loop = 0
+		while loop < int(arg[0]):
+			loop += 1
+			openoutput += medievalshipnamegenerator.main() + "\n"
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Titles
@@ -151,17 +161,9 @@ def main(ctx, item, *args):
 			else:
 				NPC = fantasyNPCgenerator.main(job)
 				
-			output = "\n**" + NPC["name"] + "**\nGender: " + NPC["gender"] + "\nAge: " + str(int(NPC["age"]))  \
-				 + "\nOccupation: " + str(NPC["occupation"]) + "\nCharacteristic: " + NPC["characteristic"]
-			openoutput += output + "\n"
-			
-			output += "\nTrait: " + NPC["trait"] 
-			
-			dummy =  NPC["secret"]
-			if str(dummy) != str("Has no secret"):
-				output += "\nSecret: " + dummy
+			openoutput += str(charaformat(NPC)) + "\n\n"
 				
-			secretoutput += output + "\n"
+			secretoutput += str(secretcharaformat(NPC)) + "\n\n"
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Inns
@@ -189,19 +191,18 @@ def main(ctx, item, *args):
 			owner = fantasyNPCgenerator.main("Innkeeper")
 			waiter = fantasyNPCgenerator.main("Waiter")
 			
-			openoutput += "\n\n__Owner__\nName: " + owner["name"] + "\nGender: " + owner["gender"] + "\nAge: " \
-			+ str(int(owner["age"])) + "\nCharacteristic: " \
-			+ owner["characteristic"]
-			openoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nGender: " + waiter["gender"] + "\nAge: " \
-			+ str(int(waiter["age"])) + "\nCharacteristic: " \
-			+ waiter["characteristic"]
-			secretoutput += "\n\n__Owner__\nName: " + owner["name"] + "\nGender: " + owner["gender"] + "\nAge: " \
-			+ str(int(owner["age"])) + "\nCharacteristic: " \
-			+ owner["characteristic"] + "\nTrait: " + owner["trait"]
+			openoutput += "\n\n__Owner__\nName: " 
+			openoutput += owner["name"] + "\nA " 
+			openoutput += owner["gender"] + " "+ str(owner["age"]) + "\nCharacteristic: " + owner["characteristic"]
+			openoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nA " 
+			openoutput += waiter["gender"] + " " + str(waiter["age"]) + "\nCharacteristic: " + waiter["characteristic"]
+			secretoutput += "\n\n__Owner__\nName: " + owner["name"] + "\nA " 
+			secretoutput += owner["gender"] + " " + str(owner["age"]) + "\nCharacteristic: " + owner["characteristic"] \
+			+ "\nTrait: " + owner["trait"]
 			if owner["secret"] != "Has no secret":
 				secretoutput += "\nSecret: " + owner["secret"]
-			secretoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nGender: " + waiter["gender"] + "\nAge: " \
-			+ str(int(waiter["age"]))  + "\nCharacteristic: " \
+			secretoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nA "
+			secretoutput += waiter["gender"] + " " + str(waiter["age"]) + "\nCharacteristic: " \
 			+ waiter["characteristic"]+ "\nTrait: " + waiter["trait"]
 			if waiter["secret"] != "Has no secret":
 				secretoutput += "\nSecret: " + waiter["secret"]
@@ -606,12 +607,13 @@ def main(ctx, item, *args):
 		i = len(split1)
 		for j in range(1,i):
 			split2 = split1[j].split("]]")
-			list = split2[0].split(";")
+			list = split2[0].split("/")
 			if list in memory:
 				secretoutput += memory[0][memory.index(list)] + split2[1]
 			else:
 				memory.append(list)
 				memory[0].append(np.random.choice(list))
+				
 				secretoutput +=  memory[0][-1] + split2[1]
 
 		if "[[" in openoutput:
@@ -622,7 +624,7 @@ def main(ctx, item, *args):
 			for j in range(1,i
 			):
 				split2 = split1[j].split("]]")
-				list = split2[0].split(";")
+				list = split2[0].split("/")
 				openoutput += memory[0][memory.index(list)] + split2[1]
 
 			
@@ -644,9 +646,10 @@ def main(ctx, item, *args):
 	
 def charaformat(character):
 
-	output = "Name: " + character["name"] + "\nGender: " + character["gender"]
-	output += "\nAge: " + str(int(character["age"])) + "\nOccupation: "  \
-		 + str(character["occupation"]) + "\nCharacteristic: " + character["characteristic"]
+	output = character["name"]
+	dummy = str(str(character["gender"])) + " " + str(character["age"]) + " " + str(character["occupation"] + ".")
+	output += "\nA " + dummy.lower()
+	output += "\nCharacteristic: " + character["characteristic"]
 		 
 	openoutput = output
 	
@@ -662,10 +665,12 @@ def charaformat(character):
 	
 def secretcharaformat(character):
 
-	output = "Name: " + character["name"] + "\nGender: " + character["gender"]
-	output += "\nAge: " + str(int(character["age"]))
+	output = character["name"] 
+	dummy = "."
 	if character["occupationgenerated"]:
-		output += "\nOccupation: " + str(character["occupation"])
+		dummy = " " + str(character["occupation"]) + "."
+	dummy2 = str(str(character["gender"])) + " " + str(character["age"]) + dummy
+	output += "\nA " + dummy2.lower()
 	output += "\nCharacteristic: " + character["characteristic"]	
 	output += "\nTrait: " + character["trait"] 
 	
@@ -707,12 +712,10 @@ def fantasysettlementformat(settlement):
 	
 	if settlement["ruler"]["individual"]:
 		output += "Name: " + settlement["ruler"]["name"] + "\n"
-		output += "Gender: " + settlement["ruler"]["gender"] + "\n"
-		output += "Title: " + settlement["ruler"]["occupation"] + "\n"
+		output += "A " + str(settlement["ruler"]["gender"]) + " " + str(settlement["ruler"]["age"]) + " " + str(settlement["ruler"]["occupation"]) + "\n"
 		
 		openoutput += output + "\n" 
 		
-		output += "Age: " + str(settlement["ruler"]["age"]) + "\n"	
 		output += "Characteristic: " + settlement["ruler"]["characteristic"] + "\n"
 		output += "Trait: " + settlement["ruler"]["trait"] + "\n"
 		if str(settlement["ruler"]["secret"]) != str("Has no secret"):

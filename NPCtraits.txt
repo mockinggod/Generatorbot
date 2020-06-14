@@ -106,8 +106,8 @@ Spends a long time making even the most trivial decision.
 Spends most of their time looking for their misplaced items.
 Spits in hand before shaking hands.
 Strongly believes that emotions are not a factor.
-Takes every opportunity to show off their [[intellect; strength; dexterity; speed; knowledge]]. 
-Takes great pride in their [[appearance; work; family]].
+Takes every opportunity to show off their [[intellect/ strength/ dexterity/ speed/ knowledge]]. 
+Takes great pride in their [[appearance/ work/ family]].
 There skin is surprisingly soft and cool to the touch. 
 They are a genuinely good person.
 They are more than willing to take risks even with little reward.
@@ -127,4 +127,4 @@ Will never stand up for themselves.
 Will seize any opportunity, whatever the cost.
 Will sometimes lie just to see if they can get away with it.
 Will stop working if not supervised.
-Worships a [[forgotten god; unpopular god;forgotten goddess; unpopular goddess]].
+Worships a [[forgotten god/ unpopular god/forgotten goddess/ unpopular goddess]].

@@ -34,3 +34,12 @@ Varnish
 Horse
 Incense
 Vomit
+Smoke
+Lamp oil
+Roses
+Lavender
+Cinnamon
+Fruity
+Minty
+Tobacco smoke
+Burned meat

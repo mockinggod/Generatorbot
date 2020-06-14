@@ -2,21 +2,24 @@ import random
 import fantasyinngenerator
 
 adjectivelist = ["A grim", "A spotless", "An overcrowded", "A worn down", "An ancient", "A brand new", "A creepy", "A rough", "A fancy",\
-	"An ugly", "A noisy", "A elegant", "A fashionable", "A high end", "A sprawling"]
+	"An ugly", "A noisy", "A elegant", "A fashionable", "A high end", "A sprawling", "A crowded", "A welcoming", "A indiscriminable",\
+	"A tiny", "A giant", "A massive", "A fantastical"]
 
 
 institutionlist = ["inn", "tavern", "trading post", "temple", "library", "university", "park"]
 	
 tradingnameslist = ["Trading Post", "Bazaar", "Market", "Arcade", "Souk"]
 
+
+prefixtemplenameslist = ["All Saints", "Abundant Life", "Angelus", "Covenant", "Deliverance", "Fellowship", "New Hope", "New Life", "Victory"]
 templenameslist = ["Church", "Temple", "Chapel", "Cathedral"]
-templeadjectivelist = ["Holy", "Blessed", "Savior", "Revered", "Sacred", "Hallowed"]
-succourlist = ["Orphanage", "Healing", "Protection", "Feeding", "Caritative Care", "Housing"]
+templeadjectivelist = ["Holy", "Blessed", "Savior", "Revered", "Sacred", "Hallowed", "Radiant", "Gleaming", "Pure"]
+succourlist = ["Orphanage", "Healing", "Protection", "Feeding", "Caritative Care", "Housing", "Exorcism", "Education"]
 
 directionslist = ["North", "South", "East", "West", "Old", "New", "Morning", "Evening"]
 
-parknameslist = ["Park", "Lawn", "Yard", "Garden", "Yard", "Estate"]
-parkcentrepiecelist = ["Fountain", "Statue", "Great tree", "Monument", "Lake", "Playground", "Gazebo", "Maze", "Flowerbed"]
+parknameslist = ["Park", "Lawn", "Yard", "Garden", "Estate"]
+parkcentrepiecelist = ["Fountain", "Statue", "Great tree", "Monument", "Lake", "Playground", "Gazebo", "Maze", "Flowerbed", "Giant [[flower/mushroom/crystal]]"]
 
 universitynamelist = ["University", "Academy", "School", "College", "Institute"]
 	
@@ -93,14 +96,22 @@ def main(identifier = 0):
 	
 		dum = random.random()
 	
-		if dum < 0.20:
+		if dum < 0.15:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s"
-		elif dum < 0.40:
+		elif dum < 0.30:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s " + random.choice(templenameslist)
-		elif dum < 0.60:
+		elif dum < 0.45:
 			output["name"] = "The " + random.choice(templeadjectivelist) + " Saint " + random.choice(humannamelist)
-		elif dum < 0.80:
+		elif dum < 0.60:
 			output["name"] = random.choice(templenameslist) + " of @here"
+		elif dum < 0.75:
+			output["name"] = "The " + random.choice(templeadjectivelist) + random.choice(templenameslist) + " of @here"
+		elif dum < 0.80:
+			output["name"] = random.choice(prefixtemplenameslist) + " " + random.choice(templenameslist)
+		elif dum < 0.85:
+			output["name"] = "The " + random.choice(templeadjectivelist) + " " + random.choice(prefixtemplenameslist) + " " + random.choice(templenameslist)
+		elif dum < 0.90:
+			output["name"] = "The " + random.choice(templeadjectivelist) + " " + random.choice(templenameslist)
 		else:
 			output["name"] = "@here " + random.choice(templenameslist)
 
@@ -112,6 +123,8 @@ def main(identifier = 0):
 	
 		if dum < 0.1:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s"
+		if dum < 0.15:
+			output["name"] = random.choice(humannamelist) + "'s Library"
 		elif dum < 0.25:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s Library" 
 		elif dum < 0.3:
@@ -128,10 +141,14 @@ def main(identifier = 0):
 	
 		dum = random.random()
 	
-		if dum < 0.15:
+		if dum < 0.1:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s"
-		elif dum < 0.3:
+		elif dum < 0.2:
 			output["name"] = "Saint " + random.choice(humannamelist) + "'s " + random.choice(universitynamelist) 
+		elif dum < 0.3:
+			output["name"] = random.choice(humannamelist) + "'s " + random.choice(universitynamelist) 
+		elif dum < 0.35:
+			output["name"] = "The " + random.choice(nounlist) + " " + random.choice(universitynamelist) 
 		else:
 			output["name"] = random.choice(universitynamelist) + " of @here"
 	

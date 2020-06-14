@@ -24,6 +24,9 @@ To run your own version you will need to add three files to the repository:
  
 You can also place these values as environmental variables: TOKEN, DISCORDID and DATABASE_URL respectively.
  
-Current version 0.3.3
+Current version 0.3.4
  
 This is an amateur project, if you have questions or feedback my reddit username is u/mockinggod.
+
+You can invite the bot to your server at this url:
+https://discordapp.com/oauth2/authorize?&client_id=539094711105880074&scope=bot&permissions=2048

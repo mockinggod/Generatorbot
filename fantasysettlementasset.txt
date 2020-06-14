@@ -1,11 +1,11 @@
 This @settlement@ is at the intersection of several waylines, granting it a great magical potential.
 A local magical spring provides healing water.
-A divine being has blessed this @settlement@, leading to its citizens [[having good luck; being very attractive; being very healthy; being very wise; being very brave]].
-A famous [[potion brewer; wizard; artificer; healer]] lives here.
+A divine being has blessed this @settlement@, leading to its citizens [[having good luck/ being very attractive/ being very healthy/ being very wise/ being very brave]].
+A famous [[potion brewer/ wizard/ artificer/ healer]] lives here.
 Magical crystal grow in a nearby cave.
 Useful magical creatures can be found nearby.
 Magical ore can be mined from a nearby cave.
-A respected order of [[mages; healers; kights]] has made this @settlement@ their home.
+A respected order of [[mages/ healers/ kights]] has made this @settlement@ their home.
 A benevolent sorcerer lives here.
 Hallowed clergy has there church here.
 A nearby titanic crater attracts many tourists, many legends exist about this crater but no one knows for sure what made it.
@@ -23,6 +23,6 @@ A prolific artificer lives here leading to minor magical items being common.
 Powerful defense spells were cast by a mage of legends, nobody alive know what they do.
 Blue flowers grow in large amounts nearby, a rare commodity needed to make blue dye.
 The @settlement@ is unnaturally calming, this can heal past traumas and return madmen to coherence for a time.
-The @settlement@ has a covenant with [[a deamon; a god; a goddess; a fey village; some unknown supernatural force]] granting them various small boons in exchange for a large food sacrifice during the winter solstice.
-The @settlement@ has a small fountain which flows with [[beer; wine; mead; apple juice; a sweet elixir]].
+The @settlement@ has a covenant with [[a deamon/ a god/ a goddess/ a fey village/ some unknown supernatural force]] granting them various small boons in exchange for a large food sacrifice during the winter solstice.
+The @settlement@ has a small fountain which flows with [[beer/ wine/ mead/ apple juice/ a sweet elixir]].
 The road of the @settlement@ and around it accelerate travel.

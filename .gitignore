@@ -15,4 +15,5 @@ __pycache__/syfanplanetgenerator.cpython-35.pyc
 __pycache__/weathergenerator.cpython-35.pyc
 token.txt
 discordid.txt
-serverinfo
+serverinfo.txt
+*.pyc

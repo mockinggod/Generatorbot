@@ -11,9 +11,15 @@ with open("innnamespart2.txt") as f:
 def main():
 # Generates a inn name from two components 
 
-	if np.random.random() < 0.1:
+	rand = np.random.random()
+
+	if rand < 0.1:
 	
 		output = "The " + np.random.choice(part2)
+		
+	elif rand < 0.15:
+	
+		output = "The " + np.random.choice(part2) + " and " + np.random.choice(part2)
 		
 	else:
 

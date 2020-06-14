@@ -33,13 +33,19 @@ with open("medievalsettlementnamep1.txt", encoding='UTF-8') as f:
 with open("medievalsettlementnamep2.txt", encoding='UTF-8') as f:
     namelist2 = f.read().splitlines()
 	
-councillist = ["religious council", "council of guild leaders", "noble parlement", "magic council", "mixed council"]
+councillist = ["religious council", "council of guild leaders", "noble parlement", "magic council", "mixed council", "council of elders", "military council"]
 
 counciladjectivelist = ["A bickering", "A cruel", "A weak", "A greedy", "A wise", "An eccentric",\
 	"A confusing", "A brutal", "A cunning", "A stern", "A secretive", "A drunkard", "A zealous",\
-	"A fanatical", "A pious", "A chaotic", "A methodical"]
+	"A fanatical", "A pious", "A chaotic", "A methodical", "A virtuous", "A righteous", "A upstanding",\
+	"A honourable", "A crooked", "A nefarious", "A squabbling", "An anarchic", "A powerless", \
+	"An antiquated", "An archaic", "A brand new", "A recently appointed", "A respected", "A esteemed"]
 	
-rulerlist = ["Despot", "Elder", "Mayor", "Grand druid", "Commander", "Hight merchant", "Hight priest", "Crime lord", "Lord", "Count"]
+rulerlist = [["Despot", "Despot"], ["Elder", "Elder"], ["Mayor", "Mayor"], ["Grand druid", "Grand druid"],
+	["Commander", "Commander"], ["Hight merchant", "Hight merchant"], ["Earl", "Earl"], ["Master", "Master"],\
+	["Hight priest", "Hight priestess"], ["Crime lord", "Crime lord"], ["Lord", "Lady"], ["Count", "Countess"],\
+	["Commissioner", "Commissioner"], ["Earl Marshal", "Earl Marshal"], ["Grand Master", "Grand Master"],  \
+	["Merchant lord", "Merchant lady"], ["Shaman", "Shaman"],  ["Alderman", "Alderwoman"]]
 	
 	
 def main(size = 0):
@@ -96,11 +102,17 @@ def main(size = 0):
 	
 	if random.random() < 0.85:
 
-		output["ruler"] = fantasyNPCgenerator.main(random.choice(rulerlist))
+		output["ruler"] = fantasyNPCgenerator.main()
 		output["ruler"]["individual"] = True 
+		
+		if output["ruler"]["gender"] == "male":
+			output["ruler"]["occupation"] = random.choice(rulerlist)[0]
+		else:
+			output["ruler"]["occupation"] = random.choice(rulerlist)[1]
+	
 		ruler = output["ruler"]["occupation"]
 		if output["ruler"]["occupation"] == "Elder":
-			output["ruler"]["age"] = round(output["ruler"]["age"]/2) + 60
+			output["ruler"]["age"] = ""
 	else:
 		output["ruler"] = {}
 		output["ruler"]["individual"] = False
@@ -121,11 +133,15 @@ def main(size = 0):
 	for i in range(institutionnum):
 		output["institutions"].append(fantasyinstitutiongenerator.main())
 		output["institutions"][i]["name"] = output["institutions"][i]["name"].replace("@here", output["name"])
+	
 	for institutcheck in output["institutions"]:
-		if output["institutions"][i]["name"] == institutcheck["name"]:
-			if output["institutions"][i] != institutcheck:		
-				print(output["institutions"][i]["name"])
-				output["institutions"].pop(i)
+		for i in range(institutionnum):	
+			if output["institutions"][i]["name"] == institutcheck["name"]:
+				if output["institutions"][i] != institutcheck:		
+					print(output["institutions"][i]["name"])
+					output["institutions"].pop(i)
+					break
+					
 					
 		
 	output["problem"] = str(random.choice(problemlist))

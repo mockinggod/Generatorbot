@@ -3,6 +3,8 @@ __Names__
  * malename /mname [(number)=1] -- Picks a male name from a list of 5k+ names from American records. You can input a number to receive several.
  * femalename /fname [(number)=1] -- Picks a female name from a list of 5k+ names from American records. You can input a number to receive several.
  * surname /sname [(number)=1] -- Picks a surname from a list of 5k+ names from American records. You can input a number to receive several.
+ * innname [(number)=1] -- Generates a name for a inn. You can input a number to receive several.
+ * shipname [(number)=1] -- Generates a name for a ship. You can input a number to receive several.
  * booktitle / btitle [(number)=1] -- Generates a book title using the fantasybookgenerator module. You can input a number to receive several.
 
 __NPC__

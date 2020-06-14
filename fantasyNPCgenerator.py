@@ -56,23 +56,21 @@ def main(occupation = "generate"):
 	
 
 	if random.random() < 0.496:
-		NPClist[i]["gender"] = "Male"
+		NPClist[i]["gender"] = "male"
 		NPClist[i]["name"] = random.choice(malenamelist)
 	else:
 		if random.random() < 0.978:
-			NPClist[i]["gender"] = "Female"
+			NPClist[i]["gender"] = "female"
 			NPClist[i]["name"] = random.choice(femalenamelist)
 		else:
-			NPClist[i]["gender"] = "Unknown"
+			NPClist[i]["gender"] = "androgynous"
 			NPClist[i]["name"] = random.choice([random.choice(malenamelist),random.choice(femalenamelist)])
 			
 	if random.random() < 0.5:
 		NPClist[i]["name"] += " " + random.choice(surnamelist)
-			
-	if random.random() < 0.8:			
-		NPClist[i]["age"] = random.randint(15, 40)
-	else:
-		NPClist[i]["age"] = random.randint(40, 90)
+	
+	
+	NPClist[i]["age"] = random.choice(["young adult", "adult", "older adult", "elder"])		
 	NPClist[i]["characteristic"] = str(random.choice(characteristiclist))
 	NPClist[i]["trait"] = random.choice(traitlist)
 	
@@ -83,7 +81,7 @@ def main(occupation = "generate"):
 		NPClist[i]["occupation"] = occupation
 		NPClist[i]["occupationgenerated"] = False 
 	
-	if random.random() < 0.30:
+	if random.random() < 0.40:
 		NPClist[i]["secret"] = random.choice(secretlist)
 	else:
 		NPClist[i]["secret"] = "Has no secret"

@@ -1,10 +1,17 @@
 Generatorbot is a tool developed for helping to run rpgs by creating randomly generated prompts. It is intended to be used both as a prep and improve tool. This is an amateur project made for fun.
-If you have any questions or feedback you can use the !feedback command alternatively my reddit username is u/mockinggod. You can add the bot at this url: https://discordapp.com/oauth2/authorize?&client_id=539094711105880074&scope=bot&permissions=2048.
+If you have any questions or feedback you can use the !feedback command alternatively my reddit username is u/mockinggod. 
+
+You can add the bot at this url: 
+https://discordapp.com/oauth2/authorize?&client_id=539094711105880074&scope=bot&permissions=2048
+
+You can see the bot's code at this url:
+https://github.com/mockinggod/Generatorbot
 
 If you want the bot to delete the commands after it acts on them, you must manually give it the permission to manage messages.
 
-Current version 0.3.3
+Current version 0.3.4
 
 Patch notes: 
- * Fixed custom prefixes
-  
+ * Added ship name generator
+ * Fixed a lot of bugs
+ * A few other tweaks

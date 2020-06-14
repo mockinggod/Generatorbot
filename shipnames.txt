@@ -1,167 +1,162 @@
+@name@'s Debtor 
 A Blackheart’s Curse 
-Accipiter 
-All Seeing Eye 
-Astral Wake 
-Black Budgie 
-Bloodmoon 
-Blue Inferno 
-Caballero 
-Carpe Diem
-Centennial 
-Coincounter 
-Crimson Tide 
-Creeper
-Deep Horizon 
-Deepracer 
-Divine Intervention 
-Dock-Breaker 
-Dragonprowess 
-Emerald Cutter 
-Emperor's Calling 
-Empress Celestina 
-Errant Venture 
-Eye of the Storm 
-Firewalker 
-Gibbous Crescent 
-Golem 
-Hammerhead 
-Harmogaunt 
-Heavens Sent 
-Hell's Requiem 
-Helm's Harrier 
-Hopeless Folly
-Humungous 
-Illithids Thrall 
-Imposter 
+A Hopeless Folly
 In Amber Clad 
-Interceptor 
-Jackdaw 
-Jergal's Debtor 
-Jupiter's Revenge 
-Justice Dealer 
-Kraken Bait 
-Kraken's bane
-Kraken’s Kiss 
+L'Abondance
+La Bonaventure
+La Capricieuse
 La Desollador 
+La Fleur de la Mer
+La Moqueuse
+La Petite Victoire
 La Pucelle 
-Lady of Black Waters 
-Lord of the Dance 
-Maelstrom's Bane 
-Magnificence
-Misfit's Gamble 
-Mistral Secret 
-Morning Glory 
-Mother of Giants 
+Le Triomphant
 Neptune's Favor 
-Night Raven 
-Nightfall's Rest 
-Northstar 
-Old Salty 
-Olliphaunt 
-Perfection 
-Poseidon's Witness 
-Queen's Grace 
-Reef Sprinter 
-Righteous Indignation 
-Sea Sprite 
-Seawolf 
-Serpent's Tooth
-Shadow Squall 
-Shorebreaker 
 Shoshanna 
-Shy Mare 
 Solitude 
-Spearhead 
-Spring's Kiss 
-Storm Giants Wake 
-Storm's Wrath 
-Swift Sorcerer 
-Swordfish 
-The Aboleth's Dream 
+Sovereign of the Seas
+Storm's [[Wrath/Gift/Blessing]]
 The Abyssal Shriek 
-The Allswell Aboleth 
+The Accipiter 
+The All Seeing Eye 
 The Antagonist 
 The Arcadia 
 The Arduous Spear 
+The Astral Wake 
+The Black Budgie 
 The Black Horizon 
+The Bloodmoon 
+The Blue Inferno 
 The Brandywine 
 The Busty Beluga 
+The Caballero 
+The Carpe Diem
+The Centennial 
+The Coincounter 
 The Copperhead 
-The Crusader 
-The Cuttlefish 
+The Creeper
+The [[Crimson/Scarlet/Black]] Tide 
 The Darkmantle 
 The Death Cheater 
+The Deep Horizon 
+The Deepracer 
 The Devil’s Promise 
-The Dovekie
+The Divine Intervention 
+The Dock-Breaker 
 The Dragon Turtle 
+The Dragonprowess 
 The Drowning Spirit 
 The Dynamo 
+The Emerald Cutter 
+The Emperor's Calling 
+The Errant Venture 
+The Eye of the Storm 
 The Fairweather Fortune 
 The Far Roamer 
 The Fat Cat 
+The Firewalker 
 The Flying Pussyfoot 
-The Goading Riptide 
+The Gibbous Crescent 
+The Goading Riptide  
+The Grace of God
 The Grand Mast 
-The Greymaiden 
+Greymaiden 
+The Hammerhead 
+The Harmogaunt 
+The Heart of Oak
+The Heaven's Sent 
+The Heir Apparent
+The Hell's Requiem 
+The Helm's Harrier 
+The Humungous 
 The Hungry Troll 
-The Ingot 
-The Iron Tide 
+The Illithids Thrall 
+The Imposter  
+The Interceptor 
+The Jackdaw 
+The [[Justice/Secret/Truth]] Dealer 
 The Kilfenora 
-The Killing Joke 
 The Kraken’s Grasp 
-The Lich's Sorrow 
+The Last [[Plank/Straw/One Standing]] 
+The Last Resort
+The Maelstrom's [[Bane/Master/Toy]] 
+The Magnificence
 The Maidens Call 
 The Mayfly 
 The Mermaid's Kiss 
 The Midnight Sun 
+The Misfit's Gamble 
+The Mistral Secret 
 The Misty Veil 
+The Morning Glory 
 The Morning Mist 
 The Morning Moon 
+The Mother of [[Giants/ Dragons/ Leviathans]]
 The Mourning Moon 
 The Narwhal’s Horn 
+The Night Raven 
+The Nightfall's Rest 
+The Northstar 
+The Old Salty 
+The Olive Branch
+The Olliphaunt 
 The Omen 
 The Parched Parrot 
-The Prid Of The North  
-The Red Falchion 
-The Red Thief 
+The Perfection 
+The Prid Of The [[North/South/West/Est]]  
+The Reef Sprinter 
 The Resplendence
+The Righteous [[Indignation / Fury / Vengeance ]]  
+The Sea Devil
 The Sea Maid 
+The Sea Nymph
+The Sea Rider
+The Sea Rover
+The Sea Scout
+The Sea [[Sprite / Witch / Maiden]]
+The Seabear
 The Seafoam Martyr 
 The Seaward 
+The Seawolf 
+The Serpent's [[Tooth / Bite / Eye]]
+The Shadow Squall 
 The Ship With No Name  
 The Shooting Star 
+The Shorebreaker 
 The Silver Spur 
-The Siren’s Tear 
-The Skate 
-The Slaughtered Brig 
+The Siren’s [[Tear/Song/Love]] 
+The Slaughtered Brig  
 The Storm Stalker 
 The Stygian 
-The Tall Maiden 
-The Torrent 
+The [[Tall/Clumsy/Awkward]] Maiden 
+The Tide Gorger 
+The Tide Runner 
+The Triton’s [[Bane, Blade, Mount]] 
+The Uppertide 
+The Victor 
+The Victorious 
+The Victory 
+The Vulcanicus 
 The Wailing Wyvern 
+The Waterdancer 
+The Wave Weasel 
 The Wavebreaker 
+The Waverunner 
 The Whippersnapper 
-The Wicked Temptress 
 The Windcutter 
+The Windgrace 
 The Winged Siren 
 The Wisdom
 The Wraith 
-The last Plank 
-Tide Gorger 
-Tide Runner
-Tigress 
-Triton’s Bane 
-Two for Flinching 
-Umberlee's Steed 
-Uppertide 
-Victor 
-Victorious 
-Victory 
-Vulcanicus 
-Waterdancer 
-Wave Weasel 
-Waverunner 
-Willow 
-Windgrace 
-Wrath of Umberlee 
-Zephyr
+The Wrath of @name@
+The [[Kraken/ Dragon/ Leviathan]] Bait 
+The [[Kraken/ Dragon/ Leviathan]] Kiss 
+The [[Kraken/ Dragon/ Leviathan]]'s bane
+The [[Lady/ Lord / Prince / Princess]] of Black Waters 
+The [[Lord/ Lady / Prince / Princess]] of the Dance 
+The [[Queen/King]]'s Grace 
+The [[Storm Giant/Kraken/Leviathan]]'s Wake 
+Two for Flinching  
+[[Jupiter/Neptune/Mars]]'s Revenge 
+[[Jupiter/Neptune/Mars]]'s Witness 
+[[Spring/Winter/Summer]]'s Kiss 
