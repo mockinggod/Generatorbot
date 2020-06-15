@@ -24,7 +24,7 @@ To run your own version you will need to add three files to the repository:
  
 You can also place these values as environmental variables: TOKEN, DISCORDID and DATABASE_URL respectively.
  
-Current version 0.3.3
+Current version 0.3.4
  
 This is an amateur project, if you have questions or feedback my reddit username is [u/mockinggod](https://www.reddit.com/user/mockinggod).
 

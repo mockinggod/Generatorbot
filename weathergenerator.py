@@ -131,7 +131,7 @@ def main(input):
 		"The air is @temperature@ and @its@@weather@.",\
 		"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
 		"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
-		"The [[air; temperature]] goes from @temperature@ to @temperature2@ and it's @weather@.",\
+		"The [[air/ temperature]] goes from @temperature@ to @temperature2@ and it's @weather@.",\
 		"In the mourning it's @temperature@ and @weather@ in the afternoon it's @temperature2@ and @weather2@.",\
 		"The mourning is @temperature@ and @weather@, the afternoon is @temperature2@ and @weather2@."\
 		]
