@@ -1,8 +1,9 @@
 #colour#; blue; green; red; purple; yellow; pink; teal; silver; gold
 #colour2#; blue; green; red; purple; yellow; pink; teal; silver; gold
-#familymembre#; father; son; mother; daughter; brother; sister; spouse
-#shape#; crown; skull; book; cross; heart; sword; lighting bolt
+#familymember#; father; son; mother; daughter; brother; sister; spouse
+#shape#; crown; skull; book; cross; heart; sword; lightning bolt; hand
 #animal#; spider, snake; bird; cat; fish; dog; cat
 #animals#; spiders, snakes; birds; cats; fish; dogs; cats
-#hobby#; knitting; gardening; dance; painting; music; singing; poetry
-#hobbyist#; knitter; gardener; dancer; painter; musician; singer; poet
+#hobby#; knitting; gardening; dance; painting; music; singing; poetry; whittling; sculpting; baking; singing; wood carving; writing; pottery; weaving
+#hobbyist#; knitter; gardener; dancer; painter; musician; singer; poet; sculptor; baker; singer; wood carver; writer; potter; weaver
+#direction#; north; north-east; east; south-east; south; south-west; west; north-west;

@@ -1,24 +1,24 @@
 Acts on impulse.
-Always chewing a [[piece of straw; match; toothpick]].
+Always chewing a [[piece of straw/match/toothpick]].
 Always finds a way to make the current situation about themselves.
 Always has a hat on, never the same one.
 Always has a runny nose.
 Always has food in their hand but never seems to be eating
 Always has one hand on their weapon.
-Always has something [[critical; nice; interesting; crude; idiotic]] to say.
+Always has something [[critical/nice/interesting/crude/idiotic/informative]] to say.
 Always muttering about something.
 Always seems disinterested in their interlocutor.
-Always seems to be [[drunk; tired; lying; angry; excited]].
+Always seems to be [[drunk/tired/lying/angry/excited]].
 Always seems to fade into the shadows.
 Always shivering.
-Always tries to flirt, is [[terrible; quite bad; quite good; excellent]] at it. 
+Always tries to flirt, is [[terrible/quite bad/quite good/excellent]] at it. 
 Always whistling.
-Apologies for the slightest perceived mistake.
+Apologises for the slightest perceived mistake.
 Avoids all social interactions.
 Begins each sentence with “Um”.
 Blinks way too much.
 Buys new accessories whenever possible.
-Calls everyone [[“chum”; “friend”; “pall”; “dude”]].
+Calls everyone [[“chum”/“friend”/“pal”/“dude”]].
 Can't stay in one place.
 Can't stay quiet for long.
 Can't talk in the presence of the opposite sex.
@@ -43,7 +43,7 @@ Has a large burn on their face and some of their scalp.
 Has a large facial scar.
 Has a large facial tattoo.
 Has a large facial tattoo of a #shape#.
-Has an odd, but not unpleasant [[odor; ascent; smile]].
+Has an odd, but not unpleasant [[odour/accent/smile]].
 Has a particularly flamboyant style.
 Has a quite, dignified, solemn quality that is hard to describe.
 Has a spastic eye, looks like they are winking.
@@ -82,8 +82,8 @@ Is constantly rude on purpose.
 Is exceedingly abrupt.
 Is extremely flatulent with a distinctive associated noise.
 Is extremely philanthropic, so much so they can't hold onto money.
-Is extremely muscular making them look [[weird; out of place; imposing; terrifying; unstoppable]]
-Is extremely skinny making them look [[frail; ghostly; weak; sick]]
+Is extremely muscular making them look [[weird/out of place/imposing/terrifying/unstoppable]].
+Is extremely skinny, making them look [[frail/ghostly/weak/sick]].
 Is extremely uncomfortable with having attention on them.
 Is very sensitive to insults.
 Is very timid and will get tongue-tied if pushed to talk.
@@ -110,7 +110,7 @@ Always wearing shorts.
 Never stops coughing.
 Never stops smiling, it gets unsettling fast.
 Nods rhythmically when not talking.
-Often fondles a [[pendant; earring; necklace]] with a thousand yard stare.
+Often fondles a [[pendant/earring/necklace]] with a thousand yard stare.
 Overly cautious in their movements.
 Picks their nose in the middle of a conversation.
 Plays with their hair a lot.
@@ -165,7 +165,7 @@ Wears several obvious religious symbols.
 Wears tattered but colourful clothing.
 Wears very revealing clothing.
 Wears #colour# lipstick
-Wears a very distinctive #colour# [[coat; hat; scarf; belt]]
+Wears a very distinctive #colour# [[coat/hat/scarf/belt]]
 When distracted they twist a ring on their finger.
 While their clothes are clean their skin is filthy.
 While their skin is clean their cloths are filthy.

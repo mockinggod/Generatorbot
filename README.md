@@ -1,7 +1,7 @@
 Thank you for your interest in Generatorbot.
 
-This is a discord bot developed to help GMs prepare and run there rpg session by creating randomly generated content. Currently available: Names,, NPCs, Inns, Settlements and more. For now there is only fantasy content.
-The philosophy behind this generator is inspired by the tables found in the Forbidden Land rpg.
+This is a discord bot developed to help GMs prepare and run their rpg session by creating randomly generated content. Currently available: Names, NPCs, Inns, Settlements and more. For now there is only fantasy content.
+The philosophy behind this generator is inspired by the tables found in the Forbidden Lands rpg.
 
 When an item is generated on a server some of the info will be sent to the same channel, and whoever sends the command might receive a private message with more information such as secrets and details.
 
@@ -26,4 +26,6 @@ You can also place these values as environmental variables: TOKEN, DISCORDID and
  
 Current version 0.3.3
  
-This is an amateur project, if you have questions or feedback my reddit username is u/mockinggod.
+This is an amateur project, if you have questions or feedback my reddit username is [u/mockinggod](https://www.reddit.com/user/mockinggod).
+
+[You can invite Generatorbot to your Discord server by clicking here.](https://discordapp.com/oauth2/authorize?&client_id=539094711105880074&scope=bot&permissions=2048)
