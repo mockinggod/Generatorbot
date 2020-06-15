@@ -1,7 +1,9 @@
 @name@'s Debtor 
 A Blackheart’s Curse 
 A Hopeless Folly
-In Amber Clad 
+Bertha
+Consitution
+Constellation
 L'Abondance
 La Bonaventure
 La Capricieuse
@@ -11,7 +13,8 @@ La Moqueuse
 La Petite Victoire
 La Pucelle 
 Le Triomphant
-Neptune's Favor 
+Neptune's Favor
+Peggy 
 Shoshanna 
 Solitude 
 Sovereign of the Seas
@@ -104,6 +107,7 @@ The Omen
 The Parched Parrot 
 The Perfection 
 The Prid Of The [[North/South/West/Est]]  
+The Raven
 The Reef Sprinter 
 The Resplendence
 The Righteous [[Indignation / Fury / Vengeance ]]  

@@ -4,7 +4,7 @@ Addicted to alcohol.
 Addicted to an illegal drug.
 Always finds insults that hit their mark.
 Always has a knife at hand.
-Always sleep with their feet pointing west.
+Always sleep with their feet pointing #direction#.
 Avoids violence whenever possible
 Believes everything that happens to be their god's plan, uses it as an excuse to behave amorally.
 Believes everything they are told.
@@ -17,7 +17,7 @@ Believes that they are meant to follow their current career, but is quite bad at
 Brags about being a great #hobbyist#, is actually terrible.
 Can only hear in one ear.
 Can't stop themselves from indulging, hates themselves for it.
-Caries a bone of their #familymembre# everywhere with them.
+Caries a bone of their #familymember# everywhere with them.
 Desperate to be famous.
 Desperate to be in a romantic relationship.
 Desperate to be remembered.
@@ -67,7 +67,7 @@ Hates following orders.
 Hates getting help, believes it makes them weak.
 Hates imprecise language.
 Haunted by dreams of their family dying in a fire. 
-Interested in poetry, but is scared to admit it.
+Interested in #hobby#, but is scared to admit it.
 Is a *strict* pacifist.
 Is always looking to distract themselves.
 Is completely devoid of emotions but pretends otherwise.

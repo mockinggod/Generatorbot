@@ -1,4 +1,4 @@
-A collection of [[fine plates/ ornate tankards/ colorful hats/ rusty weapons]]  hangs from the wall.; 0
+A collection of [[fine plates/ornate tankards/colorful hats/rusty weapons]]  hangs from the wall.; 0
 A finely carved but dusty statue lies in a dark corner.; 0
 A game of horseshoes is on going.; 0
 A group is quietly sitting, listening to a man telling a story.; 4  
@@ -21,7 +21,7 @@ A waitress with a peg leg walks with impressive grace.; 0
 An intricate slide and pulley system allow beer to be delivered to every table without leaving the bar.; 0
 As you walk in, a food fight breaks out.; 5
 There are barrels instead of chairs and planks instead of tables.; 0
-Behind the bar is a wired skeleton, if asked about it the owner says it's there #familymembre#.; 0
+Behind the bar is a wired skeleton, if asked about it the owner says it's there #familymember#.; 0
 Behind the bar is an extensive collection of rare drinks.; 0
 The fireplace is massive and burns so hot that most patrons give it a wide breadth.; 0
 A large birthday party is ongoing, a candle laden cake is being lit.; 4
@@ -44,14 +44,14 @@ All the furniture is made of stone.; 0
 The bar is circular and at the center of the room.; 0
 The bar is made of marble.; 0
 The drinks come in wooden boots.; 0
-The inn has a omnipresent [[shrimp/ cat/ frog/ owl]] theme.; 0
+The inn has a omnipresent [[shrimp/cat/frog/owl]] [[theme/odour].; 0
 The inn has a watch tower attached.; 0
-The inn has its own moat, about half a meter wide, complete with miniature drawbridge.; 0
+The inn has its own moat, about half a metre wide, complete with miniature drawbridge.; 0
 The inn has two large tapestries, rotten but still quite impressive.; 0
 The inn is made from a large boat.; 0
 The inn is hexagonal.; 0
 The inn is mostly underground.; 0
-The inn is lit by candles that give off a [[green/ red/ pink/ blue]] light.; 0
+The inn is lit by candles that give off a [[green/red/pink/blue]] light.; 0
 The inn is patroned by a knightly order.; 2
 The inn is patroned by hardened criminals.; 2
 The inn is patroned by several nobles.; 2
@@ -61,7 +61,7 @@ The inn used to be a church, the bar contains the altar.; 0
 The inn used to be a fort, the windows are arrow slits.; 0
 The inn uses glasses hand made by the owner.; 0
 The owner is distinctly foreign.; 0
-The owner practices juggling when they have a free moment, they are still pretty bad.; 0
+The owner practises juggling when they have a free moment, they are still pretty bad.; 0
 The owner whistles when cleaning glasses, it is quite lovely.; 0
 The owners are a pair of identical twins, they are completely indistinguishable.; 0
 The room is very silent.; 1
@@ -77,27 +77,27 @@ There is a couple kissing at the bar, they seem quite passionate and very inexpe
 There is a fireplace in all four corners of the front room.; 0
 There is a large stone and crystal collection behind the bar.; 0
 There is a large window in the ceiling.; 0
-There is a large, well crafted grandfather cloak behind the bar.; 0
-There is a man playing three shells and a pea in the corner.; 1
+There is a large, [[well crafted/ornate]] grandfather cloak behind the bar.; 0
+There is a man playing three shells and a pea [[in the corner/on a small stage]].; 1
 There is a parrot at the bar, it whistles continuously.; 0
 There is a rusting suit of armor right as you open the door, the arms are raised, wielding a sword.; 0
 There is a small stream going through the front room.; 0
 Several animal skulls lay on the bar, each one has a burning candle inside.; 4
-There is a two headed [[dog/ cat/ rabbit/ parrot]], he well loved by everyone.; 0
-There is a two tailed cat, the owner invites you to pet it as they claim is brings good luck.; 0
-There is a water well at the center of the front room.; 0
+There is a two headed [[dog/cat/rabbit/parrot]], he is well loved by everyone.; 0
+There is a two tailed cat, the owner invites you to pet it as they claim it brings good luck.; 0
+There is a water well in the centre of the front room.; 0
 There is an entry fee but once inside beer is free.; -1
 There is an expensive looking chandelier hanging from the surprisingly high ceiling.; 0 
 There is bachelorette party in progress.; 4
-There is stag due in progress.; 4
+There is stag do in progress.; 4
 Violence is in the air.; 2
 A man is on one knee in front of a woman, he holds out an open box with a ring in it, the inn is completely silent.; 2
 A woman is currently giving birth, everyone else seems to be either panicking or undisturbed.; 1
 Everyone in the inn is standing up and are separated in two groups facing each other, they seem to be having an argument.; 4
 The bar runs across the center of the front room, splinting it into two, while one side is loud and rowdy the other is calm and dignified.; 0
-An unknown public figure is staying at the inn, all their servant are in the front room.; 4
-A shady figure is sitting in a corner, smoking a pipe thoughtfully.; 1
-The walls are all painted bright [[pink/ yellow/ teal]], everyone refuses to talk about it.; 0
-All drinks are served in wooden tankards that are carved with the likenesses of [[great heroes of a long-forgotten age/ circus performers/ exotic animals/ dragons/ horses ]].; 0
+An unknown public figure is staying at the inn, all their servants are in the front room.; 4
+A shady figure is sitting in a corner, [[thoughtfully/[pensively]] smoking a pipe.; 1	
+The walls are all painted bright [[pink/yellow/teal]], everyone refuses to talk about it.; 0
+All drinks are served in wooden tankards that are carved with the likenesses of [[great heroes of a long-forgotten age/circus performers/exotic animals/dragons/horses]].; 0
 Almost every flat surface has one or more figurines or trinkets that the owner loves to collect. They'll often allow patrons to barter for their meal with a new trinket.; 0
 Two giant mirrors hang from opposite walls in such a way to create numerousness reflexion. 
