@@ -100,11 +100,11 @@ async def hi(ctx): # For testing
 	
 # The most important function, calls interface to generate all the bots content
 @bot.command()
-async def gen(ctx, item = "nothing was entered0", *args, aliases=['g']):
+async def gen(ctx, item = "nothing was entered0", *args):
 
 	await delete_command(ctx)
 	
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lowercase, *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
@@ -118,30 +118,11 @@ async def gen(ctx, item = "nothing was entered0", *args, aliases=['g']):
 			else:
 				await ctx.send(secretoutput)
 				
-# Same as before just with g instead
-# @bot.command()
-# async def g(ctx, item = "nothing was entered0", *args):
 
-	# await delete_command(ctx)
-
-	# openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
-	
-	# if max(len(openoutput), len(secretoutput)) > 1999:
-		# await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
-	# else:
-		# if openoutput == secretoutput:
-			# await ctx.send(openoutput)
-		# else:
-			# if isinstance(ctx.message.channel, discord.abc.GuildChannel):
-				# await ctx.send(openoutput)
-				# await ctx.message.author.send(secretoutput)
-			# else:
-				# await ctx.send(secretoutput)
-				
 
 		
 @bot.command()
-async def help(ctx, aliases=['h']):
+async def help(ctx):
 
 	await delete_command(ctx)
 
@@ -152,6 +133,8 @@ async def help(ctx, aliases=['h']):
 	output = output.replace("@prefix@", prefix(bot, ctx.message))
 		
 	await ctx.send(output)
+
+
 	
 # Prints out the list of things that can be generated
 @bot.command()	
@@ -167,6 +150,7 @@ async def itemlist(ctx, aliases=['list']):
 			output = ""
 		
 	await ctx.send(output)
+	
 
 #Gives info on the bot, arguments can be added to get info on specific features 
 @bot.command()	
@@ -243,6 +227,7 @@ async def gbchangeprefix(ctx, arg1=None):
 		output = "This hasn't been implemented for private messages. "
 		
 	await ctx.send(output)
+	
 @bot.command()	
 async def addfantasyrace(ctx, race = None, gendre = "notset", weight = 1.0):
 #allows a user to add a race to their custom lists of fantasy races
@@ -354,6 +339,139 @@ async def kill(ctx, arg = 0):
 		await bot.logout()
 	else:
 		await ctx.send("You are not the chosen one.")
+		
+# /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
+#					Duplicates
+# /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
+
+@bot.command()
+async def g(ctx, item = "nothing was entered0", *args):
+
+	await delete_command(ctx)
+
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lowercase, *args)
+	
+	if max(len(openoutput), len(secretoutput)) > 1999:
+		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
+	else:
+		if openoutput == secretoutput:
+			await ctx.send(openoutput)
+		else:
+			if isinstance(ctx.message.channel, discord.abc.GuildChannel):
+				await ctx.send(openoutput)
+				await ctx.message.author.send(secretoutput)
+			else:
+				await ctx.send(secretoutput)
+
+@bot.command()	
+async def h(ctx):
+
+	await delete_command(ctx)
+
+	output = ""
+	for i in helptext:
+		output += i + "\n"
+		
+	output = output.replace("@prefix@", prefix(bot, ctx.message))
+		
+	await ctx.send(output)
+
+@bot.command()
+async def list(ctx, aliases=['list']):
+
+	await delete_command(ctx)
+
+	output = ""
+	for i in itemlisttext:
+		output += i + "\n"
+		if i == "":
+			await ctx.send(output + "_ _")
+			output = ""
+		
+	await ctx.send(output)	
+		
+@bot.command()	
+async def addfantasyraces(ctx, race = None, gendre = "notset", weight = 1.0):
+#allows a user to add a race to their custom lists of fantasy races
+	
+	if race == None:
+		output = "Type @prefix@info races to learn how to use this."	
+		
+	else:
+				
+		if gendre == "notset":
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight)/2])
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight)/2])
+			
+			output = race + " added to your personal list of races"
+		
+		elif gendre == "none":
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "", float(weight)/2])
+			
+			output = "genderless " + race + " added to your personal list of races"
+			
+		else:
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gendre, float(weight)])
+			
+			output = gendre + " " + race + " added to your personal list of races"
+			
+	output = output.replace("@prefix@", prefix(bot, ctx.message))
+		
+		
+	await ctx.send(output)
+	
+#allows a user to view the races of their custom list	
+@bot.command()
+async def reviewfantasyrace(ctx):
+	
+	count, lists= psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
+	
+	if count == 0:
+	
+		output = "You have no fantasy races"
+	
+	else:
+
+		output = "Your races are:\n"
+		for list in lists:
+			output += str(list[2]) + " (" + str(list[3]) + ") " + " weight: " + str(list[4]) + "\n"	
+		
+	await ctx.send(output)
+	
+#allows a user to remove a race from their custom lists of fantasy races	
+@bot.command()
+async def removefantasyrace(ctx, race=None):
+
+	if race == None:
+	
+		output = "Add the race you want to delete as an argument or add \"all\" to delete all you fantasy races."
+
+	if race == "all":
+	
+		count = psqlf.removeracegenre(serverinfo, ctx.message.author.id, "fantasy")	
+		
+		if count == 0:
+		
+			output = "There was no entry in your list of fantasy races"
+		
+		else:
+			
+			output = "Removed all your fantasy races"
+		
+		
+	else:
+
+		count = psqlf.removerace(serverinfo, ctx.message.author.id, "fantasy", race)
+		
+		if count == 0:
+		
+			output = "There is no such entry in your list of fantasy races"
+		
+		else:
+
+			output = race + " removed from your personal list of races"
+		
+	await ctx.send(output)
 		
 def my_background_task():
     schedule.run_pending()

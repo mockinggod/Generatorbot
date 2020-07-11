@@ -148,7 +148,7 @@ def main(ctx, serverinfo, item, *args):
 #					NPCS
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 		
-	elif item == "fantasyNPC" or item == "fNPC":
+	elif item == "fantasynpc" or item == "fnpc":
 		#Generates a fantasy NPC.
 		if len(arg) == 0:
 			loopmax = 1
