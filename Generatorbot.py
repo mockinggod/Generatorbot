@@ -104,7 +104,7 @@ async def gen(ctx, item = "nothing was entered0", *args):
 
 	await delete_command(ctx)
 	
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lowercase, *args)
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
@@ -349,7 +349,7 @@ async def g(ctx, item = "nothing was entered0", *args):
 
 	await delete_command(ctx)
 
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lowercase, *args)
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
