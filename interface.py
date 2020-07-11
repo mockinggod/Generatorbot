@@ -50,8 +50,7 @@ def main(ctx, serverinfo, item, *args):
 
 	if item in ["fantasyNPC", "fNPC", "fantasyinn", "finn", "fantasysettlement", "fsettlement", "fset", "fantasybookcase", "fbookcase", "fbc", "fantasybook", "fbook", "fantasyoutpost",  "foutpost", "fantasyhamlet", "fhamlet", "fantasyvillage", "fvillage", "fantasytown", "ftown", "fantasycity", "fcity"]:
 
-		races = psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
-		races = races[1]
+		dum, races = psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
 		
 
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
@@ -640,7 +639,7 @@ def main(ctx, serverinfo, item, *args):
 				list = split2[0].split("/")
 				openoutput += memory[0][memory.index(list)] + split2[1]
 
-	secretoutput = secretoutput.replace("   ", ".", 10)				
+	secretoutput = secretoutput.replace("   ", " ", 10)				
 	secretoutput = secretoutput.replace("  ", " ", 100)	
 	secretoutput = secretoutput.replace(" .", ".", 10)		
 	secretoutput = secretoutput.replace(" ,", ",", 10)	

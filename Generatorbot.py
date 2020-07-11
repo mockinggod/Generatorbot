@@ -100,7 +100,7 @@ async def hi(ctx): # For testing
 	
 # The most important function, calls interface to generate all the bots content
 @bot.command()
-async def gen(ctx, item = "nothing was entered0", *args):
+async def gen(ctx, item = "nothing was entered0", *args, aliases=['g']):
 
 	await delete_command(ctx)
 	
@@ -119,29 +119,29 @@ async def gen(ctx, item = "nothing was entered0", *args):
 				await ctx.send(secretoutput)
 				
 # Same as before just with g instead
-@bot.command()
-async def g(ctx, item = "nothing was entered0", *args):
+# @bot.command()
+# async def g(ctx, item = "nothing was entered0", *args):
 
-	await delete_command(ctx)
+	# await delete_command(ctx)
 
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
+	# openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
 	
-	if max(len(openoutput), len(secretoutput)) > 1999:
-		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
-	else:
-		if openoutput == secretoutput:
-			await ctx.send(openoutput)
-		else:
-			if isinstance(ctx.message.channel, discord.abc.GuildChannel):
-				await ctx.send(openoutput)
-				await ctx.message.author.send(secretoutput)
-			else:
-				await ctx.send(secretoutput)
+	# if max(len(openoutput), len(secretoutput)) > 1999:
+		# await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
+	# else:
+		# if openoutput == secretoutput:
+			# await ctx.send(openoutput)
+		# else:
+			# if isinstance(ctx.message.channel, discord.abc.GuildChannel):
+				# await ctx.send(openoutput)
+				# await ctx.message.author.send(secretoutput)
+			# else:
+				# await ctx.send(secretoutput)
 				
 
 		
 @bot.command()
-async def help(ctx):
+async def help(ctx, aliases=['h']):
 
 	await delete_command(ctx)
 
@@ -155,7 +155,7 @@ async def help(ctx):
 	
 # Prints out the list of things that can be generated
 @bot.command()	
-async def itemlist(ctx):
+async def itemlist(ctx, aliases=['list']):
 
 	await delete_command(ctx)
 
@@ -309,7 +309,7 @@ async def removefantasyraces(ctx, race=None):
 		
 		else:
 			
-			output = "Removed " + str(count) + " fantasy races"
+			output = "Removed all your fantasy races"
 		
 		
 	else:
