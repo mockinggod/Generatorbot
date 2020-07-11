@@ -1,27 +1,27 @@
-The race system allows you to add __your__ races to the generator. Each NPC will then be asigned a race as well as a few other feature.
+The race system allows you to add __your__ races to the generator. Each NPC will then be assigned a race as well as a few other features.
 
 You add a race throufght the @prefix@addfantasyrace [race] [gender=both] [weight=1] command
 
-The race should be given in the singular form and if their is a different version for each gender you can enter them separately with the none gender
+The race should be given in the singular form and if there is a different version for each gender you can enter them separately with the none gender
  
-The gender is separate from the race so you can have races with uneven, no or more then two genders. The none gender will remove gender from the descriptors of NPC of that race.
+The gender is separate from the race so you can have races with uneven, no or more than two genders. The none gender will remove gender from the descriptors of NPC of that race.
 
-You must input a gender a gender to input a weight
+You must input a gender to input a weight
 
-Each races will appear in numbers proportional to their weight. In the below example list 2/3 of elves will be female and their will be on golem for every 10 humans.
+Each race will appear in numbers proportional to their weight. In the below example list 2/3 of elves will be female and there will be on golem for every 10 humans.
 
-example statments:
-"@prefix@addfantasyrace human" will add two entries to your personal list:
+example statements:
+"@prefix@addfantasyrace human" will add two entries to your list:
  * human male   0.5
  * human female 0.5
  
-"@prefix@addfantasyrace elf male" will add one entry to your personal list:
+"@prefix@addfantasyrace elf male" will add one entry to your list:
  * elf male   1
  
-"@prefix@addfantasyrace elf female 2" will add one entry to your personal list:
+"@prefix@addfantasyrace elf female 2" will add one entry to your list:
  * elf female   2
  
-"@prefix@addfantasyrace human none 0.1" will add one entry to your personal list:
+"@prefix@addfantasyrace human none 0.1" will add one entry to your list:
  * golem none
  
 "@prefix@reviewfantasyraces" will output:
@@ -34,4 +34,3 @@ golem ()  weight: 0.050
 "@prefix@removefantasyraces human " will remove both male and female humans from the list
 
 "@prefix@removefantasyraces all " will remove all entries from the list
-

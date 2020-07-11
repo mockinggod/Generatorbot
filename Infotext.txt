@@ -13,7 +13,7 @@ Current version 0.4.0
 
 Patch notes: 
  * Added the race system for NPCs
- * Changed a lot of formating
+ * Changed a lot of formatting
  * A few other tweaks
  
 type "@prefix@info races" to get information on the race system
