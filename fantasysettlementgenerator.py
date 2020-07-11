@@ -35,20 +35,20 @@ with open("medievalsettlementnamep2.txt", encoding='UTF-8') as f:
 	
 councillist = ["religious council", "council of guild leaders", "noble parlement", "magic council", "mixed council", "council of elders", "military council"]
 
-counciladjectivelist = ["A bickering", "A cruel", "A weak", "A greedy", "A wise", "An eccentric",\
-	"A confusing", "A brutal", "A cunning", "A stern", "A secretive", "A drunkard", "A zealous",\
-	"A fanatical", "A pious", "A chaotic", "A methodical", "A virtuous", "A righteous", "A upstanding",\
-	"A honourable", "A crooked", "A nefarious", "A squabbling", "An anarchic", "A powerless", \
-	"An antiquated", "An archaic", "A brand new", "A recently appointed", "A respected", "A esteemed"]
+counciladjectivelist = ["a bickering", "a cruel", "a weak", "a greedy", "a wise", "an eccentric",\
+	"a confusing", "a brutal", "a cunning", "a stern", "a secretive", "a drunkard", "a zealous",\
+	"a fanatical", "a pious", "a chaotic", "a methodical", "a virtuous", "a righteous", "a upstanding",\
+	"a honourable", "a crooked", "a nefarious", "a squabbling", "an anarchic", "a powerless", \
+	"an antiquated", "an archaic", "a brand new", "a recently appointed", "a respected", "a esteemed"]
 	
-rulerlist = [["Despot", "Despot"], ["Elder", "Elder"], ["Mayor", "Mayor"], ["Grand druid", "Grand druid"],
-	["Commander", "Commander"], ["Hight merchant", "Hight merchant"], ["Earl", "Earl"], ["Master", "Master"],\
-	["Hight priest", "Hight priestess"], ["Crime lord", "Crime lord"], ["Lord", "Lady"], ["Count", "Countess"],\
-	["Commissioner", "Commissioner"], ["Earl Marshal", "Earl Marshal"], ["Grand Master", "Grand Master"],  \
-	["Merchant lord", "Merchant lady"], ["Shaman", "Shaman"],  ["Alderman", "Alderwoman"]]
+rulerlist = [["despot", "despot"], ["elder", "elder"], ["mayor", "mayor"], ["grand druid", "grand druid"],
+	["commander", "commander"], ["hight merchant", "hight merchant"], ["earl", "earl"], ["master", "master"],\
+	["hight priest", "hight priestess"], ["crime lord", "crime lord"], ["lord", "lady"], ["count", "countess"],\
+	["commissioner", "commissioner"], ["earl marshal", "earl marshal"], ["grand master", "grand master"],  \
+	["merchant lord", "merchant lady"], ["shaman", "shaman"],  ["alderman", "alderwoman"]]
 	
 	
-def main(size = 0):
+def main(races, size = 0):
 # Generates a random settlement from tables and RNGs, the output is an object
 #The input selects the size 0: Random, 1:Outpost, 2:Village, 3:Town, 4:City
 
@@ -102,7 +102,7 @@ def main(size = 0):
 	
 	if random.random() < 0.85:
 
-		output["ruler"] = fantasyNPCgenerator.main()
+		output["ruler"] = fantasyNPCgenerator.main(races)
 		output["ruler"]["individual"] = True 
 		
 		if output["ruler"]["gender"] == "male":

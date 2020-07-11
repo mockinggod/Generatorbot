@@ -42,7 +42,7 @@
 2; @its@ snowing
 2; @its@ snowing intermittently
 2; @its@@and1@ cloudy @and2@
-2; @itseater@a dull grey sky threatening rain
+2; @itseater@a dull grey sky threatens rain
 2; @itseater@everything is blanketed in a thick fog
 2; @itseater@the ground is coated with frost.
 2; @itseater@the sky is full of tumultuous, dark, ragged clouds
@@ -52,7 +52,7 @@
 2; there is a thick fog 
 3; @and1@ fogy @and2@
 3; @and1@ gusty @and2@
-3; @and1@ humid @and2@
+3; @its@@and1@ humid @and2@
 3; @and1@ misty @and2@
 3; @and1@ overcast @and2@
 3; @and1@dreary @and2@
@@ -70,7 +70,6 @@
 4; @and1@ overcast @and2@
 4; @and1@ very dry @and2@
 4; @its@ raining intermittently
-4; @its@@and1@ pretty @and2@
 4; @its@@and1@ sunny @and2@
 4; @itseater@a warm rain pleasantly cools you down
 4; a single ray of light shines through the clouds 

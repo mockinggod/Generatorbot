@@ -1,14 +1,13 @@
-0; @itseater@even though the sky is perfectly clear a thunderclap reverberates out of nowhere
-0; @itseater@the cloud are a deep #colour#
-0; @itseater@without warning hailstones start falling from the heavens
-0; @itseater@suddenly the sun is obscured by the moon causing a partial eclipse
-0; @itseater@suddenly the sun is obscured by the moon causing a total eclipse
-0; @itseater@a large thunderstorm blows in from the closest desert dragging with it sand that falls with the rain
-0; @itseater@a large thunderstorm blows in from the closest ocean dragging with it fish that fall with the rain
-0; @itseater@a volcano has erupted, filling the air with ash and soot
-0; @itseater@a comet flies through the sky, for a few hours it seams that there two suns in the sky
-0; @itseater@a meteor crashes nearby
-3; @itseater@a tornado forms ahead and starts coming towards you
-4; @itseater@a tornado forms ahead and starts coming towards you
-5; @itseater@several dust devils rise during the day
-5; @itseater@ a strong wind has blown dust into the air, turning the sun red
+0; The air is @temperature@ and the sky is perfectly clear, unexpectedly a thunderclap reverberates out of nowhere.
+0; The air is @temperature@ and the sky filled with clouds of a striking deep #colour#.
+0; The air is @temperature@ and the sky is perfectly clear until suddenly and without warning hailstones start falling from the heavens.
+0; The air is @temperature@ and the sky is perfectly clear, suddenly the earth shakes, everyone must struggle to stay on their feet, unstable structures topple over.
+0; The air is @temperature@ and the sky is clear, suddenly the sun is obscured by the moon causing a [[partial/total]] eclipse for a few minutes.
+0; The air is @temperature@ and a large thunderstorm blows in from the closest desert dragging with it sand that falls with the rain.
+0; The air is @temperature@ and a large thunderstorm blows in from the closest ocean dragging with it fish that fall with the rain.
+0; The air is @temperature@ a distant volcano has erupted, filling the air with ash and soot.
+0; The air is @temperature@ a comet flies through the sky, for a few hours it seams that there is a second smaller suns in the sky.
+0; The air is @temperature@, the sky cloudy and from one cloud emerges a meteor with a flaming trail, the earth trembles as it crashes nearby.
+3; The air is @temperature@, a mild winds picks up and a tornado forms ahead and starts coming towards you.
+4; The air is @temperature@, a mild winds picks up and a tornado forms ahead and starts coming towards you.
+5; The air is @temperature@, a strong wind has blown dust into the air, turning the sun a deep red.

@@ -9,9 +9,11 @@ https://github.com/mockinggod/Generatorbot
 
 If you want the bot to delete the commands after it acts on them, you must manually give it the permission to manage messages.
 
-Current version 0.3.4
+Current version 0.4.0
 
 Patch notes: 
- * Added ship name generator
- * Fixed a lot of bugs
+ * Added the race system for NPCs
+ * Changed a lot of formating
  * A few other tweaks
+ 
+type "@prefix@info races" to get information on the race system

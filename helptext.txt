@@ -1,7 +1,10 @@
 Things placed in [square brackets] below and elsewhere are variables that must/can be placed after the command eg: "@prefix@gen fNPC 2".
 
-@prefix@gen / @prefix@gen  [item] -- Procedurally generates an item 
+@prefix@gen / @prefix@g  [item] -- Procedurally generates an item 
 @prefix@itemlist -- lists the items that can be generated
 @prefix@info -- gives some information on the bot
+@prefix@addfantasyrace [race] [gender=both] [weight=1] -- adds a fantasy race to your personal list
+@prefix@reviewfantasyraces -- lists your fantasy races
+@prefix@removefantasyraces [race] or [all] -- deletes a (or all) fantasy race(s) from personal list
 @prefix@gbchangeprefix [prefix] -- Changes the bot command prefix for the server, \"!\" by default
 @prefix@feedback [feedback] -- Allows you to send me feedback anonymously.

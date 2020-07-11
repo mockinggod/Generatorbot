@@ -20,7 +20,7 @@ def main():
 	output["name"] = name.main()
 	output["oddity"] = np.random.choice(odditylist[0])
 	output["specialty"] = np.random.choice(specialtylist)
-	if np.random.random() < 0.85:
+	if np.random.random() < 0.80:
 		output["secret"] = "The beer is watered down"
 	else:
 		output["secret"] = np.random.choice(secretlist)

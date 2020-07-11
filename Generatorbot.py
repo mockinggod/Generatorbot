@@ -33,15 +33,17 @@ except KeyError:
 feedbackusedtoday = [] 
 	
 
-
 with open("helptext.txt", encoding='UTF-8') as f:
-		helptext = f.read().splitlines() 
+	helptext = f.read().splitlines() 
 	
 with open("itemlisttext.txt", encoding='UTF-8') as f:
     itemlisttext = f.read().splitlines()
 
 with open("Infotext.txt", encoding='UTF-8') as f:
     infotext = f.read().splitlines()
+	
+with open("Inforacestext.txt", encoding='UTF-8') as f:
+    inforacestext = f.read().splitlines()
 	
 def prefix(bot, message): # Function finds the prefix used by the guild
 	
@@ -102,7 +104,7 @@ async def gen(ctx, item = "nothing was entered0", *args):
 
 	await delete_command(ctx)
 	
-	openoutput, secretoutput = interface.main(ctx, item, *args)
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
@@ -122,7 +124,7 @@ async def g(ctx, item = "nothing was entered0", *args):
 
 	await delete_command(ctx)
 
-	openoutput, secretoutput = interface.main(ctx, item, *args)
+	openoutput, secretoutput = interface.main(ctx, serverinfo, item, *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
@@ -166,14 +168,25 @@ async def itemlist(ctx):
 		
 	await ctx.send(output)
 
+#Gives info on the bot, arguments can be added to get info on specific features 
 @bot.command()	
-async def info(ctx):
+async def info(ctx, arg1=None):
 
 	await delete_command(ctx)
 
-	output = ""
-	for i in infotext:
-		output += i + "\n"
+	if arg1 == "races":
+	
+		output = ""
+		for i in inforacestext:
+			output += i + "\n"
+	
+	else:
+
+		output = ""
+		for i in infotext:
+			output += i + "\n"
+			
+	output = output.replace("@prefix@", prefix(bot, ctx.message))
 		
 	await ctx.send(output)
 	
@@ -184,6 +197,7 @@ async def myid(ctx):
 		
 	await ctx.send(output)
 
+#flips a coin
 @bot.command()	
 async def cf(ctx):
 
@@ -197,7 +211,7 @@ async def cf(ctx):
 	
 # Allows to change the bot prefix for one server
 @bot.command()
-async def gbchangeprefix(ctx, arg1):
+async def gbchangeprefix(ctx, arg1=None):
 
 	if isinstance(ctx.message.channel, discord.abc.GuildChannel):
 	
@@ -229,13 +243,95 @@ async def gbchangeprefix(ctx, arg1):
 		output = "This hasn't been implemented for private messages. "
 		
 	await ctx.send(output)
+@bot.command()	
+async def addfantasyrace(ctx, race = None, gendre = "notset", weight = 1.0):
+#allows a user to add a race to their custom lists of fantasy races
+	
+	if race == None:
+		output = "Type @prefix@info races to learn how to use this."	
+		
+	else:
+				
+		if gendre == "notset":
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight)/2])
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight)/2])
+			
+			output = race + " added to your personal list of races"
+		
+		elif gendre == "none":
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "", float(weight)/2])
+			
+			output = "genderless " + race + " added to your personal list of races"
+			
+		else:
+			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gendre, float(weight)])
+			
+			output = gendre + " " + race + " added to your personal list of races"
+			
+	output = output.replace("@prefix@", prefix(bot, ctx.message))
+		
+		
+	await ctx.send(output)
+	
+#allows a user to view the races of their custom list	
+@bot.command()
+async def reviewfantasyraces(ctx):
+	
+	count, lists= psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
+	
+	if count == 0:
+	
+		output = "You have no fantasy races"
+	
+	else:
+
+		output = "Your races are:\n"
+		for list in lists:
+			output += str(list[2]) + " (" + str(list[3]) + ") " + " weight: " + str(list[4]) + "\n"	
+		
+	await ctx.send(output)
+	
+#allows a user to remove a race from their custom lists of fantasy races	
+@bot.command()
+async def removefantasyraces(ctx, race=None):
+
+	if race == None:
+	
+		output = "Add the race you want to delete as an argument or add \"all\" to delete all you fantasy races."
+
+	if race == "all":
+	
+		count = psqlf.removeracegenre(serverinfo, ctx.message.author.id, "fantasy")	
+		
+		if count == 0:
+		
+			output = "There was no entry in your list of fantasy races"
+		
+		else:
+			
+			output = "Removed " + str(count) + " fantasy races"
+		
+		
+	else:
+
+		count = psqlf.removerace(serverinfo, ctx.message.author.id, "fantasy", race)
+		
+		if count == 0:
+		
+			output = "There is no such entry in your list of fantasy races"
+		
+		else:
+
+			output = race + " removed from your personal list of races"
+		
+	await ctx.send(output)
 	
 # Allows to send me feedback as a private discord message
 @bot.command()
 async def feedback(ctx, arg1 = None):
 
 	if ctx.message.author.id in feedbackusedtoday:	
-		await ctx.send("You have already given feedback today, try again tomorrow.")
+		await ctx.send("You have already given feedback today, try again tomorrow.") 
 		
 	else:
 		

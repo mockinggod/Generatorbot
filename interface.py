@@ -11,6 +11,7 @@ import riddlegenerator
 import weathergenerator
 import medievalshipnamegenerator
 
+import psqlfunctions as psqlf
 import homebrew as hb
 import numpy as np
 from titlecase import titlecase
@@ -35,10 +36,22 @@ with open("medievalsurname.txt", encoding='latin-1') as f:
 	
 taglist = (hb.arrayreader("universaltags.txt"))
 
-def main(ctx, item, *args):
+def main(ctx, serverinfo, item, *args):
 	arg = []
 	for input in args:
 		arg.append(input)
+		
+	
+# /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
+#					Genre prep
+# /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
+
+	races = []
+
+	if item in ["fantasyNPC", "fNPC", "fantasyinn", "finn", "fantasysettlement", "fsettlement", "fset", "fantasybookcase", "fbookcase", "fbc", "fantasybook", "fbook", "fantasyoutpost",  "foutpost", "fantasyhamlet", "fhamlet", "fantasyvillage", "fvillage", "fantasytown", "ftown", "fantasycity", "fcity"]:
+
+		races = psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
+		races = races[1]
 		
 
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
@@ -148,7 +161,7 @@ def main(ctx, item, *args):
 			except ValueError:
 				loopmax = 1
 				job = arg[0]
-				
+
 		openoutput = ""
 		secretoutput = ""
 				
@@ -157,9 +170,9 @@ def main(ctx, item, *args):
 			loop += 1
 			
 			if job == None:
-				NPC = fantasyNPCgenerator.main()
+				NPC = fantasyNPCgenerator.main(races)
 			else:
-				NPC = fantasyNPCgenerator.main(job)
+				NPC = fantasyNPCgenerator.main(races, job)
 				
 			openoutput += str(charaformat(NPC)) + "\n\n"
 				
@@ -188,24 +201,24 @@ def main(ctx, item, *args):
 			output += "\nSecret: " + inn["secret"]
 			secretoutput += output
 			
-			owner = fantasyNPCgenerator.main("Innkeeper")
-			waiter = fantasyNPCgenerator.main("Waiter")
+			owner = fantasyNPCgenerator.main(races, "Innkeeper")
+			waiter = fantasyNPCgenerator.main(races, "Waiter")
 			
-			openoutput += "\n\n__Owner__\nName: " 
-			openoutput += owner["name"] + "\nA " 
-			openoutput += owner["gender"] + " "+ str(owner["age"]) + "\nCharacteristic: " + owner["characteristic"]
-			openoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nA " 
-			openoutput += waiter["gender"] + " " + str(waiter["age"]) + "\nCharacteristic: " + waiter["characteristic"]
-			secretoutput += "\n\n__Owner__\nName: " + owner["name"] + "\nA " 
-			secretoutput += owner["gender"] + " " + str(owner["age"]) + "\nCharacteristic: " + owner["characteristic"] \
+			openoutput += "\n\n__Owner__: " 
+			openoutput += owner["name"] + "\nA" 
+			openoutput += owner["age"] + " "+ str(owner["gender"]) + "\nCharacteristic: " + owner["characteristic"]
+			openoutput += "\n\n__Waiter__: " + waiter["name"] + "\nA" 
+			openoutput += waiter["age"] + " " + str(waiter["gender"]) + "\nCharacteristic: " + waiter["characteristic"] + "\n"
+			secretoutput += "\n\n__Owner__: " + owner["name"] + "\nA" 
+			secretoutput += owner["age"] + " " + str(owner["gender"]) + "\nCharacteristic: " + owner["characteristic"] \
 			+ "\nTrait: " + owner["trait"]
 			if owner["secret"] != "Has no secret":
 				secretoutput += "\nSecret: " + owner["secret"]
-			secretoutput += "\n\n__Waiter__\nName: " + waiter["name"] + "\nA "
-			secretoutput += waiter["gender"] + " " + str(waiter["age"]) + "\nCharacteristic: " \
+			secretoutput += "\n\n__Waiter__: " + waiter["name"] + "\nA"
+			secretoutput += waiter["age"] + " " + str(waiter["gender"]) + "\nCharacteristic: " \
 			+ waiter["characteristic"]+ "\nTrait: " + waiter["trait"]
 			if waiter["secret"] != "Has no secret":
-				secretoutput += "\nSecret: " + waiter["secret"]
+				secretoutput += "\nSecret: " + waiter["secret"] + "\n"
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Missions
@@ -296,7 +309,7 @@ def main(ctx, item, *args):
 			if arg[0] > 5:
 				openoutput = "The maximum size of a settlement is five, see itemlist for more info"
 			else:			
-				openoutput, secretoutput = fantasysettlementformat(fantasysettlementgenerator.main(arg[0]))
+				openoutput, secretoutput = fantasysettlementformat(races, fantasysettlementgenerator.main(races, arg[0]))
 		except ValueError:
 			openoutput = "The input must be a number between 1 and 5, see itemlist for more info"
 				
@@ -304,7 +317,7 @@ def main(ctx, item, *args):
 		
 	elif item == "fantasyoutpost" or item == "foutpost": #fantasy outpost
 	
-		dum = fantasysettlementgenerator.main(1)
+		dum = fantasysettlementgenerator.main(races, 1)
 		
 		if len(arg) == 0:
 			arg.append(0)
@@ -312,11 +325,11 @@ def main(ctx, item, *args):
 		if type(arg[0])== str:
 			dum["name"] = arg[0]
 			
-		openoutput, secretoutput = fantasysettlementformat(dum)
+		openoutput, secretoutput = fantasysettlementformat(races, dum)
 
 	elif item == "fantasyhamlet" or item == "fhamlet": #fantasy hamlet
 			
-		dum = fantasysettlementgenerator.main(2)
+		dum = fantasysettlementgenerator.main(races, 2)
 		
 		if len(arg) == 0:
 			arg.append(0)
@@ -324,11 +337,11 @@ def main(ctx, item, *args):
 		if type(arg[0])== str:
 			dum["name"] = arg[0]
 			
-		openoutput, secretoutput = fantasysettlementformat(dum)
+		openoutput, secretoutput = fantasysettlementformat(races, dum)
 		
 	elif item == "fantasyvillage" or item == "fvillage": #fantasy village
 			
-		dum = fantasysettlementgenerator.main(3)
+		dum = fantasysettlementgenerator.main(races, 3)
 		
 		if len(arg) == 0:
 			arg.append(0)
@@ -336,11 +349,11 @@ def main(ctx, item, *args):
 		if type(arg[0])== str:
 			dum["name"] = arg[0]
 			
-		openoutput, secretoutput = fantasysettlementformat(dum)
+		openoutput, secretoutput = fantasysettlementformat(races, dum)
 		
 	elif item == "fantasytown" or item == "ftown": #fantasy town
 			
-		dum = fantasysettlementgenerator.main(4)
+		dum = fantasysettlementgenerator.main(races, 4)
 		
 		if len(arg) == 0:
 			arg.append(0)
@@ -348,11 +361,11 @@ def main(ctx, item, *args):
 		if type(arg[0])== str:
 			dum["name"] = arg[0]
 			
-		openoutput, secretoutput = fantasysettlementformat(dum)
+		openoutput, secretoutput = fantasysettlementformat(races, dum)
 		
 	elif item == "fantasyvcity" or item == "fcity": #fantasy city
 			
-		dum = fantasysettlementgenerator.main(5)
+		dum = fantasysettlementgenerator.main(races, 5)
 		
 		if len(arg) == 0:
 			arg.append(0)
@@ -360,7 +373,7 @@ def main(ctx, item, *args):
 		if type(arg[0])== str:
 			dum["name"] = arg[0]
 			
-		openoutput, secretoutput = fantasysettlementformat(dum)
+		openoutput, secretoutput = fantasysettlementformat(races, dum)
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Books
@@ -521,7 +534,7 @@ def main(ctx, item, *args):
 	elif item == "insult" or item == "insults":
 	
 		valid = True
-		argslist = ["all", "empty", "empty"]
+		argslist = ["default", "empty", "empty"]
 
 		test = 0
 		numloop = 1		
@@ -627,13 +640,14 @@ def main(ctx, item, *args):
 				list = split2[0].split("/")
 				openoutput += memory[0][memory.index(list)] + split2[1]
 
-			
-	secretoutput = secretoutput.replace("  ", " ", 10)	
-	secretoutput = secretoutput.replace(" .", ".", 1)		
-	secretoutput = secretoutput.replace(" ,", ",", 1)	
-	openoutput = openoutput.replace("  ", " ", 10)	
-	openoutput = openoutput.replace(" .", ".", 1)		
-	openoutput = openoutput.replace(" ,", ",", 1)
+	secretoutput = secretoutput.replace("   ", ".", 10)				
+	secretoutput = secretoutput.replace("  ", " ", 100)	
+	secretoutput = secretoutput.replace(" .", ".", 10)		
+	secretoutput = secretoutput.replace(" ,", ",", 10)	
+	openoutput = openoutput.replace("   ", " ", 10)	
+	openoutput = openoutput.replace("  ", " ", 100)	
+	openoutput = openoutput.replace(" .", ".", 10)		
+	openoutput = openoutput.replace(" ,", ",", 10)
 	
 	return(openoutput, secretoutput)
 	
@@ -647,21 +661,13 @@ def main(ctx, item, *args):
 def charaformat(character):
 
 	output = character["name"]
-	dummy = str(str(character["gender"])) + " " + str(character["age"]) + " " + str(character["occupation"] + ".")
-	output += "\nA " + dummy.lower()
+	dummy = str(str(character["age"]) + " " + str(character["gender"]) + " " + str(character["race"]) + " " + str(character["occupation"]) + ".")
+	output += "\nA" + dummy.lower()
 	output += "\nCharacteristic: " + character["characteristic"]
 		 
 	openoutput = output
 	
-	output += "\nTrait: " + character["trait"] 
-	
-	dummy =  character["secret"]
-	if str(dummy) != str("Has no secret"):
-		output += "\nSecret: " + dummy
-		
-	secretoutput = output
-	
-	return(openoutput, secretoutput)
+	return(openoutput)
 	
 def secretcharaformat(character):
 
@@ -669,8 +675,8 @@ def secretcharaformat(character):
 	dummy = "."
 	if character["occupationgenerated"]:
 		dummy = " " + str(character["occupation"]) + "."
-	dummy2 = str(str(character["gender"])) + " " + str(character["age"]) + dummy
-	output += "\nA " + dummy2.lower()
+	dummy2 = str(character["age"]) + " " + str(character["gender"]) + " " + str(character["race"]) + dummy
+	output += "\nA" + dummy2.lower()
 	output += "\nCharacteristic: " + character["characteristic"]	
 	output += "\nTrait: " + character["trait"] 
 	
@@ -682,7 +688,7 @@ def secretcharaformat(character):
 	
 	return(secretoutput)
 	
-def fantasysettlementformat(settlement):
+def fantasysettlementformat(races, settlement):
 	
 	# general settlement stuff
 		
@@ -708,11 +714,11 @@ def fantasysettlementformat(settlement):
 	
 	# Ruler stuff
 	
-	output = "__Ruler__\n"
+	output = "__Ruler__: "
 	
 	if settlement["ruler"]["individual"]:
-		output += "Name: " + settlement["ruler"]["name"] + "\n"
-		output += "A " + str(settlement["ruler"]["gender"]) + " " + str(settlement["ruler"]["age"]) + " " + str(settlement["ruler"]["occupation"]) + "\n"
+		output += settlement["ruler"]["name"] + "\nA"
+		output +=  str(settlement["ruler"]["age"]) + " " + str(settlement["ruler"]["gender"]) + str(settlement["ruler"]["race"]) + " " + str(settlement["ruler"]["occupation"]) + "\n"
 		
 		openoutput += output + "\n" 
 		
@@ -751,9 +757,9 @@ def fantasysettlementformat(settlement):
 			secretoutput += output
 			output = ""
 			
-			owner = fantasyNPCgenerator.main("Owner")
+			owner = fantasyNPCgenerator.main(races, "Owner")
 			
-			secretoutput += "\n\n__Owner__\n" + secretcharaformat(owner) + "\n"
+			secretoutput += "\n\n__Owner__: " + secretcharaformat(owner) + "\n"
 			
 			# Removed Waiter from settlement inns, too much info already
 			# secretoutput += "\n__Waiter__\n" + secretcharaformat(waiter) + "\n" 
@@ -770,9 +776,9 @@ def fantasysettlementformat(settlement):
 		
 			secretoutput += "\nPrincipal succour: " + institution["succour"] + "\n"
 			
-			highpriest = fantasyNPCgenerator.main("High priest")
+			highpriest = fantasyNPCgenerator.main(races, "High priest")
 			
-			secretoutput += "\n__High priest__\n" + secretcharaformat(highpriest) + "\n"
+			secretoutput += "\n__High priest__: " + secretcharaformat(highpriest) + "\n"
 			
 		elif institution["identifier"] == 5: #Library
 		
@@ -780,9 +786,9 @@ def fantasysettlementformat(settlement):
 			for discipline in institution["disciplines"]:
 				secretoutput += "    " + discipline + "\n"
 				
-			librarian = fantasyNPCgenerator.main("Librarian")
+			librarian = fantasyNPCgenerator.main(races, "Librarian")
 			
-			secretoutput += "\n__Librarian__\n" + secretcharaformat(librarian) + "\n"
+			secretoutput += "\n__Librarian__: " + secretcharaformat(librarian) + "\n"
 				
 		elif institution["identifier"] == 6: #University
 		
@@ -790,9 +796,9 @@ def fantasysettlementformat(settlement):
 			for discipline in institution["disciplines"]:
 				secretoutput += "    " + discipline + "\n"
 				
-			dean = fantasyNPCgenerator.main("Dean")
+			dean = fantasyNPCgenerator.main(races, "Dean")
 			
-			secretoutput += "\n__Dean__\n" + secretcharaformat(dean) + "\n"
+			secretoutput += "\n__Dean__: " + secretcharaformat(dean) + "\n"
 			
 		elif institution["identifier"] == 7: #Park
 		

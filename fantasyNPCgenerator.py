@@ -45,7 +45,7 @@ with open("surname.txt", encoding='latin-1') as f:
 with open("medievalsurname.txt", encoding='latin-1') as f:
     surnamelist += f.read().splitlines() 
 	
-def main(occupation = "generate"):
+def main(races=None, occupation = "generate"):
 # Generates a random Non Player Character from tables and RNGs, the output is an object
 
 	NPClist = []
@@ -54,23 +54,53 @@ def main(occupation = "generate"):
 	
 	NPClist.append({})
 	
-
-	if random.random() < 0.496:
-		NPClist[i]["gender"] = "male"
-		NPClist[i]["name"] = random.choice(malenamelist)
-	else:
-		if random.random() < 0.978:
-			NPClist[i]["gender"] = "female"
-			NPClist[i]["name"] = random.choice(femalenamelist)
+	NPClist[i]["name"] = ""
+	
+	if races==[]:
+	
+		NPClist[i]["race"] = ""
+	
+		if random.random() < 0.496:
+			NPClist[i]["gender"] = "male"
+			NPClist[i]["name"] = random.choice(malenamelist)
 		else:
-			NPClist[i]["gender"] = "androgynous"
-			NPClist[i]["name"] = random.choice([random.choice(malenamelist),random.choice(femalenamelist)])
+			if random.random() < 0.978:
+				NPClist[i]["gender"] = "female"
+				NPClist[i]["name"] = random.choice(femalenamelist)
+			else:
+				NPClist[i]["gender"] = "androgynous"
+				NPClist[i]["name"] = random.choice([random.choice(malenamelist),random.choice(femalenamelist)])
+	
+	else:
+		sumw = 0.0
+		for race in races:
+			sumw += float(race[4])
+			
+		rand = random.random()*sumw
+		dum = 0
+		for race in races:
+			dum += float(race[4])
+			if rand < dum:
+				NPClist[i]["race"] = race[2]
+				print(NPClist[i]["race"])
+				NPClist[i]["gender"] = race[3]
+				print(NPClist[i]["gender"])
+				if race[3] == "male":
+					NPClist[i]["name"] = random.choice(malenamelist)
+				elif race[3] == "female":
+					NPClist[i]["name"] = random.choice(femalenamelist)
+				else:
+					NPClist[i]["name"] = randomnamegenerator.main()
+					
+				break
+			
+			print(NPClist[i]["name"])
 			
 	if random.random() < 0.5:
 		NPClist[i]["name"] += " " + random.choice(surnamelist)
 	
 	
-	NPClist[i]["age"] = random.choice(["young adult", "adult", "older adult", "elder"])		
+	NPClist[i]["age"] = random.choice([" young", " ", "n older", "n elder"])		
 	NPClist[i]["characteristic"] = str(random.choice(characteristiclist))
 	NPClist[i]["trait"] = random.choice(traitlist)
 	

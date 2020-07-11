@@ -20,40 +20,40 @@ def main(input):
 	
 	if(input=="arctic" or input=="polar" or input=="1"):
 	
-		if rand < 0.5:
+		if rand < 0.6:
 			temp = 1
-		elif rand < 0.95:
+		elif rand < 0.97:
 			temp = 2
 		else:
 			temp = 3
 			
 	elif(input=="winter" or input=="cold"or input=="2" ):
 	
-		if rand < 0.2:
+		if rand < 0.25:
 			temp = 1
-		elif rand < 0.7:
+		elif rand < 0.75:
 			temp = 2
-		elif rand < 0.98:
+		elif rand < 0.99:
 			temp = 3
 		else:
 			temp = 4
 			
 	elif(input=="summer" or input=="hot" or input=="4"):
 	
-		if rand < 0.02:
+		if rand < 0.01:
 			temp = 2
-		elif rand < 0.3:
+		elif rand < 0.25:
 			temp = 3
-		elif rand < 0.8:
+		elif rand < 0.25:
 			temp = 4
 		else:
 			temp = 5
 			
 	elif(input=="desert" or input=="drought" or input=="5"):
 
-		if rand < 0.05:
+		if rand < 0.03:
 			temp = 3
-		elif rand < 0.5:
+		elif rand < 0.4:
 			temp = 4
 		else:
 			temp = 5
@@ -73,13 +73,13 @@ def main(input):
 
 	else:
 	
-		if rand < 0.03:
+		if rand < 0.02:
 			temp = 1
 		elif rand < 0.25:
 			temp = 2
 		elif rand < 0.75:
 			temp = 3
-		elif rand < 0.97:
+		elif rand < 0.98:
 			temp = 4
 		else:
 			temp = 5
@@ -98,45 +98,48 @@ def main(input):
 			templistselect.append(t[1])
 			
 	#creates a list of all the temperature descriptions that match the value temp plus or minus 1			
-	for t in templist:
 		if(int(t[0]) - temp == pom):
 			templistselect2.append(t[1])	
 			
-	rand = np.random.random()
-	if rand<0.002: #very rare but epic weather: eruptions, eclipses...
-		for weather in rareweatherlist:
-			if(int(weather[0]) == temp or int(weather[0]) == 0):
-				weatherlistselect.append(weather[1])	#creates a list of all the weather descriptions that match the value temp or weathers that occur at all temperatures 
-	else: #normal weather
-		for weather in weatherlist:
-			if(int(weather[0]) == temp or int(weather[0]) == 0):
-				weatherlistselect.append(weather[1]) #creates a list of all the weather descriptions that match the value temp or weathers that occur at all temperatures 
 				
 	rand = np.random.random()
 	if rand<0.002: #very rare but epic weather: eruptions, eclipses...
+		formats = []
+		#The replace function need the following lists to be none empty enven if they are not being used.
+		weatherlistselect = ["This should not be visible"]
+		weatherlistselect2 = ["This should not be visible"]
 		for weather in rareweatherlist:
-			if(abs(weather[0]) - temp == pom):
-				weatherlistselect2.append(weather[1])	
-				#creates a list of all the weather descriptions that match the value temp pom 1, doesn't to include weathers that occur at all temperatures to make repetitions impossible
+			if(int(weather[0]) == temp or int(weather[0]) == 0):
+				formats.append(weather[1])	
+
+				
+		output = np.random.choice(formats)
+		
+		
 	else: #normal weather
 		for weather in weatherlist:
+			#creates a list of all the weather descriptions that match the value temp or weathers that occur at all temperatures 
+			if(int(weather[0]) == temp or int(weather[0]) == 0):
+				weatherlistselect.append(weather[1])
+				
+			#creates a list of all the weather descriptions that match the value temp pom 1, doesn't to include weathers that occur at all temperatures to make repetitions impossible
 			if(int(weather[0]) - temp == pom):
 				weatherlistselect2.append(weather[1])
-				#creates a list of all the weather descriptions that match the value temp pom 1, doesn't to include weathers that occur at all temperatures to make repetitions impossible
 
-	# The possible formats that the weather statements can come in, I repeated my favorite as a crude way or weighting them
-	formats = ["It's @temperature@ and @weather@.",\
-		"The temperature is @temperature@ and @its@@weather@.",\
-		"It's @temperature@ and @weather@.",\
-		"The air is @temperature@ and @its@@weather@.",\
-		"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
-		"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
-		"The [[air/ temperature]] goes from @temperature@ to @temperature2@ and it's @weather@.",\
-		"In the mourning it's @temperature@ and @weather@ in the afternoon it's @temperature2@ and @weather2@.",\
-		"The mourning is @temperature@ and @weather@, the afternoon is @temperature2@ and @weather2@."\
-		]
 
-	output = np.random.choice(formats)
+		# The possible formats that the weather statements can come in, I repeated my favorite as a crude way or weighting them
+		formats = ["It's @temperature@ and @weather@.",\
+			"The temperature is @temperature@ and @its@@weather@.",\
+			"It's @temperature@ and @weather@.",\
+			"The air is @temperature@ and @its@@weather@.",\
+			"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
+			"It's a @temperature@ day and @and1@@its@@weather@@and2@",\
+			"The [[air/ temperature]] goes from @temperature@ to @temperature2@ and it's @weather@.",\
+			"In the mourning it's @temperature@ and @weather@ in the afternoon it's @temperature2@ and @weather2@.",\
+			"The mourning is @temperature@ and @weather@, the afternoon is @temperature2@ and @weather2@."\
+			]
+
+		output = np.random.choice(formats)
 	
 	# Applies the numerous changes needed to make the sentence from different formats make grammatical sense 
 	output = output.replace("@temperature@", str(np.random.choice(templistselect)), 1)

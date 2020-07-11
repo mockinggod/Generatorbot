@@ -70,9 +70,13 @@ def main(identifier = 0):
 	elif identifier == 2: #Taverns
 	
 		output = fantasyinngenerator.main()
-		if output["name"].endswith(" Inn"):
-			output["name"] = output["name"][:-4]
-			output["name"] += " Tavern"
+		output["name"] = output["name"].replace("Inn", "Tavern")
+		output["oddity"] = output["oddity"].replace("inn", "iavern")
+		output["oddity"] = output["oddity"].replace("beer", "wine")
+		output["oddity"] = output["oddity"].replace("tankards", "glasses")	
+		output["secret"] = output["secret"].replace("inn", "tavern")
+		output["secret"] = output["secret"].replace("beer", "wine")
+		output["secret"] = output["secret"].replace("tankards", "glasses")	
 			
 	elif identifier == 3: #Trading Post
 	
@@ -86,9 +90,7 @@ def main(identifier = 0):
 			output["name"] = random.choice(humannamelist) + "'s " + random.choice(tradingnameslist)
 			
 		dum = random.randint(1, 4)
-		output["food"] = []
-		for i in range(dum):
-			output["food"].append(random.choice(fooddrinklist))
+		output["food"] = random.sample(fooddrinklist, dum)
 		
 		output["smell"] = random.choice(smelllist)
 		
@@ -133,9 +135,7 @@ def main(identifier = 0):
 			output["name"] = "Library of @here"
 	
 		dum = random.randint(1, 3)
-		output["disciplines"] = []
-		for i in range(dum):
-			output["disciplines"].append(random.choice(disciplinelist))
+		output["disciplines"] = random.sample(disciplinelist, dum)
 			
 	elif identifier == 6: #University
 	
@@ -153,9 +153,7 @@ def main(identifier = 0):
 			output["name"] = random.choice(universitynamelist) + " of @here"
 	
 		dum = random.randint(1, 5)
-		output["disciplines"] = []
-		for i in range(dum):
-			output["disciplines"].append(random.choice(disciplinelist))
+		output["disciplines"] = random.sample(disciplinelist, dum)
 	
 	elif identifier == 7: #Park
 	

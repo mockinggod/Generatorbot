@@ -17,3 +17,5 @@ token.txt
 discordid.txt
 serverinfo.txt
 *.pyc
+__pycache__/psqlfunctions.cpython-35.pyc
+*.pyc
