@@ -91,14 +91,14 @@ def main(situation = None):
 	
 		
 	states = ["A brand new",\
-		"A like new",\
+		"A like-new",\
 		"A small",\
 		"A large",\
 		"A huge",\
 		"A worn",\
-		"A worn but sea worthy",\
-		"A old",\
-		"An old but very well maintained",\
+		"A worn, but sea worthy",\
+		"An old",\
+		"An old, but very well maintained",\
 		"An ancient"\
 		]
 		
@@ -109,9 +109,9 @@ def main(situation = None):
 		"merchant",\
 		"missionary",\
 		"monster hunting",\
-		"navy",\
+		"naval",\
 		"pleasure",\
-		"privateers",\
+		"privateer",\
 		"slaver"\
 		]
 	
@@ -122,7 +122,7 @@ def main(situation = None):
 	if port:
 		states.extend(["A still unvarnished"])
 		bonus.extend([\
-			["with a [[party/brawl/wedding/unknown contest]] ongoing on deck",4]])
+			["with [[a party/a brawl/a wedding/an unknown contest]] ongoing on deck",4]])
 		actions.extend(["is docked", "is being unloaded", "is being loaded", "is having its hull inspected", "is undergoing simple maintenance", "is getting ready to set sail"])
 	else:
 		jobs.extend(["pirate", "raider"])
@@ -137,10 +137,10 @@ def main(situation = None):
 	if drift:
 		bonus.extend([\
 			["with a [[broken/shattered/missing mast]]",4]])
-		actions.extend(["is [[slowly//rapidly]] drifting northwards","is [[slowly//rapidly]] drifting eastwards","is [[slowly//rapidly]] drifting southwards","is [[slowly//rapidly]] drifting westwards", "is floating [[very/]] low in the water", "is drifting in a circle around it's lowered anchor"])
+		actions.extend(["is [[slowly//rapidly]] drifting northwards","is [[slowly//rapidly]] drifting eastwards","is [[slowly//rapidly]] drifting southwards","is [[slowly//rapidly]] drifting westwards", "is floating [[very/]] low in the water", "is drifting in a circle around its lowered anchor"])
 	
 	if reck:
-		states.extend(["A roting", "A broken"])
+		states.extend(["A rotting", "A broken"])
 		actions.extend(["is grounded on the shore","is laying on its side","is grounded on a reef"])
 	else:
 		bonus.extend([\
