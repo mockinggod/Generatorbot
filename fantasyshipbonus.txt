@@ -1,0 +1,11 @@
+with sails [[filled/buffeted]] by an invisible wind; 0.5
+made of [[ice/jade/ruby/glass/crystal/bone/marble]]; 1
+with a [[dark/holy/unholy/angry/joyous]] aura; 0.5
+that radiates #colour# light; 0.5
+with [ice crystals forming/sparks running/#colour# flames running/flowers sprouting] across the hull; 0.7
+with a giant #colour# eyeball at the top of the mast instead of an crow's nest; 0.2
+with a bright #colour# smokeless flame burning endlessly [[on top of the mast/in the crow's nest]]; 0.2
+with a [[skeletal/ghostly/infernal]] reflexion; 0.2
+without a [[reflexion/shadow]]; 0.2
+with a shadow that goes in the wrong direction; 0.05 
+followed by a [[tiny/small/]] magical [[rain/snow/storm/thunder/white]] cloud; 0.2 
