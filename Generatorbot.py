@@ -103,7 +103,7 @@ async def hi(ctx): # For testing
 async def gen(ctx, item = "nothing was entered0", *args):
 
 	#easter egg for a friend 
-	if ctx.message.author.id == int(idnum-105742405411536896) and "japan" in args:
+	if ctx.message.author.id == int(int(idnum)-105742405411536896) and "japan" in args:
 
 		await ctx.send("Rice")
 		
