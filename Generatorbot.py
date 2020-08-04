@@ -164,7 +164,7 @@ async def itemlist(ctx, *args):
 				await ctx.send(output + "_ _")
 				output = ""
 		
-	await ctx.send(output)
+		await ctx.send(output)
 	
 
 #Gives info on the bot, arguments can be added to get info on specific features 
@@ -392,7 +392,7 @@ async def h(ctx):
 	await ctx.send(output)
 
 @bot.command()
-async def list(ctx, aliases=['list']):
+async def list(ctx, aliases=['list'], *args):
 
 	await delete_command(ctx)
 
@@ -410,7 +410,7 @@ async def list(ctx, aliases=['list']):
 				output = ""
 
 		
-	await ctx.send(output)	
+		await ctx.send(output)	
 		
 @bot.command()	
 async def addfantasyraces(ctx, race = None, gendre = "notset", weight = 1.0):
