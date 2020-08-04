@@ -5,4 +5,4 @@ The inn is patroned by an order of mages.;0
 There is a very chatty ghost, he is harmless.; 0
 There is a pseudo dragon called Ararohij living in the inn, it sleeps in a mug filled with copper coins.; 0
 There is a miniature ship in a bottle on the bar. It looks very, very realistic.; 0
-The [[beer/wine] is brewed in a magic barrel, it is said [[to have healing properties/to cure many diseases/to slow down aging/to increase fertility/to give good luck]].
+The beer is brewed in a magic barrel, it is said [[to have healing properties/to cure many diseases/to slow down aging/to increase fertility/to give good luck]].

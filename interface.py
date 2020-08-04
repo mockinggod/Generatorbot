@@ -10,29 +10,13 @@ import syfanplanetgenerator
 import riddlegenerator
 import weathergenerator
 import medievalshipnamegenerator
+import names
 
 import psqlfunctions as psqlf
 import homebrew as hb
 import numpy as np
 from titlecase import titlecase
 
-with open("femalename.txt", encoding='latin-1') as f:
-    femalenamelist = f.read().splitlines() 	
-	
-with open("medievalfemalename.txt", encoding='latin-1') as f:
-    medievalfemalenamelist = f.read().splitlines() 
-	
-with open("malename.txt", encoding='latin-1') as f:
-    malenamelist = f.read().splitlines() 	
-	
-with open("medievalmalename.txt", encoding='latin-1') as f:
-    medievalmalenamelist = f.read().splitlines() 
-	
-with open("surname.txt", encoding='latin-1') as f:
-    surnamelist = f.read().splitlines() 	
-	
-with open("medievalsurname.txt", encoding='latin-1') as f:
-    medievalsurnamelist = f.read().splitlines() 
 	
 taglist = (hb.arrayreader("universaltags.txt"))
 
@@ -57,78 +41,135 @@ def main(ctx, serverinfo, item, *args):
 #					Names
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 
-	if item == "randomname" or item == "rname":
+	if item == "name" or item  =="n":
 	
+		numloop = 1
+		types = []
 		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			
-			openoutput += randomnamegenerator.main() + "\n"
+		typelist =["random", "r", "eng", "fr", "inca", "japan", "arabic" "settlement", "set", "inn", "ship", "book"]
+		humantypelist = ["eng", "fr", "inca", "japan", "arabic"]
+		humangentypelist = ["inca"]
+		nosurnamelist = ["inca"]
+		full = False
+		gendre = None
+		gen = False
+		lenght = [4,10]
 		
-	elif item == "malename" or item == "mname":
+		for input in arg:
+			try: 
+				int(input)
+				integer = True
+			except ValueError:
+				integer = False
+			if integer:
+				numloop = int(input)
+			else: 
+				if input == 'full' or input == 'fullname':
+					full = True
+				elif input == 'female' or input == 'f':
+					gendre = 'female'
+				elif input == 'male' or input =='m':
+					gendre = 'male'
+				elif input == 'surname' or input == 'sur' or input == 's':
+					full = True
+					gendre = 'surname'
+				elif input == 'short':
+					lenght = [2,6]
+				elif input == 'long':
+					lenght = [9,15]
+				elif input == 'endless':
+					lenght = [12,22]
+				elif input in typelist:
+					types.append(input)
+				else:
+					openoutput += "Unknown name type: " + input + " so ignored\n"
+				
+		for i in range(numloop):
+		
 
-		openoutput = ""	
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
+			if len(types) == 0: 
+				type = "eng"
+			else:
+				type = np.random.choice(types)					
 			
-			openoutput += np.random.choice(malenamelist) + "\n"
-		
-	elif item == "femalename" or item == "fname":
+			if type == "random" or type == "r" :
+					
+				openoutput += names.randname(lenght) 
+				
+				if full:
+				
+					openoutput += " " + names.randname(lenght) + "\n"
+					
+				else:
+				
+					openoutput += "\n"
 	
-		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
+			elif type in humantypelist:
 			
-			openoutput += np.random.choice(femalenamelist) + "\n"
-		
-	elif item == "surname" or item == "sname":
-	
-		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			openoutput += np.random.choice(surnamelist) + "\n"
+				if type in humangentypelist:
+					gen = True
 			
-	elif item == "settlementname" or item == "setname":
-		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			dum = fantasysettlementgenerator.main()
-			openoutput += dum["name"] + "\n"
+				if gendre == None:
+				
+					gendre = np.random.choice(["male", "female"])
 			
-	elif item == "innname":
-		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			dum = fantasyinngenerator.main()
-			openoutput += titlecase(dum["name"]) + "\n"
+				if gendre == "male":
+				
+					string = type + "m"
+
+					openoutput += names.name(gen, string, lenght) + ' '
+					
+				elif gendre == "female":
+					
+					string = type + "f"
+					
+					openoutput += names.name(gen, string, lenght) + ' '
+					
+				if full:
+
+					if type in nosurnamelist:
+				
+						string = type + "m"
+						
+						openoutput += names.name(True, string, lenght) + "\n"
+						
+					else:
+					
+						string = type + "sur"
+					
+						openoutput += names.name(gen, string, lenght) + "\n"
+					
+				else:
+				
+					openoutput += "\n"
+					
+			elif type == "settlement" or type == "set":
+
+				dum = fantasysettlementgenerator.main(races)
+				openoutput += dum["name"]  + "\n"
+					
+			elif type == "inn":
 			
-	elif item == "shipname":
-		openoutput = ""
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			openoutput += medievalshipnamegenerator.main() + "\n"
-		
+				dum = fantasyinngenerator.main()
+				openoutput += titlecase(dum["name"])  + "\n"
+
+					
+			elif type == "ship":
+
+				openoutput += medievalshipnamegenerator.main()  + "\n"
+					
+			elif type == "book" or type == "b":
+				
+				dum = fantasybookgenerator.main()
+				openoutput += titlecase(dum["title"]) + "\n"
+						
+				
+			else: 
+			
+				openoutput +=  "Errorname: mybad\n"
+
+				
+				
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Titles
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
@@ -313,66 +354,9 @@ def main(ctx, serverinfo, item, *args):
 			openoutput = "The input must be a number between 1 and 5, see itemlist for more info"
 				
 			
-		
-	elif item == "fantasyoutpost" or item == "foutpost": #fantasy outpost
 	
-		dum = fantasysettlementgenerator.main(races, 1)
-		
-		if len(arg) == 0:
-			arg.append(0)
 
-		if type(arg[0])== str:
-			dum["name"] = arg[0]
-			
-		openoutput, secretoutput = fantasysettlementformat(races, dum)
 
-	elif item == "fantasyhamlet" or item == "fhamlet": #fantasy hamlet
-			
-		dum = fantasysettlementgenerator.main(races, 2)
-		
-		if len(arg) == 0:
-			arg.append(0)
-
-		if type(arg[0])== str:
-			dum["name"] = arg[0]
-			
-		openoutput, secretoutput = fantasysettlementformat(races, dum)
-		
-	elif item == "fantasyvillage" or item == "fvillage": #fantasy village
-			
-		dum = fantasysettlementgenerator.main(races, 3)
-		
-		if len(arg) == 0:
-			arg.append(0)
-
-		if type(arg[0])== str:
-			dum["name"] = arg[0]
-			
-		openoutput, secretoutput = fantasysettlementformat(races, dum)
-		
-	elif item == "fantasytown" or item == "ftown": #fantasy town
-			
-		dum = fantasysettlementgenerator.main(races, 4)
-		
-		if len(arg) == 0:
-			arg.append(0)
-
-		if type(arg[0])== str:
-			dum["name"] = arg[0]
-			
-		openoutput, secretoutput = fantasysettlementformat(races, dum)
-		
-	elif item == "fantasyvcity" or item == "fcity": #fantasy city
-			
-		dum = fantasysettlementgenerator.main(races, 5)
-		
-		if len(arg) == 0:
-			arg.append(0)
-
-		if type(arg[0])== str:
-			dum["name"] = arg[0]
-			
-		openoutput, secretoutput = fantasysettlementformat(races, dum)
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Books
@@ -412,38 +396,6 @@ def main(ctx, serverinfo, item, *args):
 			secretoutput += "\n"		
 			openoutput += "\n"
 		
-	elif item == "fantasybookcase" or item == "fbookcase" or item == "fbc": #fantasy book
-		
-		if len(arg) == 0:
-			arg.append(4)
-			
-		openoutput = ""
-		secretoutput = ""
-			
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
-			
-			book = fantasybookgenerator.main()
-
-			openoutput += "\nTitle: " + titlecase(book["title"]) +  \
-			"\nAuthor: " + book["author"].title()
-			#+ "\nState: " + book["state"].capitalize() doesn't fell needed, hard to fit in some contexts
-
-			secretoutput += "\nTitle: " + titlecase(book["title"]) +  \
-			"\nAuthor: " + book["author"].title() + " a " +book["authorjob"].lower()
-			#+ "\nState: " + book["state"].capitalize() doesn't fell needed, hard to fit in some contexts
-			
-			
-			secretoutput += "\nSubject: " + book["subject"].capitalize()
-			secretoutput += "\nBranch: " + book["branch"].capitalize()
-			secretoutput += "\nFocus: " + book["focus"].capitalize()
-
-			if book["secret"] != "no secret":
-				secretoutput += "\nSecret: " + book["secret"].capitalize()
-
-			secretoutput += "\n"		
-			openoutput += "\n"
 		
 
 	

@@ -58,7 +58,7 @@ def main(input):
 		else:
 			temp = 5
 			
-	elif(input=="chaos" or input=="random" or input=="?"):
+	elif(input=="chaos" or input=="random" or input=="r"):
 		
 		if rand < 0.2:
 			temp = 1

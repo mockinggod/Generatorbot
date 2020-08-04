@@ -1,11 +1,9 @@
 __Names__
- * randomname / rname [(number)=1] -- Generates a name procedurally with quite wild outcomes. You can input a number to receive several.
- * malename /mname [(number)=1] -- Picks a male name from a list of 5k+ names from American records. You can input a number to receive several.
- * femalename /fname [(number)=1] -- Picks a female name from a list of 5k+ names from American records. You can input a number to receive several.
- * surname /sname [(number)=1] -- Picks a surname from a list of 5k+ names from American records. You can input a number to receive several.
- * innname [(number)=1] -- Generates a name for a inn. You can input a number to receive several.
- * shipname [(number)=1] -- Generates a name for a ship. You can input a number to receive several.
- * booktitle / btitle [(number)=1] -- Generates a book title using the fantasybookgenerator module. You can input a number to receive several.
+ * name / n [(number)=1], [(gendre)=random], [(ethnicity) = english], [(type) = person] -- Generates a name thought a variety of means. The following variable can be inputted in any order
+    * (number) is the integer number of names outputted
+    * (gendre) can have values male / m or female / f
+    * (ethnicity) can take on many different values.
+    * (type) can be surname / sur, fullname / full, settlement / set, inn, ship, book
 
 __NPC__
  * fantasyNPC / fNPC [(Job)=random] or [(number)=1] -- Procedurally generates a fantasy character with shown (Name, Gender, Age, Job and Characteristic) and hidden proprieties (Trait, Secret). You can input a set job or a number to generate more then one.
@@ -19,18 +17,12 @@ __Mission__
 
 __Settlement__
  * fantasysettlement / fsettlement / fset [(size)=random] -- Procedurally generates a settlement with shown (Size(Outpost/Hamlet/Village/Town/City), Name, Asset, Oddity, a ruler(character/or council) and at least one institution and hidden proprieties (problem, more info on ruler, more info on institutions).
- * fantasyoutpost / foutpost -- Procedurally generates a outpost with shown (Size, Name, Asset, Oddity, a ruler(character/or council) and one institution and hidden proprieties (problem, more info on ruler, more info on institution).
- * fantasyhamlet / fhamlet -- Procedurally generates a hamlet with shown (Size, Name, Asset, Oddity, a ruler(character/or council) and at least one institution and hidden proprieties (problem, more info on ruler, more info on institutions).
- * fantasyvillage / fvillage -- Procedurally generates a village with shown (Size, Name, Asset, Oddity, a ruler(character/or council) and at least one institution and hidden proprieties (problem, more info on ruler, more info on institutions).
- * fantasytown / ftown -- Procedurally generates a town with shown (Size, Name, Asset, Oddity, a ruler(character/or council) and at least one institution and hidden proprieties (problem, more info on ruler, more info on institutions).
- * fantasycity / fcity -- Procedurally generates a city with shown (Size, Name, Asset, Oddity, a ruler(character/or council) and at least one institution and hidden proprieties (problem, more info on ruler, more info on institutions).
 
 __Books__
  * fantasybook / fbook[(number)=1] -- Procedurally generates a book with shown (Title, Author, State and hidden proprieties (Author job, Subject, Branch, possibly a secret).
- * fantasybookcase/ fbookcase / fbc[(number)=4] -- Procedurally generates a number of books with shown (Title, Author, State and hidden proprieties (Author job, Subject, Branch, possibly a secret).
 
 __Misc__
  * insult [(Type)=random - comeback] or [(number)=1] -- Picks an insult from five lists (intelligence, appearance, character, misc and comeback) by default everything but comeback can be pulled. You can add several arguments.
  * riddle [(difficulty)=random] -- Picks a riddle from a list, sends the visible riddle and hidden answer. You can chose a difficulty between 1 to 5.
  * riddles [(number)=1] -- Picks a number of riddles from a list, sends the visible riddles and hidden answers. You input the number of riddles with a default of one.
- * weather / w [(temperature)=3] -- Generates a random weather described by a sentence. You can chose a climate between 1 (arctic) to 5 (desert), you can also type "?" to get a completely random result.
+ * weather / w [(temperature)=3] -- Generates a random weather described by a sentence. You can chose a climate between 1 (arctic) to 5 (desert), you can also type random / r to get a completely random result.

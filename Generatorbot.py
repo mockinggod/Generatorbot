@@ -102,21 +102,30 @@ async def hi(ctx): # For testing
 @bot.command()
 async def gen(ctx, item = "nothing was entered0", *args):
 
-	await delete_command(ctx)
+	#easter egg for a friend 
+	if ctx.message.author.id == int(idnum-105742405411536896) and "japan" in args:
+
+		await ctx.send("Rice")
+		
+	#end easter egg
 	
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
-	
-	if max(len(openoutput), len(secretoutput)) > 1999:
-		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
 	else:
-		if openoutput == secretoutput:
-			await ctx.send(openoutput)
+
+		await delete_command(ctx)
+		
+		openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
+		
+		if max(len(openoutput), len(secretoutput)) > 1999:
+			await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
 		else:
-			if isinstance(ctx.message.channel, discord.abc.GuildChannel):
+			if openoutput == secretoutput:
 				await ctx.send(openoutput)
-				await ctx.message.author.send(secretoutput)
 			else:
-				await ctx.send(secretoutput)
+				if isinstance(ctx.message.channel, discord.abc.GuildChannel):
+					await ctx.send(openoutput)
+					await ctx.message.author.send(secretoutput)
+				else:
+					await ctx.send(secretoutput)
 				
 
 
@@ -138,16 +147,22 @@ async def help(ctx):
 	
 # Prints out the list of things that can be generated
 @bot.command()	
-async def itemlist(ctx, aliases=['list']):
+async def itemlist(ctx, *args):
 
 	await delete_command(ctx)
 
-	output = ""
-	for i in itemlisttext:
-		output += i + "\n"
-		if i == "":
-			await ctx.send(output + "_ _")
-			output = ""
+	if len(args) == 0:
+		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
+		
+	elif args[0] == 'discord':
+
+		output = ""
+	
+		for i in itemlisttext:
+			output += i + "\n"
+			if i == "":
+				await ctx.send(output + "_ _")
+				output = ""
 		
 	await ctx.send(output)
 	
@@ -381,12 +396,19 @@ async def list(ctx, aliases=['list']):
 
 	await delete_command(ctx)
 
-	output = ""
-	for i in itemlisttext:
-		output += i + "\n"
-		if i == "":
-			await ctx.send(output + "_ _")
-			output = ""
+	if len(args) == 0:
+		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
+		
+	elif args[0] == 'discord':
+
+		output = ""
+	
+		for i in itemlisttext:
+			output += i + "\n"
+			if i == "":
+				await ctx.send(output + "_ _")
+				output = ""
+
 		
 	await ctx.send(output)	
 		
