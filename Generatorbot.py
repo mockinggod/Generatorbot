@@ -307,8 +307,9 @@ async def gbchangeprefix(ctx, arg1=None):
 	await ctx.send(output)
 	
 @bot.command()	
-async def addfantasyrace(ctx, race = None, gender = None, weight = 1.0, namesethnicity = None, surnamesethnicity = None, maxsettlement = 5, occupations = [1,1,1,1,1,1,1,1,1,1,1]):
+async def addfantasyrace(ctx, race = None, gender = None, weight = None, namesethnicity = None, surnamesethnicity = None, maxsettlement = 5, occupations = [1,1,1,1,1,1,1,1,1,1,1]):
 #allows a user to add a race to their custom lists of fantasy races
+
 
 	for i in range(len(racesbyID)):
 		if racesbyID[i]['ID'] == ctx.message.author.id:

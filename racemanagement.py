@@ -50,10 +50,13 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 				
 			output = ""
 			
+		if weight is None:
+			weight = 1.0
+			
 		try:
 			float(weight)
 			floatisnumber = True
-		except ValueError:
+		except:
 			floatisnumber = False
 			
 		if floatisnumber and floatisnumber<1000:

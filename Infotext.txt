@@ -12,7 +12,7 @@ If you want the bot to delete the commands after it acts on them, you must manua
 Current version 0.4.2
 
 Patch notes: 
- * Fully implemented the race system
+ * Fully implemented and explained the race system
  * Added weights for professions
  * Tweaked formating
  
