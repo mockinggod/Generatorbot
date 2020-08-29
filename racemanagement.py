@@ -53,7 +53,7 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 		try:
 			float(weight)
 			floatisnumber = True
-		except:
+		except ValueError:
 			floatisnumber = False
 			
 		if floatisnumber and floatisnumber<1000:
@@ -75,8 +75,8 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 				if namesethnicity.lower() in names.strings or (gender == 'both' and namesethnicity.lower() in names.ethnicities):
 				
 					if gender == 'both':
-						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight), namesethnicity.lower()+f, 'engsur', maxsettlement, occupations])
-						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight), namesethnicity.lower()+m, 'engsur', maxsettlement, occupations])
+						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight), namesethnicity.lower()+"f", 'engsur', maxsettlement, occupations])
+						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight), namesethnicity.lower()+"m", 'engsur', maxsettlement, occupations])
 						gender = 'both male and female'
 					else:
 						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gender, float(weight), namesethnicity.lower(), 'engsur', maxsettlement, occupations])
@@ -123,8 +123,8 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 									if all(check):
 									
 										if gender == 'both':
-											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight), namesethnicity.lower()+f, surnamesethnicity.lower(), maxsettlement, occupations])
-											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight), namesethnicity.lower()+m, surnamesethnicity.lower(), maxsettlement, occupations])
+											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight), namesethnicity.lower()+"f", surnamesethnicity.lower(), maxsettlement, occupations])
+											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight), namesethnicity.lower()+"m", surnamesethnicity.lower(), maxsettlement, occupations])
 											gender = 'both male and female'
 										else:
 											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gender, float(weight), namesethnicity.lower(), surnamesethnicity.lower(), int(maxsettlement), occupations])
