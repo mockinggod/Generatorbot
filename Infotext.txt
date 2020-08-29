@@ -1,5 +1,5 @@
 Generatorbot is a tool developed for helping to run rpgs by creating randomly generated prompts. It is intended to be used both as a prep and improve tool. This is an amateur project made for fun.
-If you have any questions or feedback you can use the !feedback command alternatively my reddit username is u/mockinggod. 
+If you have any questions or feedback you can use the @prefix@feedback command alternatively my reddit username is u/mockinggod. 
 
 You can add the bot at this url: 
 <https://discordapp.com/oauth2/authorize?&client_id=539094711105880074&scope=bot&permissions=2048>
@@ -9,11 +9,12 @@ You can see the bot's code at this url:
 
 If you want the bot to delete the commands after it acts on them, you must manually give it the permission to manage messages.
 
-Current version 0.4.1
+Current version 0.4.2
 
 Patch notes: 
- * Changed the name generating system
- * Changed a lot of formatting
- * A few other tweaks
+ * Fully implemented the race system
+ * Added weights for professions
+ * Tweaked formating
  
 type "@prefix@info races" to get information on the race system
+type "@prefix@info names" to get information on the naming system

@@ -6,7 +6,7 @@ __Names__
     * (type) can be surname / sur, fullname / full, settlement / set, inn, ship, book
 
 __NPC__
- * fantasyNPC / fNPC [(Job)=random] or [(number)=1] -- Procedurally generates a fantasy character with shown (Name, Gender, Age, Job and Characteristic) and hidden proprieties (Trait, Secret). You can input a set job or a number to generate more then one.
+ * fantasyNPC / fNPC [(Race/Ethnicity)=random] [(Job)=random] or [(number)=1] -- Procedurally generates a fantasy character with shown (Name, Gender, Age, Job and Characteristic) and hidden proprieties (Trait, Secret). You can input a set job or a number to generate more then one.
 
 __Inn__
  * fantasyinn / finn [(number)=1] -- Procedurally generates a fantasy inn with shown (Name, Oddity and Specialty) and hidden proprieties (Secret) as well as an owner and waiter. You can input a number to generate several.

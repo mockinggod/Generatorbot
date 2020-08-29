@@ -1,16 +1,20 @@
-Abjurer
-Battlemage
-Druid
-Elementalist
-Exorcist
-Illusionist
-Seer
-Shaman
-Summoner
-Transmuter
-Treasure Hunter
-Warlock/Witch
-Witchdoctor
-Wizard
-Paladin
-Potion brewer
+Abjurer;Abjurer;Magic;0.2
+Alchemist;Alchemist;Magic;0.2
+Battlemage;Battlemage;Magic;0.6 
+Barbarian;Barbarian;Nature;1
+Druid;Druid;Nature;1
+Elementalist;Elementalist;Magic;0.4
+Exorcist;Elementalist;Religion;0.4
+Illusionist;Illusionist;Magic;0.3
+Knight;Knight;Warrior;0.4
+Seer;Seer;Magic;0.4
+Shaman;Shaman;Magic;0.4
+Summoner;Summoner;Magic;0.3
+Transmuter;Transmuter;Magic;0.3
+Treasure Hunter;Treasure Hunter;Common;0.5
+Warlock;Witch;Magic;0.5
+Witchdoctor;Witchdoctor;Magic;0.3
+Wizard;Enchantress;Magic;0.5
+Paladin;Paladin;Religion;0.2
+Potion brewer;Potion brewer;Artisan;0.5
+Warder;Warder;Artisan;0.5

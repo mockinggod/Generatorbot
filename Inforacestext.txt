@@ -1,36 +1,79 @@
-The race system allows you to add __your__ races to the generator. Each NPC will then be assigned a race as well as a few other features.
+The race system allows you to add __your__ races to the generator. Each NPC will then be assigned a race and this will affect their names, occupations and other things.
 
-You add a race throufght the @prefix@addfantasyrace [race] [gender=both] [weight=1] command
+You add a race through the @prefix@addfantasyrace [race] [gender=both] [weight=1] [forename=engm] [surname=engsur] [maxsettlement=5] [occupations=[1,1,1,1,1,1,1,1,1,1,1]] command
 
-The race should be given in the singular form and if there is a different version for each gender you can enter them separately with the none gender
+Parameters must be inputted in order.
+
+**Race**: (A string) The race should be given in the singular form and if there is a different version for each gender you can enter them separately with the none gender
  
-The gender is separate from the race so you can have races with uneven, no or more than two genders. The none gender will remove gender from the descriptors of NPC of that race.
+**Gendre**: (A string) The gender is separate from the race so you can have races with uneven, no or more than two genders. The "both" gender will create both genders simultaneously and identically. The "none" gender will remove gender from the descriptors of NPC of that race.
 
-You must input a gender to input a weight
+**Weight**: (A number between 0 and 999.999) Each race will appear in numbers proportional to their weight. In the below example list 2/3 of elves will be female and there will be on golem for every 20 humans.
 
-Each race will appear in numbers proportional to their weight. In the below example list 2/3 of elves will be female and there will be on golem for every 10 humans.
+**Forename**: (A string) Will decide the what list the forenames are pulled from or generated from. If gender is both enter an ethnicity otherwise the parameter must be from the name-string list. Type "@prefix@ info names" for more information
+
+**Surname**: (A string) Will decide the what list the surnames are pulled from or generated from. The parameter must be from the name-string list alternatively the "none" surname will deactivate surnames for the races. Type "@prefix@ info names" for more information
+
+**Maxsettlement**: (An integer between -9 and 9.) 
+-9: The race builds no settlements and only lives in cities
+-8: The race builds no settlements and only lives in towns and cities
+-7: The race builds no settlements and only lives in villages and bigger
+-6: The race builds no settlements and only lives in hamlets and bigger
+-5: The race builds no settlements and lives in any settlements 
+-4: The race builds no settlements and only lives in towns and smaller
+-3: The race builds no settlements and only lives in villagers and smaller
+-2: The race builds no settlements and only lives in outposts and hamlets
+-1: The race builds no settlements and only lives in outposts
+0: The race builds and lives in no settlements
+1: The race only builds outposts
+2: The race only builds outposts and hamlets
+3: The race only builds villages and smaller
+4: The race only builds towns and smaller
+5: The race builds all types of settlements
+6: The race only builds hamlets and bigger
+7: The race only builds villagers and bigger
+8: The race only builds towns and cities
+9: The race only builds cities
+
+Races that build settlements can live in any settlement
+
+**Occupations**: (This parameter must be given as 11 numbers separated by "," and boxed in by "[]", no spaces)
+Each number alters the weight of occupations that a member of a race can have.
+1:  Academia    (intellect based occupations such as Accountant or Engineer)
+2:  Artisan     (crafting based occupations such as Blacksmith or Fletcher)
+3:  Bourgeoisie (occupations that require money such as Trader or Landlord)
+4:  Common      (occupations that require little skill such as Courier or Lumberjack)
+5:  Law	        (Bailiff, Constable, Judge, Lawman, Lawyer, Sheriff)
+6:  Magic       (occupations that require the use of magic)
+7:  Nature      (Animal tamer, Falconer, Forager, Gardener, Hunter, Ranger, Scout, Trapper, Wanderer, Druid)
+8:  Outlaw      (Unlawful occupations)
+9:  Performer   (Occupations that entertain)
+10: Religion    (Initiate, Missionary, Monk, Priest)
+11: Warrior     (Occupations that involve hitting people)
 
 example statements:
-"@prefix@addfantasyrace human" will add two entries to your list:
- * human male   0.5
- * human female 0.5
+"@prefix@addfantasyrace human" will add both female and male humans
  
-"@prefix@addfantasyrace elf male" will add one entry to your list:
- * elf male   1
+Creates both 
  
-"@prefix@addfantasyrace elf female 2" will add one entry to your list:
- * elf female   2
+"@prefix@addfantasyrace elf male 1 elfm elfsur 3" will add male elves with elf like names that only build outpost, hamlets and villages.
  
-"@prefix@addfantasyrace human none 0.1" will add one entry to your list:
- * golem none
+"@prefix@addfantasyrace elf female 2 elff elfsur 3 [1,1,1,1,1,1,1,0.1,1,4,1]" will add female elves with elf like names that are twice as males and only build outpost, hamlets and villages. They are rarely outlaws but tend towards religious callings.
+ 
+"@prefix@addfantasyrace golem none 0.1 frm none -7 [0,1,0,1,0,0,0,0,0,0,0]" will add genderless golems with french forname and never any surname that never builds settlements and only lives in villages, towns and cities. They are only ever workers.
  
 "@prefix@reviewfantasyraces" will output:
-human (male)  weight: 0.500
-human (female)  weight: 0.500
-elf (male)  weight: 1.000
-female (2)  weight: 1.000
-golem ()  weight: 0.050
+human (female)   Weight: 1.000  Name pool: engf  Surname pool: engsur  Max settlement: 5
+Occupations weights: Academia: 1.00 Artisan:1.00 Bourgeoisie: 1.00 Common: 1.00 Law: 1.00 Magic: 1.00 Nature: 1.00 Outlaw: 1.00 Performer: 1.00 Religion: 1.00 Warrior: 1.00
+human (male)   Weight: 1.000  Name pool: engm  Surname pool: engsur  Max settlement: 5
+Occupations weights: Academia: 1.00 Artisan:1.00 Bourgeoisie: 1.00 Common: 1.00 Law: 1.00 Magic: 1.00 Nature: 1.00 Outlaw: 1.00 Performer: 1.00 Religion: 1.00 Warrior: 1.00
+elf (male)   Weight: 1.000  Name pool: elfm  Surname pool: elfsur  Max settlement: 3
+Occupations weights: Academia: 1.00 Artisan:1.00 Bourgeoisie: 1.00 Common: 1.00 Law: 1.00 Magic: 1.00 Nature: 1.00 Outlaw: 1.00 Performer: 1.00 Religion: 1.00 Warrior: 1.00
+elf (female)   Weight: 2.000  Name pool: elff  Surname pool: elfsur  Max settlement: 3
+Occupations weights: Academia: 1.00 Artisan:1.00 Bourgeoisie: 1.00 Common: 1.00 Law: 1.00 Magic: 1.00 Nature: 1.00 Outlaw: 0.100 Performer: 1.00 Religion: 4.00 Warrior: 1.00
+golem ()   Weight: 0.100  Name pool: frm  Surname pool: none  Max settlement: -7
+Occupations weights: Academia: 0.00 Artisan:1.00 Bourgeoisie: 0.00 Common: 1.00 Law: 0.00 Magic: 0.00 Nature: 0.00 Outlaw: 0.00 Performer: 0.00 Religion: 0.00 Warrior: 0.00
 
-"@prefix@removefantasyraces human " will remove both male and female humans from the list
+"@prefix@removefantasyraces human" will remove both male and female humans from the list
 
-"@prefix@removefantasyraces all " will remove all entries from the list
+"@prefix@removefantasyraces all" will remove all entries from the list

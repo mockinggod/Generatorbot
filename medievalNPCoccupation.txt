@@ -1,183 +1,181 @@
-Academic
-Accountant
-Acrobat
-Actor
-Agitator
-Alchemist
-Animal tamer
-Apothecary
-Apprentice
-Arborist
-Archer
-Architect
-Aristocrat
-Armorer
-Artisan
-Assassin
-Astrologer
-Author
-Bailiff
-Baker
-Bandit
-Banker
-Barber
-Barde
-Bartender
-Beekeeper
-Beggar
-Blacksmith
-Bladesmith
-Bodyguard
-Bookbinder
-Bouncer
-Bounty hunter
-Bowyer
-Brewer
-Brickmason
-Butcher
-Camp Follower
-Candlemaker
-Carpenter
-Cartographer
-Cartwright
-Champion
-Charcoal-Burner
-Chimney sweep
-Clerk
-Clocksmith
-Coachman
-Cobbler
-Con artist
-Constable
-Cook
-Coopers
-Courier
-Cow herder
-Cutler
-Cutpurse
-Dairy maid
-Dancer
-Doctor
-Drug Lord
-Embalmer
-Engineer
-Executioner
-Falconer
-Farm hand
-Farmer
-Fence
-Ferryman
-Fireman
-Fisherman
-Fishmonger
-Fletcher
-Forager
-Fortune teller
-Furrier
-Gambler
-Gardener
-Gladiator
-Glass blower
-Glasspainter
-Glovemaker
-Gravedigger
-Grocer
-Groom
-Guard
-Guide
-Guild Master
-Hairdresser
-Herald
-Herbalist
-Historian
-Hunter
-Initiate
-Innkeeper
-Interpreter
-Ironmonger
-Jester
-Jeweler
-Judge
-Kidnapper
-Knight
-Laborer
-Lamplighter
-Landlord
-Lawman
-Lawyer
-Leatherworker
-Librarian
-Linguist
-Loan Shark
-Locksmith
-Lumberjack
-Makeup Artist
-Mathematician
-Mayor
-Mercenary
-Messenger
-Miner
-Minstrel
-Missionary
-Mortician
-Musician
-Poet
-Noble
-Nun
-Nurse
-Peddler
-Philosopher
-Plasterer
-Portrait painter
-Potter
-Priest
-Printer
-Professor
-Ranger
-Rat catcher
-Roofer
-Rope-maker
-Saddler
-Sailor
-Scout
-Scribe
-Sculptor
-Servant
-Shepperd
-Sheriff
-Shopkeeper
-Slave
-Smuggler
-Soap maker
-Soaper
-Soldier
-Squire
-Stable hand
-Stonemason
-Student
-Tailor
-Tanner
-Tattoo artist
-Tax Collector
-Taxidermist
-Thatcher
-Thief
-Thug
-Tinkerer
-Tomb raider
-Town Crier
-Town guard
-Toymaker
-Trader
-Trapper
-Tutor
-Vagabond
-Veterinarian
-Wanderer
-Washerwoman
-Weavers
-Wheelwright
-Whittler
-Woodcarver
-Wrestler
-Writer
+Academic; Academic;Academia;0.2
+Accountant;Accountant;Academia;0.2
+Acrobat;Acrobat;Performer;0.2
+Actor;Actress;Performer;0.2
+Agitator;Agitator;Common;0.2
+Alchemist;Alchemist;Academia;0.05
+Animal tamer;Animal tamer;Nature;0.5
+Apothecary;Apothecary;Academia;0.5
+Apprentice;Apprentice;Artisan;4
+Arborist;Arborist;Artisan;0.4
+Archer;Archer;Warrior;1
+Architect;Architect;Academia;0.2
+Aristocrat;Aristocrat;Bourgeoisie;0.2
+Armorer;Armorer;Artisan;0.5
+Assassin;Assassin;Warrior;0.2
+Astrologer;Astrologer;Academia;0.2
+Author;Author;Academia;0.5
+Bailiff;Bailiff;Law;1
+Baker;Baker;Artisan;2
+Bandit;Bandit;Outlaw;2
+Banker;Banker;Bourgeoisie;0.5
+Barber;Barber;Artisan;1
+Barde;Barde;Performer;0.5
+Bartender;Bartender;Common;1
+Beekeeper;Beekeeper;Artisan;1
+Beggar;Beggar;Common;2
+Blacksmith;Blacksmith;Artisan;1
+Bladesmith;Bladesmith;Artisan;0.5
+Bodyguard;Bodyguard;Warrior;0.5
+Bookbinder;Bookbinder;Artisan;0.2
+Bouncer;Bouncer;Common;0.2
+Bounty hunter;Bounty hunter;Warrior;0.5
+Bowyer;Bowyer;Artisan;0.5
+Brewer;Brewer;Artisan;0.8
+Brickmason;Brickmason;Artisan;1
+Butcher;Butcher;Artisan;1
+Camp Follower;Camp Follower;Common;1
+Candlemaker;Candlemaker;Artisan;0.5
+Carpenter;Carpenter;Artisan;2
+Cartographer;Cartographer;Academia;0.5
+Cartwright;Cartwright;Artisan;1
+Champion;Champion;Warrior;0.5
+Charcoal-Burner;Charcoal-Burner;Common;1
+Chimney sweep;Chimney sweep;Common;1
+Clerk;Clerk;Academia;1
+Clocksmith;Clocksmith;Artisan;0.3
+Coachman;Coachwoman;Common;0.7
+Cobbler;Cobbler;Artisan;1
+Constable;Constable;Law;1
+Cook;Cook;Artisan;1
+Coopers;Coopers;Artisan;0.5
+Courier;Courier;Common;1
+Cow herder;Cow herder;Common;1
+Cutler;Cutler;Artisan;0.4
+Cutpurse;Cutpurse;Outlaw;1
+Dairyman;Dairymaid;Common;1
+Dancer;Dancer;Performer;1
+Doctor;Doctor;Academia;0.5
+Crime Lord;Crime Lady;Outlaw;0.1
+Embalmer;Embalmer;Academia;0.2
+Engineer;Engineer;Academia;0.5
+Executioner;Executioner;Common;0.1
+Falconer;Falconer;Nature;0.1
+Farm hand;Farm hand;Common;4
+Farmer;Farmer;Common;6
+Fence;Fence;Outlaw;1
+Ferryman;Ferrywoman;Common;0.3
+Fireman;Firewoman;Common;0.3
+Fisherman;Fisher;Common;2
+Fishmonger;Fishmonger;Common;1
+Fletcher;Fletcher;Artisan;1
+Forager;Forager;Nature;2
+Fortune teller;Fortune teller;Performer;0.4
+Furrier;Furrier;Artisan;1
+Gambler;Gambler;Common;0.5
+Gardener;Gardener;Nature;0.2
+Gladiator;Gladiator;Warrior;0.2
+Glass blower;Glass blower;Artisan;0.4
+Glasspainter;Glasspainter;Artisan;0.1
+Glovemaker;Glovemaker;Artisan;0.3
+Gravedigger;Gravedigger;Common;0.4
+Grocer;Grocer;Common;1
+Groom;Groom;Nature;0.7
+Guard;Guard;Warrior;1
+Guide;Guide;Common;0.2
+Guild Master;Guild Master;Bourgeoisie;0.1
+Hairdresser;Hairdresser;Artisan;0.4
+Herald;Herald;Performer;0.2
+Herbalist;Herbalist;Academia;0.4
+Historian;Historian;Academia;0.2
+Hunter;Hunter;Nature;2
+Initiate;Initiate;Religion;1
+Innkeeper;Innkeeper;Bourgeoisie;1
+Interpreter;Interpreter;Academia;0.6
+Ironmonger;Ironmonger;Common;1
+Jester;Jester;Performer;0.5
+Jeweler;Jeweler;Artisan;0.4
+Judge;Judge;Law;0.3
+Kidnapper;Kidnapper;Outlaw;0.3
+Knight;Knight;Bourgeoisie;0.4
+Laborer;Laborer;Common;2
+Lamplighter;Lamplighter;Common;0.5
+Landlord;Landlandy;Bourgeoisie;1
+Lawman;Lawwoman;Law;1
+Lawyer;Lawyer;Academia;1
+Leatherworker;Leatherworker;Artisan;1
+Librarian;Librarian;Academia;0.3
+Linguist;Linguist;Academia;0.1
+Loan Shark;Loan Shark;Outlaw;0.6
+Locksmith;Locksmith;Artisan;0.2
+Lumberjack;Lumberjack;Common;1.5
+Makeup Artist;Makeup Artist;Artisan;0.1
+Mathematician;Mathematician;Academia;0.1
+Mayor;Mayor;Bourgeoisie;0.1
+Mercenary;Mercenary;Warrior;1
+Messenger;Messenger;Common;0.7
+Miner;Miner;Common;1
+Minstrel;Minstrel;Performer;0.4
+Missionary;Missionary;Religion;0.5
+Mortician;Mortician;Academia;0.3
+Musician;Musician;Performer;0.2
+Poet;Poet;Performer;0.2
+Noble;Noble;Bourgeoisie;0.1
+Monk;Nun;Religion;1
+Nurse;Nurse;Academia;0.8
+Peddler;Peddler;Bourgeoisie;1
+Philosopher;Philosopher;Academia;0.1
+Plasterer;Plasterer;Artisan;0.2
+Portrait painter;Portrait painter;Artisan;0.2
+Potter;Potter;Artisan;1
+Priest;Priestess;Religion;1.5
+Printer;Printer;Artisan;0.5
+Professor;Professor;Academia;1
+Ranger;Ranger;Nature;1
+Rat catcher;Rat catcher;Common;1
+Roofer;Roofer;Common;0.7
+Rope-maker;Rope-maker;Artisan;1
+Saddler;Saddler;Artisan;0.5
+Sailor;Sailor;Common;1
+Scout;Scout;Nature;0.8
+Scribe;Scribe;Academia;1
+Sculptor;Sculptor;Artisan;0.4
+Servant;Servant;Common;1.5
+Shepperd;Shepperd;Common;1
+Sheriff;Sheriff;Law;0.1
+Shopkeeper;Shopkeeper;Bourgeoisie;1
+Slave;Slave;Common;1
+Smuggler;Smuggler;Outlaw;1
+Soap maker;Soap maker;Artisan;0.5
+Soaper;Soaper;Common;1
+Soldier;Soldier;Warrior;2
+Squire;Squire;Warrior;0.2
+Stable hand;Stable hand;Common;0.7
+Stonemason;Stonemason;Artisan;1
+Student;Student;Academia;1
+Tailor;Tailor;Artisan;0.5
+Tanner;Tanner;Artisan;1
+Tattoo artist;Tattoo artist;Artisan;0.1
+Tax Collector;Tax Collector;Bourgeoisie;0.1
+Taxidermist;Taxidermist;Artisan;0.1
+Thatcher;Thatcher;Artisan;0.2
+Thief;Thief;Outlaw;1
+Thug;Thug;Outlaw;2
+Tinkerer;Tinkerer;Academia;0.3
+Tomb raider;Tomb raider;Common;0.2
+Town Crier;Town Crier;Common;0.2
+Town guard;Town guard;Warrior;1
+Toymaker;Toymaker;Artisan;0.1
+Trader;Trader;Bourgeoisie;1
+Trapper;Trapper;Nature;0.5
+Tutor;Tutor;Academia;0.4
+Vagabond;Vagabond;Common;1
+Veterinarian;Veterinarian;Academia;1
+Wanderer;Wanderer;Nature;1
+Washerman;Washerwoman;Common;1
+Weavers;Weavers;Artisan;1
+Wheelwright;Wheelwright;Artisan;0.4
+Whittler;Whittler;Artisan;0.4
+Woodcarver;Woodcarver;Artisan;0.3
+Wrestler;Wrestler;Performer;0.2
+Writer;Writer;Academia;0.3

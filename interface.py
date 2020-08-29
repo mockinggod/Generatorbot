@@ -14,27 +14,35 @@ import names
 
 import psqlfunctions as psqlf
 import homebrew as hb
+import racemanagement as rm
 import numpy as np
 from titlecase import titlecase
 
 	
 taglist = (hb.arrayreader("universaltags.txt"))
 
-def main(ctx, serverinfo, item, *args):
+
+def main(ctx, races, item, *args):
 	arg = []
 	for input in args:
 		arg.append(input)
 		
-	
+		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Genre prep
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 
-	races = []
+	dum = []
 
-	if item in ["fantasyNPC", "fNPC", "fantasyinn", "finn", "fantasysettlement", "fsettlement", "fset", "fantasybookcase", "fbookcase", "fbc", "fantasybook", "fbook", "fantasyoutpost",  "foutpost", "fantasyhamlet", "fhamlet", "fantasyvillage", "fvillage", "fantasytown", "ftown", "fantasycity", "fcity"]:
+	if item in ["fantasynpc", "fnpc", "fantasyinn", "finn", "fantasysettlement", "fsettlement", "fset", "fantasybookcase", "fbookcase", "fbc", "fantasybook", "fbook"]:
+	
+	
+		for race in races:
+			if race["genre"] == 'fantasy':
+				dum.append(race)
+		
 
-		dum, races = psqlf.readraces(serverinfo, ctx.message.author.id, "fantasy")
+	races = dum
 		
 
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
@@ -46,12 +54,11 @@ def main(ctx, serverinfo, item, *args):
 		numloop = 1
 		types = []
 		openoutput = ""
-		typelist =["random", "r", "eng", "fr", "inca", "japan", "arabic" "settlement", "set", "inn", "ship", "book"]
-		humantypelist = ["eng", "fr", "inca", "japan", "arabic"]
-		humangentypelist = ["inca"]
-		nosurnamelist = ["inca"]
+		typelist = []
+		typelist.extend(names.ethnicities)
+		typelist.extend(["random", "r", "settlement", "set", "inn", "ship", "book"])
 		full = False
-		gendre = None
+		gender = None
 		gen = False
 		lenght = [4,10]
 		
@@ -67,12 +74,12 @@ def main(ctx, serverinfo, item, *args):
 				if input == 'full' or input == 'fullname':
 					full = True
 				elif input == 'female' or input == 'f':
-					gendre = 'female'
+					gender = 'female'
 				elif input == 'male' or input =='m':
-					gendre = 'male'
+					gender = 'male'
 				elif input == 'surname' or input == 'sur' or input == 's':
 					full = True
-					gendre = 'surname'
+					gender = 'surname'
 				elif input == 'short':
 					lenght = [2,6]
 				elif input == 'long':
@@ -86,12 +93,12 @@ def main(ctx, serverinfo, item, *args):
 				
 		for i in range(numloop):
 		
-
+	
 			if len(types) == 0: 
 				type = "eng"
 			else:
-				type = np.random.choice(types)					
-			
+				type = np.random.choice(types)			
+
 			if type == "random" or type == "r" :
 					
 				openoutput += names.randname(lenght) 
@@ -103,23 +110,32 @@ def main(ctx, serverinfo, item, *args):
 				else:
 				
 					openoutput += "\n"
+					
+			
 	
-			elif type in humantypelist:
-			
-				if type in humangentypelist:
+			elif type in names.ethnicities:
+					
+				if type in names.humangentypelist:
 					gen = True
+					
+				#easter egg for a friend 
+				if ctx.message.author.id == int(132528782794817536) and "japan" in args:
+
+					openoutput +="Rice"
+		
+				#end easter egg
 			
-				if gendre == None:
+				if gender == None:
 				
-					gendre = np.random.choice(["male", "female"])
+					gender = np.random.choice(["male", "female"])
 			
-				if gendre == "male":
+				if gender == "male":
 				
 					string = type + "m"
 
 					openoutput += names.name(gen, string, lenght) + ' '
 					
-				elif gendre == "female":
+				elif gender == "female":
 					
 					string = type + "f"
 					
@@ -127,7 +143,7 @@ def main(ctx, serverinfo, item, *args):
 					
 				if full:
 
-					if type in nosurnamelist:
+					if type in names.nosurnamelist:
 				
 						string = type + "m"
 						
@@ -144,6 +160,7 @@ def main(ctx, serverinfo, item, *args):
 					openoutput += "\n"
 					
 			elif type == "settlement" or type == "set":
+		
 
 				dum = fantasysettlementgenerator.main(races)
 				openoutput += dum["name"]  + "\n"
@@ -190,29 +207,43 @@ def main(ctx, serverinfo, item, *args):
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 		
 	elif item == "fantasynpc" or item == "fnpc":
-		#Generates a fantasy NPC.
-		if len(arg) == 0:
-			loopmax = 1
-			job = None
-		else: 		
-			try:
-				loopmax = int(arg[0])
-				job = None
-			except ValueError:
-				loopmax = 1
-				job = arg[0]
+	#Generates a fantasy NPC.
+		numloop = 1
 
+		race = None
+		job = None
+		ethnicity = 'eng'
+	
+		for input in arg:
+			try: 
+				int(input)
+				integer = True
+			except ValueError:
+				integer = False
+			if integer:
+				numloop = int(input)
+			else: 
+				if any(input == ra['racename'] for ra in races):
+					race = input
+				elif input in names.ethnicities:
+					ethnicity = input
+				else:
+					job = input
+					
 		openoutput = ""
 		secretoutput = ""
+		
+		if race == None:
+			tempraces = races
+		else:
+			tempraces = []
+			for ra in races:
+				if race == ra['racename']:
+					tempraces.append(ra)
 				
-		loop = 0
-		while loop < loopmax:
-			loop += 1
-			
-			if job == None:
-				NPC = fantasyNPCgenerator.main(races)
-			else:
-				NPC = fantasyNPCgenerator.main(races, job)
+		for i in range(numloop):
+		
+			NPC = fantasyNPCgenerator.main(tempraces, ethnicity, job)
 				
 			openoutput += str(charaformat(NPC)) + "\n\n"
 				
@@ -224,14 +255,28 @@ def main(ctx, serverinfo, item, *args):
 		
 	elif item == "fantasyinn" or item == "finn":
 	
+		tempraces = rm.exracebys(races, 2)
+	
+		numloop = 1
+		ethnicity = "eng"
+		for input in arg:
+			try: 
+				int(input)
+				integer = True
+			except ValueError:
+				integer = False
+			if integer:
+				numloop = int(input)
+			else: 
+				if input in names.ethnicities:
+					ethnicity = input
+				
+
+	
 		openoutput = ""
 		secretoutput = ""
 		
-		if len(arg) == 0:
-			arg.append(1)
-		loop = 0
-		while loop < int(arg[0]):
-			loop += 1
+		for i in range(numloop):		
 			
 			inn = fantasyinngenerator.main()
 			output = "\n**" + inn["name"] + "**\nOddity: " + inn["oddity"]   \
@@ -241,24 +286,35 @@ def main(ctx, serverinfo, item, *args):
 			output += "\nSecret: " + inn["secret"]
 			secretoutput += output
 			
-			owner = fantasyNPCgenerator.main(races, "Innkeeper")
-			waiter = fantasyNPCgenerator.main(races, "Waiter")
+			owner = fantasyNPCgenerator.main(tempraces, ethnicity, "Innkeeper")
+			waiter = fantasyNPCgenerator.main(tempraces, ethnicity, "Waiter")
 			
-			openoutput += "\n\n__Owner__: " 
-			openoutput += owner["name"] + "\nA" 
-			openoutput += owner["age"] + " "+ str(owner["gender"]) + "\nCharacteristic: " + owner["characteristic"]
-			openoutput += "\n\n__Waiter__: " + waiter["name"] + "\nA" 
-			openoutput += waiter["age"] + " " + str(waiter["gender"]) + "\nCharacteristic: " + waiter["characteristic"] + "\n"
-			secretoutput += "\n\n__Owner__: " + owner["name"] + "\nA" 
-			secretoutput += owner["age"] + " " + str(owner["gender"]) + "\nCharacteristic: " + owner["characteristic"] \
-			+ "\nTrait: " + owner["trait"]
+
+			openoutput += "\n\n" + owner["name"] +":"+ " A" + owner["age"] + " "+ str(owner["gender"]) +\
+				" "+ str(owner["race"]) + " owner\nCharacteristic: " + owner["characteristic"]
+			if waiter["gender"] == "female":
+				openoutput += "\n\n" + waiter["name"] +":"+ " A" + waiter["age"] + " "+ str(waiter["gender"]) +\
+					" "+ str(waiter["race"]) + " waitress\nCharacteristic: " + waiter["characteristic"]
+			else:
+				openoutput += "\n\n" + waiter["name"] +":"+ " A" + waiter["age"] + " "+ str(waiter["gender"]) +\
+					" "+ str(waiter["race"]) + " waiter\nCharacteristic: " + waiter["characteristic"]	
+
+			openoutput += "\n"
+				
+			secretoutput +=  "\n\n" + owner["name"] +":"+ " A" + owner["age"] + " "+ str(owner["gender"]) +\
+				" "+ str(owner["race"]) + " owner\nCharacteristic: " + owner["characteristic"] + "\nTrait: " + owner["trait"]
 			if owner["secret"] != "Has no secret":
 				secretoutput += "\nSecret: " + owner["secret"]
-			secretoutput += "\n\n__Waiter__: " + waiter["name"] + "\nA"
-			secretoutput += waiter["age"] + " " + str(waiter["gender"]) + "\nCharacteristic: " \
-			+ waiter["characteristic"]+ "\nTrait: " + waiter["trait"]
+			if waiter["gender"] == "female":
+				secretoutput +=  "\n\n" + waiter["name"] +":"+ " A" + waiter["age"] + " "+ str(waiter["gender"]) +\
+					" "+ str(waiter["race"]) + " waitress\nCharacteristic: " + waiter["characteristic"] + "\nTrait: " + waiter["trait"]
+			else:
+				secretoutput +=  "\n\n" + waiter["name"] +":"+ " A" + waiter["age"] + " "+ str(waiter["gender"]) +\
+					" "+ str(waiter["race"]) + " waiter\nCharacteristic: " + waiter["characteristic"] + "\nTrait: " + waiter["trait"]
 			if waiter["secret"] != "Has no secret":
 				secretoutput += "\nSecret: " + waiter["secret"] + "\n"
+
+			secretoutput += "\n"
 		
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Missions
@@ -339,22 +395,34 @@ def main(ctx, serverinfo, item, *args):
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
 #					Settlements
 # /|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|//|\\|/
+
 			
 	elif item == "fantasysettlement" or item == "fsettlement" or item == "fset": #fantasy settlement
-		if len(arg) == 0:
-			arg.append(0)
-			
-		try:
-			arg[0] = int(arg[0])
-			if arg[0] > 5:
-				openoutput = "The maximum size of a settlement is five, see itemlist for more info"
-			else:			
-				openoutput, secretoutput = fantasysettlementformat(races, fantasysettlementgenerator.main(races, arg[0]))
-		except ValueError:
+		
+		size = 0
+		race = None
+		ethnicity = 'eng' 
+		
+		for input in arg:
+			try: 
+				int(input)
+				integer = True
+			except ValueError:
+				integer = False
+			if integer:
+				size = int(input)
+			else: 
+				if any(input == ra['racename'] for ra in races):
+					race = input
+				elif input in names.ethnicities:
+					ethnicity = input
+		
+
+		if size > 5 or size < 0:
 			openoutput = "The input must be a number between 1 and 5, see itemlist for more info"
-				
-			
-	
+		else:			
+			set = fantasysettlementgenerator.main(races, race, ethnicity, size)
+			openoutput, secretoutput = fantasysettlementformat(races, set)
 
 
 		
@@ -555,7 +623,8 @@ def main(ctx, serverinfo, item, *args):
 		openoutput = item + " is not a valid generator argument, use !itemlist to get a list"
 		
 	try: secretoutput
-	except NameError: secretoutput = openoutput
+	except NameError: 
+		secretoutput = openoutput
 	
 	if "#" in secretoutput:
 		for tag in taglist:
@@ -565,6 +634,7 @@ def main(ctx, serverinfo, item, *args):
 			
 	if "[[" in secretoutput:
 		memory = [[""]]
+		
 			
 		split1 = secretoutput.split("[[")
 		secretoutput = split1[0]
@@ -579,26 +649,29 @@ def main(ctx, serverinfo, item, *args):
 				memory[0].append(np.random.choice(list))
 				
 				secretoutput +=  memory[0][-1] + split2[1]
+				
 
 		if "[[" in openoutput:
 			split1 = openoutput.split("[[")
 			openoutput = split1[0]
 			i = len(split1)
 			
-			for j in range(1,i
-			):
+			for j in range(1,i):
 				split2 = split1[j].split("]]")
 				list = split2[0].split("/")
 				openoutput += memory[0][memory.index(list)] + split2[1]
+				
 
 	secretoutput = secretoutput.replace("   ", " ", 10)				
 	secretoutput = secretoutput.replace("  ", " ", 100)	
 	secretoutput = secretoutput.replace(" .", ".", 10)		
 	secretoutput = secretoutput.replace(" ,", ",", 10)	
+	secretoutput = secretoutput.replace(" :", ":", 10)	
 	openoutput = openoutput.replace("   ", " ", 10)	
 	openoutput = openoutput.replace("  ", " ", 100)	
 	openoutput = openoutput.replace(" .", ".", 10)		
 	openoutput = openoutput.replace(" ,", ",", 10)
+	openoutput = openoutput.replace(" :", ":", 10)
 	
 	return(openoutput, secretoutput)
 	
@@ -623,11 +696,8 @@ def charaformat(character):
 def secretcharaformat(character):
 
 	output = character["name"] 
-	dummy = "."
-	if character["occupationgenerated"]:
-		dummy = " " + str(character["occupation"]) + "."
-	dummy2 = str(character["age"]) + " " + str(character["gender"]) + " " + str(character["race"]) + dummy
-	output += "\nA" + dummy2.lower()
+	dummy = str(character["age"]) + " " + str(character["gender"]) + " " + str(character["race"]) + " " + str(character["occupation"]) + "."
+	output += "\nA" + dummy.lower()
 	output += "\nCharacteristic: " + character["characteristic"]	
 	output += "\nTrait: " + character["trait"] 
 	
@@ -643,8 +713,8 @@ def fantasysettlementformat(races, settlement):
 	
 	# general settlement stuff
 		
-	output = "__**" + settlement["name"] + "**__\n"
-	output += "Size: " + settlement["size"] + "\n"
+	output = "__**" + settlement["name"] + "**__: "
+	output += settlement["race"].capitalize() + " " + settlement["size"] + "\n"
 #	output += "Population: " + str(settlement["population"]) + "\n" Current philosophy goes against giving an accurate population, plus settlement have sufficient content
 	
 	openoutput = output
@@ -669,7 +739,7 @@ def fantasysettlementformat(races, settlement):
 	
 	if settlement["ruler"]["individual"]:
 		output += settlement["ruler"]["name"] + "\nA"
-		output +=  str(settlement["ruler"]["age"]) + " " + str(settlement["ruler"]["gender"]) + str(settlement["ruler"]["race"]) + " " + str(settlement["ruler"]["occupation"]) + "\n"
+		output +=  str(settlement["ruler"]["age"]) + " " + str(settlement["ruler"]["gender"]) + " " + str(settlement["ruler"]["race"]) + " " + str(settlement["ruler"]["occupation"]) + "\n"
 		
 		openoutput += output + "\n" 
 		
@@ -699,6 +769,13 @@ def fantasysettlementformat(races, settlement):
 		secretoutput += output
 		output = ""
 		
+		if np.random.random()<0.85:
+			ethnicity = settlement["ethnicity"]
+			tempraces = rm.exracebyn(races, settlement["race"])
+		else:
+			ethnicity = np.random.choice(names.humanethnicities)
+			tempraces = rm.exracebys(races, settlement["sizenum"])
+			
 		if institution["identifier"] == 1 or institution["identifier"] == 2: #inn/tavern
 		
 			output += "\nOddity: " + institution["oddity"]   \
@@ -708,9 +785,9 @@ def fantasysettlementformat(races, settlement):
 			secretoutput += output
 			output = ""
 			
-			owner = fantasyNPCgenerator.main(races, "Owner")
+			owner = fantasyNPCgenerator.main(tempraces, ethnicity, "owner")
 			
-			secretoutput += "\n\n__Owner__: " + secretcharaformat(owner) + "\n"
+			secretoutput +=  "\n" + secretcharaformat(owner) + "\n"
 			
 			# Removed Waiter from settlement inns, too much info already
 			# secretoutput += "\n__Waiter__\n" + secretcharaformat(waiter) + "\n" 
@@ -719,7 +796,7 @@ def fantasysettlementformat(races, settlement):
 	
 			secretoutput += "\nFood vendors:\n"
 			for vendor in institution["food"]:
-				secretoutput += "    " + vendor + "\n"
+				secretoutput += " - " + vendor + "\n"
 				
 			secretoutput += "Smell: " + institution["smell"] + "\n"
 			
@@ -727,29 +804,29 @@ def fantasysettlementformat(races, settlement):
 		
 			secretoutput += "\nPrincipal succour: " + institution["succour"] + "\n"
 			
-			highpriest = fantasyNPCgenerator.main(races, "High priest")
+			highpriest = fantasyNPCgenerator.main(tempraces, ethnicity, "High priest")
 			
-			secretoutput += "\n__High priest__: " + secretcharaformat(highpriest) + "\n"
+			secretoutput += "\n" + secretcharaformat(highpriest) + "\n"
 			
 		elif institution["identifier"] == 5: #Library
 		
 			secretoutput += "\nAreas of focus:\n"
 			for discipline in institution["disciplines"]:
-				secretoutput += "    " + discipline + "\n"
+				secretoutput += " - " + discipline + "\n"
 				
-			librarian = fantasyNPCgenerator.main(races, "Librarian")
+			librarian = fantasyNPCgenerator.main(tempraces, ethnicity, "Librarian")
 			
-			secretoutput += "\n__Librarian__: " + secretcharaformat(librarian) + "\n"
+			secretoutput +=  "\n" + secretcharaformat(librarian) + "\n"
 				
 		elif institution["identifier"] == 6: #University
 		
 			secretoutput += "\nClasses taught:\n"
 			for discipline in institution["disciplines"]:
-				secretoutput += "    " + discipline + "\n"
+				secretoutput += " - " + discipline + "\n"
 				
-			dean = fantasyNPCgenerator.main(races, "Dean")
+			dean = fantasyNPCgenerator.main(tempraces, ethnicity, "Dean")
 			
-			secretoutput += "\n__Dean__: " + secretcharaformat(dean) + "\n"
+			secretoutput +=  "\n" + secretcharaformat(dean) + "\n"
 			
 		elif institution["identifier"] == 7: #Park
 		

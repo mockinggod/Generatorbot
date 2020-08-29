@@ -44,7 +44,7 @@ All the furniture is made of stone.; 0
 The bar is circular and at the center of the room.; 0
 The bar is made of marble.; 0
 The drinks come in wooden boots.; 0
-The inn has a omnipresent [[shrimp/cat/frog/owl]] [[theme/odour].; 0
+The inn has a omnipresent [[shrimp/cat/frog/owl]] [[theme/odour]].; 0
 The inn has a watch tower attached.; 0
 The inn has its own moat, about half a metre wide, complete with miniature drawbridge.; 0
 The inn has two large tapestries, rotten but still quite impressive.; 0
@@ -96,7 +96,7 @@ A woman is currently giving birth, everyone else seems to be either panicking or
 Everyone in the inn is standing up and are separated in two groups facing each other, they seem to be having an argument.; 4
 The bar runs across the center of the front room, splinting it into two, while one side is loud and rowdy the other is calm and dignified.; 0
 An unknown public figure is staying at the inn, all their servants are in the front room.; 4
-A shady figure is sitting in a corner, [[thoughtfully/[pensively]] smoking a pipe.; 1	
+A shady figure is sitting in a corner, [[thoughtfully/pensively]] smoking a pipe.; 1	
 The walls are all painted bright [[pink/yellow/teal]], everyone refuses to talk about it.; 0
 All drinks are served in wooden tankards that are carved with the likenesses of [[great heroes of a long-forgotten age/circus performers/exotic animals/dragons/horses]].; 0
 Almost every flat surface has one or more figurines or trinkets that the owner loves to collect. They'll often allow patrons to barter for their meal with a new trinket.; 0

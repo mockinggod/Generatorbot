@@ -71,12 +71,12 @@ def main(identifier = 0):
 	
 		output = fantasyinngenerator.main()
 		output["name"] = output["name"].replace("Inn", "Tavern")
-		output["oddity"] = output["oddity"].replace("inn", "iavern")
+		output["oddity"] = output["oddity"].replace("inn", "tavern")
 		output["oddity"] = output["oddity"].replace("beer", "wine")
 		output["oddity"] = output["oddity"].replace("tankards", "glasses")	
 		output["secret"] = output["secret"].replace("inn", "tavern")
 		output["secret"] = output["secret"].replace("beer", "wine")
-		output["secret"] = output["secret"].replace("tankards", "glasses")	
+		output["secret"] = output["secret"].replace("tankards", "glasses")
 			
 	elif identifier == 3: #Trading Post
 	

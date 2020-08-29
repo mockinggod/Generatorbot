@@ -2,10 +2,13 @@ import discord
 import asyncio
 from discord.ext import commands
 import interface
-import homebrew as hb
 import random
 import os
+import names
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+import homebrew as hb
+import racemanagement as rm
 import psqlfunctions as psqlf
 
 sched = AsyncIOScheduler()
@@ -31,6 +34,7 @@ except KeyError:
 	
 	
 feedbackusedtoday = [] 
+racesbyID = []
 	
 
 with open("helptext.txt", encoding='UTF-8') as f:
@@ -81,7 +85,7 @@ async def on_guild_remove(guild):
 			del prefixes[n-1]
 			break
 	
-def clearfeedbacklist():	
+def clearfeedbacklist():
 
 	feedbackusedtoday.clear()
 	print('Feedback list cleared')
@@ -101,32 +105,44 @@ async def hi(ctx): # For testing
 # The most important function, calls interface to generate all the bots content
 @bot.command()
 async def gen(ctx, item = "nothing was entered0", *args):
-
-	#easter egg for a friend 
-	if ctx.message.author.id == int(int(idnum)-105742405411536896) and "japan" in args:
-
-		await ctx.send("Rice")
-		
-	#end easter egg
+	
+	for races in racesbyID:
+		if races['ID'] == ctx.message.author.id:
+			userraces = races['list']
+			break
 	
 	else:
-
-		await delete_command(ctx)
-		
-		openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
-		
-		if max(len(openoutput), len(secretoutput)) > 1999:
-			await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
-		else:
-			if openoutput == secretoutput:
-				await ctx.send(openoutput)
-			else:
-				if isinstance(ctx.message.channel, discord.abc.GuildChannel):
-					await ctx.send(openoutput)
-					await ctx.message.author.send(secretoutput)
-				else:
-					await ctx.send(secretoutput)
+		dum, tempraces = psqlf.readraces(serverinfo, ctx.message.author.id, 'all')
+		output = []
+		for temprace in tempraces:
+			output.append(dict(genre= temprace[1], racename= temprace[2], gender= temprace[3],\
+				weight= temprace[4], names= temprace[5], surnames= temprace[6], maxsettlement = temprace[7]\
+				, occupations = [temprace[8], temprace[9], temprace[10], temprace[11], temprace[12], temprace[13], temprace[14], temprace[15], temprace[16], temprace[17], temprace[18]]))
 				
+		
+		racesbyID.append(dict(ID= ctx.message.author.id, list= output))
+		userraces = output
+
+
+
+	await delete_command(ctx)
+
+
+	
+	openoutput, secretoutput = interface.main(ctx, userraces, item.lower(), *args)
+	
+	if max(len(openoutput), len(secretoutput)) > 1999:
+		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
+	else:
+		if openoutput == secretoutput:
+			await ctx.send(openoutput)
+		else:
+			if isinstance(ctx.message.channel, discord.abc.GuildChannel):
+				await ctx.send(openoutput)
+				await ctx.message.author.send(secretoutput)
+			else:
+				await ctx.send(secretoutput)
+			
 
 
 		
@@ -147,14 +163,11 @@ async def help(ctx):
 	
 # Prints out the list of things that can be generated
 @bot.command()	
-async def itemlist(ctx, *args):
+async def itemlist(ctx, arg1):
 
 	await delete_command(ctx)
 
-	if len(args) == 0:
-		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
-		
-	elif args[0] == 'discord':
+	if arg1 == 'discord':
 
 		output = ""
 	
@@ -164,30 +177,80 @@ async def itemlist(ctx, *args):
 				await ctx.send(output + "_ _")
 				output = ""
 		
-		await ctx.send(output)
+		await ctx.message.author.send(output)
+		
+	else:
+		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
 	
 
 #Gives info on the bot, arguments can be added to get info on specific features 
 @bot.command()	
-async def info(ctx, arg1=None):
+async def info(ctx, arg1=None, arg2=None):
 
 	await delete_command(ctx)
 
-	if arg1 == "races":
+	if arg1 == "races" or arg1 == "race":
 	
-		output = ""
-		for i in inforacestext:
-			output += i + "\n"
+		if arg2 == 'discord':
+		
+			output = ""
+			for i in inforacestext:
+				output += i + "\n"
+				
+			output = output.replace("@prefix@", prefix(bot, ctx.message))
+
+			await ctx.message.author.send(output)
+		
+		else:
+	
+			output = "<https://generatorbot.wordpress.com/info-races/>"
+		
+			output += "\n\nAdd \"discord\" to an info statement to receive it as a private message"
+
+			await ctx.send(output)
+	
+	if arg1 == "names" or arg1 == "name":
+	
+		if arg2 == 'discord':
+		
+			output = ""
+			for i in infonamestext:
+				output += i + "\n"
+				
+			output = output.replace("@prefix@", prefix(bot, ctx.message))
+			
+			output += "\n\nAdd \"discord\" to an info statement to receive it as a private message"
+		
+			await ctx.message.author.send(output)
+		
+		else:
+			
+			output = "<https://generatorbot.wordpress.com/info-names/>"
+		
+			output += "\n\nAdd \"discord\" to an info statement to receive it as a private message"
+
+			await ctx.send(output)
 	
 	else:
 
-		output = ""
-		for i in infotext:
-			output += i + "\n"
-			
-	output = output.replace("@prefix@", prefix(bot, ctx.message))
+		if arg1 == 'discord':
 		
-	await ctx.send(output)
+			output = ""
+			for i in infotext:
+				output += i + "\n"
+				
+			output = output.replace("@prefix@", prefix(bot, ctx.message))
+				
+			await ctx.message.author.send(output)
+		
+		else:
+			
+			output = "<https://generatorbot.wordpress.com/about/>"
+		
+			output += "\n\n Add \"discord\" to an info statement to receive it as a private message"
+
+			await ctx.send(output)
+
 	
 @bot.command()	
 async def myid(ctx):
@@ -244,33 +307,19 @@ async def gbchangeprefix(ctx, arg1=None):
 	await ctx.send(output)
 	
 @bot.command()	
-async def addfantasyrace(ctx, race = None, gendre = "notset", weight = 1.0):
+async def addfantasyrace(ctx, race = None, gender = None, weight = 1.0, namesethnicity = None, surnamesethnicity = None, maxsettlement = 5, occupations = [1,1,1,1,1,1,1,1,1,1,1]):
 #allows a user to add a race to their custom lists of fantasy races
+
+	for i in range(len(racesbyID)):
+		if racesbyID[i]['ID'] == ctx.message.author.id:
+			del racesbyID[i]
+			break
+
+		
+	output = str(rm.addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnamesethnicity, maxsettlement, occupations))
 	
-	if race == None:
-		output = "Type @prefix@info races to learn how to use this."	
-		
-	else:
-				
-		if gendre == "notset":
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight)/2])
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight)/2])
-			
-			output = race + " added to your personal list of races"
-		
-		elif gendre == "none":
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "", float(weight)/2])
-			
-			output = "genderless " + race + " added to your personal list of races"
-			
-		else:
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gendre, float(weight)])
-			
-			output = gendre + " " + race + " added to your personal list of races"
-			
 	output = output.replace("@prefix@", prefix(bot, ctx.message))
-		
-		
+	
 	await ctx.send(output)
 	
 #allows a user to view the races of their custom list	
@@ -285,15 +334,26 @@ async def reviewfantasyraces(ctx):
 	
 	else:
 
+
 		output = "Your races are:\n"
 		for list in lists:
-			output += str(list[2]) + " (" + str(list[3]) + ") " + " weight: " + str(list[4]) + "\n"	
+			output += str(list[2]) + " (" + str(list[3]) + ") " + "  Weight: " + str(list[4]) + "  Name pool: " + str(list[5]) \
+				+ "  Surname pool: " + str(list[6]) + "  Max settlement: " + str(list[7]) + "\nOccupations weights: Academia: "+ str(hb.sigfig(list[8],3))\
+				+ " Artisan:" + str(hb.sigfig(list[9],3)) + " Bourgeoisie: " + str(hb.sigfig(list[10],3))+ " Common: " + str(hb.sigfig(list[11],3))\
+				+ " Law: " + str(hb.sigfig(list[12],3))+ " Magic: " + str(hb.sigfig(list[13],3))+ " Nature: " + str(hb.sigfig(list[14],3))+ " Outlaw: " + str(hb.sigfig(list[15],3)) \
+				 +  " Performer: " + str(hb.sigfig(list[16],3)) + " Religion: " + str(hb.sigfig(list[17],3)) + " Warrior: " + str(hb.sigfig(list[18],3)) + "\n"
+				 
 		
 	await ctx.send(output)
 	
 #allows a user to remove a race from their custom lists of fantasy races	
 @bot.command()
 async def removefantasyraces(ctx, race=None):
+
+	for races in racesbyID:
+		if races['ID'] == ctx.message.author.id:
+			del racesbyID[races]
+			break
 
 	if race == None:
 	
@@ -361,10 +421,31 @@ async def kill(ctx, arg = 0):
 
 @bot.command()
 async def g(ctx, item = "nothing was entered0", *args):
+	
+	for races in racesbyID:
+		if races['ID'] == ctx.message.author.id:
+			userraces = races['list']
+			break
+	
+	else:
+		dum, tempraces = psqlf.readraces(serverinfo, ctx.message.author.id, 'all')
+		output = []
+		for temprace in tempraces:
+			output.append(dict(genre= temprace[1], racename= temprace[2], gender= temprace[3],\
+				weight= temprace[4], names= temprace[5], surnames= temprace[6], maxsettlement = temprace[7]\
+				, occupations = [temprace[8], temprace[9], temprace[10], temprace[11], temprace[12], temprace[13], temprace[14], temprace[15], temprace[16], temprace[17], temprace[18]]))
+				
+		
+		racesbyID.append(dict(ID= ctx.message.author.id, list= output))
+		userraces = output
+
+
 
 	await delete_command(ctx)
 
-	openoutput, secretoutput = interface.main(ctx, serverinfo, item.lower(), *args)
+
+	
+	openoutput, secretoutput = interface.main(ctx, userraces, item.lower(), *args)
 	
 	if max(len(openoutput), len(secretoutput)) > 1999:
 		await ctx.send("The generated message is too long, one of us was too ambitious, try again.")
@@ -392,14 +473,12 @@ async def h(ctx):
 	await ctx.send(output)
 
 @bot.command()
-async def list(ctx, aliases=['list'], *args):
+async def list(ctx, aliases=['list'], arg1=None):
 
 	await delete_command(ctx)
 
-	if len(args) == 0:
-		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
-		
-	elif args[0] == 'discord':
+
+	if arg1 == 'discord':
 
 		output = ""
 	
@@ -408,38 +487,26 @@ async def list(ctx, aliases=['list'], *args):
 			if i == "":
 				await ctx.send(output + "_ _")
 				output = ""
-
 		
-		await ctx.send(output)	
-		
-@bot.command()	
-async def addfantasyraces(ctx, race = None, gendre = "notset", weight = 1.0):
-#allows a user to add a race to their custom lists of fantasy races
-	
-	if race == None:
-		output = "Type @prefix@info races to learn how to use this."	
+		await ctx.message.author.send(output)
 		
 	else:
-				
-		if gendre == "notset":
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "male", float(weight)/2])
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "female", float(weight)/2])
-			
-			output = race + " added to your personal list of races"
+		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
 		
-		elif gendre == "none":
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, "", float(weight)/2])
-			
-			output = "genderless " + race + " added to your personal list of races"
-			
-		else:
-			psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gendre, float(weight)])
-			
-			output = gendre + " " + race + " added to your personal list of races"
-			
+@bot.command()	
+async def addfantasyraces(ctx, race = None, gender = None, weight = 1.0, namesethnicity = None, surnamesethnicity = None, maxsettlement = 5, occupations = [1,1,1,1,1,1,1,1,1,1,1]):
+#allows a user to add a race to their custom lists of fantasy races
+
+	for i in range(len(racesbyID)):
+		if racesbyID[i]['ID'] == ctx.message.author.id:
+			del racesbyID[i]
+			break
+
+		
+	output = str(rm.addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnamesethnicity, maxsettlement, occupations))
+	
 	output = output.replace("@prefix@", prefix(bot, ctx.message))
-		
-		
+	
 	await ctx.send(output)
 	
 #allows a user to view the races of their custom list	
@@ -454,9 +521,15 @@ async def reviewfantasyrace(ctx):
 	
 	else:
 
+
 		output = "Your races are:\n"
 		for list in lists:
-			output += str(list[2]) + " (" + str(list[3]) + ") " + " weight: " + str(list[4]) + "\n"	
+			output += str(list[2]) + " (" + str(list[3]) + ") " + "  Weight: " + str(list[4]) + "  Name pool: " + str(list[5]) \
+				+ "  Surname pool: " + str(list[6]) + "  Max settlement: " + str(list[7]) + "\nOccupations weights: Academia: "+ str(hb.sigfig(list[8],3))\
+				+ " Artisan:" + str(hb.sigfig(list[9],3)) + " Bourgeoisie: " + str(hb.sigfig(list[10],3))+ " Common: " + str(hb.sigfig(list[11],3))\
+				+ " Law: " + str(hb.sigfig(list[12],3))+ " Magic: " + str(hb.sigfig(list[13],3))+ " Nature: " + str(hb.sigfig(list[14],3))+ " Outlaw: " + str(hb.sigfig(list[15],3)) \
+				 +  " Performer: " + str(hb.sigfig(list[16],3)) + " Religion: " + str(hb.sigfig(list[17],3)) + " Warrior: " + str(hb.sigfig(list[18],3)) + "\n"
+				 
 		
 	await ctx.send(output)
 	

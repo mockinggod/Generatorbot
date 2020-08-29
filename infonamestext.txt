@@ -1,0 +1,41 @@
+Names can be generated on their own or as part of an NPC. Names are normally chosen from a list of English names but other ethnicities are possible.
+
+**Ethnicities**:
+American:	us
+Arabic:		arabic
+Czech:		czech
+Dwarven:	dwarf
+Elven: 		elf
+English:	eng
+French:		fr
+Gothic:		goth
+Halfling:	half
+Inca:		inca
+Italian:	ita
+Japanese:	japan
+Norse:		norse
+Orcish:		orc
+Random:		rand
+Roman:		latin
+Saxon:		saxon
+
+When adding a race to your list you will probably have to input a string from the following list. (f/female, m/male, sur/surname)
+
+**name-string list**
+arabicf	arabicm	arabicsur
+czechf	czechm	czechsur
+dwarff	dwarfm	dwarfsur
+elff	elfm	elfsur
+engf	engm	engsur
+frf		frm		frsur
+gothf	gothm
+halff	halfm	halfsur
+incaf	incam
+itaf	itam	itasur
+japanf	japanm	japansur
+latinf	latinm
+norsef	norsem
+orcf	orcm
+rand
+saxonf	saxonm
+usf		usm		ussur 

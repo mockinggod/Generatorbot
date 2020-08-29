@@ -30,7 +30,9 @@ def rotate(array):
 	
 	
 def sigfig(x, digit):
-	return round(x, digit -1 -int(math.floor(math.log10(abs(x)))))
-	
+	try:
+		return round(x, digit -1 -int(math.floor(math.log10(abs(x)))))
+	except ValueError:
+		return round(x, digit -1)
 def normalise(list):
 	return([float(i)/sum(list) for i in list])

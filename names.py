@@ -51,6 +51,18 @@ defaults.new = False
 
 # == MARKOV CHAIN BASED NAMER =========================================
 
+strings = ["none", "rand", "engm", "engf", "engsur", "frm", "frf", "frsur", "incam", "incaf",\
+	"japanm", "japanf", "japansur", "arabicm", "arabicf", "arabicsur", "elff", "elfm", "elfsur",\
+	"halff", "halfm", "halfsur", "orcf", "orcm", "dwarff", "dwarfm", "dwarfsur", "gothf", "gothm",\
+	"czechf", "czechm", "czechsur", "norsem", "norsef", "saxonf", "saxonm", "usf", "usm", "ussur",\
+	"itaf", "itam", "itasur", "latinf", "latinm"]
+ethnicities = ["eng", "fr", "inca", "japan", "arabic", "elf", "half", "orc", "dwarf", "rand",\
+	"goth", "czech", "norse", "saxon", "us", "ita", "latin"]
+humanethnicities = ["eng", "fr", "inca", "japan", "arabic", "czech", "goth", "norse", "saxon", "us"\
+	"ita", "latin"]
+humangentypelist = ["inca", "incam", "incaf"]
+nosurnamelist = ["inca", "orc", "goth", "norse", "saxon", "latin"]
+
 class MarkovChainNamer( object ):
 	def __init__(self):
 		self.chains = defaultdict(list)
@@ -183,6 +195,7 @@ def names(gen, sourceSequence, minlen = 4, maxlen = 10, new = False) :
 	options.min = minlen
 	options.max = maxlen
 	options.new = new
+	
 
 	if gen:
 		for source in sourceSequence:
@@ -201,30 +214,32 @@ def gen_names( sourceSequence, options = defaults ):
 
 	return " ".join(generated)
 	
-def name(gen, setname, lenght = [4,10], new = False): 
+def name(gen, setname, lenght = [2,10], new = False): 
 
-
-	if gen:
-		options = argparse.Namespace()
-		options.count = 1
-		options.min = lenght[0]
-		options.max = lenght[1]
-		options.new = new
-		return markov.gen_name( setname, options )
+	if setname == "rand" or setname == "randf" or setname == "randm":
+		return randname(lenght)
 	else:
-		if setname not in markov.splat:
-			markov.load_dataset(setname)
-		namelist = []
-		for i in range(9):
-			namelist.append(np.random.choice((markov.source[setname]))) 
-			if len(namelist[i]) >= lenght[0] and len(namelist[i]) <= lenght[1]:
-					return namelist[i]
-					break
+		if gen:
+			options = argparse.Namespace()
+			options.count = 1
+			options.min = lenght[0]
+			options.max = lenght[1]
+			options.new = new
+			return markov.gen_name( setname, options )
 		else:
-			if(len(max(namelist, key=len)) < lenght[0]):
-				return max(namelist, key=len)
-			if(len(min(namelist, key=len)) > lenght[1]):
-				return min(namelist, key=len)
+			if setname not in markov.splat:
+				markov.load_dataset(setname)
+			namelist = []
+			for i in range(9):
+				namelist.append(np.random.choice((markov.source[setname]))) 
+				if len(namelist[i]) >= lenght[0] and len(namelist[i]) <= lenght[1]:
+						return namelist[i]
+						break
+			else:
+				if(len(max(namelist, key=len)) < lenght[0]):
+					return max(namelist, key=len)
+				if(len(min(namelist, key=len)) > lenght[1]):
+					return min(namelist, key=len)
 
 def gen_name( setname, options = defaults ):
 	return markov.gen_name( setname, options )
