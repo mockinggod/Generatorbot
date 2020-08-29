@@ -83,7 +83,7 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 						gender = 'both male and female'
 					else:
 						psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gender, float(weight), namesethnicity.lower(), 'engsur', maxsettlement, occupations])
-						output += gender + " " + race + " added to your personal list of races"
+					output += gender + " " + race + " added to your personal list of races"
 				
 				else:
 				
@@ -131,7 +131,7 @@ def addfantasyrace(ctx, serverinfo, race, gender, weight, namesethnicity, surnam
 											gender = 'both male and female'
 										else:
 											psqlf.addrace(serverinfo, ctx.message.author.id, "fantasy", [race, gender, float(weight), namesethnicity.lower(), surnamesethnicity.lower(), int(maxsettlement), occupations])
-											output += gender + " " + race + " added to your personal list of races"
+										output += gender + " " + race + " added to your personal list of races"
 							
 									else:
 										
