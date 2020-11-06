@@ -5,6 +5,7 @@ import interface
 import random
 import os
 import names
+import diceroller
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 import homebrew as hb
@@ -48,6 +49,9 @@ with open("Infotext.txt", encoding='UTF-8') as f:
 	
 with open("Inforacestext.txt", encoding='UTF-8') as f:
     inforacestext = f.read().splitlines()
+
+with open("Infonamestext.txt", encoding='UTF-8') as f:
+    infonamestext = f.read().splitlines()
 	
 def prefix(bot, message): # Function finds the prefix used by the guild
 	
@@ -256,6 +260,15 @@ async def info(ctx, arg1=None, arg2=None):
 async def myid(ctx):
 
 	output = ctx.message.author.id
+		
+	await ctx.send(output)
+	
+#A home brew dice roller for a very particular system
+@bot.command()
+async def r(ctx, mod = 0):
+	await delete_command(ctx)
+
+	output = diceroller.formatsum(ctx.message.author.name, diceroller.whbt(), mod)
 		
 	await ctx.send(output)
 
