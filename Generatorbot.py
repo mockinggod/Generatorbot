@@ -50,7 +50,7 @@ with open("infotext.txt", encoding='UTF-8') as f:
 with open("inforacestext.txt", encoding='UTF-8') as f:
     inforacestext = f.read().splitlines()
 
-with open("Infonamestext.txt", encoding='UTF-8') as f:
+with open("infonamestext.txt", encoding='UTF-8') as f:
     infonamestext = f.read().splitlines()
 	
 def prefix(bot, message): # Function finds the prefix used by the guild
