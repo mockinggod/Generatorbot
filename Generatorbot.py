@@ -44,10 +44,10 @@ with open("helptext.txt", encoding='UTF-8') as f:
 with open("itemlisttext.txt", encoding='UTF-8') as f:
     itemlisttext = f.read().splitlines()
 
-with open("Infotext.txt", encoding='UTF-8') as f:
+with open("infotext.txt", encoding='UTF-8') as f:
     infotext = f.read().splitlines()
 	
-with open("Inforacestext.txt", encoding='UTF-8') as f:
+with open("inforacestext.txt", encoding='UTF-8') as f:
     inforacestext = f.read().splitlines()
 
 with open("Infonamestext.txt", encoding='UTF-8') as f:
