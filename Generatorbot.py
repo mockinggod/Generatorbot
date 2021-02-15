@@ -167,7 +167,7 @@ async def help(ctx):
 	
 # Prints out the list of things that can be generated
 @bot.command()	
-async def itemlist(ctx, arg1):
+async def itemlist(ctx, arg1=None):
 
 	await delete_command(ctx)
 
@@ -185,6 +185,8 @@ async def itemlist(ctx, arg1):
 		
 	else:
 		await ctx.send("<https://generatorbot.wordpress.com/item-list/>")
+		
+
 	
 
 #Gives info on the bot, arguments can be added to get info on specific features 
